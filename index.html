@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="flex h-screen">
+      <nav
+        class="flex flex-col justify-between p-5 bg-white w-1/5"
+        role="navigation"
+      >
+        <div class="flex flex-col gap-12">
+          <img width="130" src="./Images/Logo.svg" alt="Company Logo" />
+
+          <ul class="flex flex-col gap-5">
+            <li>
+              <a href="#" class="flex gap-5 text-xl" aria-label="Dashboard">
+                <img src="./Images/DashIcon.svg" alt="Dashboard Icon" />
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex gap-5 text-xl" aria-label="Inventory">
+                <img src="./Images/Invent.svg" alt="Inventory Icon" />
+                Inventory
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex gap-5 text-xl" aria-label="Reports">
+                <img src="./Images/Reports.svg" alt="Reports Icon" />
+                Reports
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex gap-5 text-xl" aria-label="Suppliers">
+                <img src="./Images/Suppliers.svg" alt="Suppliers Icon" />
+                Suppliers
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex gap-5 text-xl" aria-label="Orders">
+                <img src="./Images/Orders.svg" alt="Orders Icon" />
+                Orders
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex gap-5 text-xl" aria-label="Manage Store">
+                <img src="./Images/Store.svg" alt="Manage Store Icon" />
+                Manage Store
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="flex flex-col gap-5">
+          <li>
+            <a href="#" class="flex gap-5 text-xl" aria-label="Settings">
+              <img src="./Images/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex gap-5 text-xl" aria-label="Log Out">
+              <img src="./Images/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="flex-1 p-5">
+        <!-- <div>SEARCH BAR</div>
+        <div>DASHBOARD</div> -->
+      </main>
+    </div>
+  </body>
+</html>

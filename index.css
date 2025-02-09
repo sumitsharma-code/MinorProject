@@ -3,7 +3,7 @@ a {
 }
 
 a:hover {
-  color: blue;
+  color: #448df2;
 }
 
 body {
@@ -15,5 +15,5 @@ body {
 
 nav {
   background-color: white;
-  width: 15%;
+  width: 14%;
 }

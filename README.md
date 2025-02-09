@@ -1,3 +1,3 @@
 # MinorProject
 <br>
-Author - Sumit Sharma
+Author - Sumit, Satyam, Mayank, Nikhil

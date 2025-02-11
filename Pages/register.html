@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/MinorProject/CSS/register.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <div class="logo-section">
+            <img src="/MinorProject/IMG/logo-poly.svg" alt="" id="logo-poly">
+            <h1 id="logo-name">TEMPNAME</h1>
+        </div>
+        <div class="login-panel">
+            <div class="header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path d="M24 3.97363L44.7846 14.9802V36.9933L24 47.9998L3.21539 36.9933V14.9802L24 3.97363Z"
+                        fill="#009ED8" />
+                    <path
+                        d="M14.3555 31.6875V12.0823C16.592 9.53186 18.6374 11.0196 19.3806 12.0823V21.2069L42.4834 0.0992135C45.6476 -0.49444 46.1391 1.72076 45.9892 2.90257L14.3555 31.6875Z"
+                        fill="#0ACF83" />
+                    <path d="M14.3555 41.7611V35.5538L19.9253 30.7197L23.2193 33.6311L14.3555 41.7611Z" fill="white" />
+                    <path
+                        d="M36.4584 41.4139L22.2012 28.3576L35.6765 15.888C39.5095 15.4925 39.5095 17.8472 39.0304 19.0741L28.9322 28.3576L40.7824 39.1222L36.4584 41.4139Z"
+                        fill="white" />
+                </svg>
+                <div class="header-text">
+                    <h1 class="login-panel-h">
+                        Create an account
+                    </h1>
+                    <h3 class="login-panel-sub-h">
+                        Start your inventory.
+                    </h3>
+                </div>
+            </div>
+
+            <form action="/action_page.php" class="login-content">
+                <div class="all-input-field">
+
+                    <div class="input-field">
+                        <div class="input-field-base">
+                            <label for="name-input" class="label-input">Name</label>
+                            <input type="text" id="name-input" name="name-input"
+                                placeholder="e.g., Alex Brown">
+                        </div>
+                    </div>
+
+                    <div class="input-field">
+                        <div class="input-field-base">
+                            <label for="email-input" class="label-input">Email</label>
+                            <input type="email" id="email-input" name="email-input"
+                                placeholder="e.g., example@email.com">
+                        </div>
+                    </div>
+
+                    <div class="input-field">
+                        <div class="input-field-base">
+                            <label for="password-input" class="label-input">Password</label>
+                            <input type="password" id="password-input" name="password-input" placeholder="••••••••">
+                        </div>
+                    </div>
+                </div>
+                <div class="login-form-actions">
+                    <div class="submit-button">
+                        <div class="submit-button-base">
+                            <input type="submit" value="Get started" class="sign-in-btn">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="foot">
+                <h5>Already have an account?</h5>
+                <div class="register-btn">
+                    <div class="register-btn-base">
+                        <a href="login.html">Sign in</a>
+                    </div>
+                </div>
+            </div>
+    </main>
+</body>
+
+</html>

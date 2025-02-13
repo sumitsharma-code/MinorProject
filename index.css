@@ -22,3 +22,15 @@ nav {
   padding-top: 1rem;
   padding-bottom: 1rem;
 } */
+
+
+.search-bar {
+  background-color: wheat;
+  height: 6.25rem;
+  ;
+}
+
+.dashboard {
+  background-color: blanchedalmond;
+  height: 100vh;
+}

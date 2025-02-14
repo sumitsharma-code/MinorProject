@@ -23,11 +23,12 @@ nav {
   padding-bottom: 1rem;
 } */
 
-
 .search-bar {
-  background-color: wheat;
-  height: 6.25rem;
-  ;
+  height: 100px;
+}
+
+.bell {
+  width: 102px;
 }
 
 .dashboard {

@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orders Page</title>
+    <title>ORDERS Page</title>
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../CSS/index.css" />
+    <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
   </head>
 
   <body>
@@ -21,68 +21,81 @@
           <img
             width="150"
             class="px-4 py-1"
-            src="../IMG/Logo.svg"
+            src="/MinorProject/IMG/Logo.svg"
             alt="Company Logo"
           />
 
           <ul class="flex flex-col gap-3 px-4 py-2">
             <li class="py-4">
               <a
-                href="../index.html"
+                href="/MinorProject/index.html"
                 class="flex gap-4 text-md"
                 aria-label="Dashboard"
               >
-                <img src="../IMG/DashIcon.svg" alt="Dashboard Icon" />
+                <img
+                  src="/MinorProject/IMG/DashIcon.svg"
+                  alt="Dashboard Icon"
+                />
                 Dashboard
               </a>
             </li>
             <li class="py-4">
               <a
-                href="Inventory.html"
+                href="/MinorProject/Pages/Inventory.html"
                 class="flex gap-4 text-md"
                 aria-label="Inventory"
               >
-                <img src="../IMG/Invent.svg" alt="Inventory Icon" />
+                <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
                 Inventory
               </a>
             </li>
             <li class="py-4">
               <a
-                href="./Reports.html"
+                href="/MinorProject/Pages/Reports.html"
                 class="flex gap-4 text-md"
                 aria-label="Reports"
               >
-                <img width="24" src="../IMG/Report.svg" alt="Reports Icon" />
+                <img
+                  width="24"
+                  src="/MinorProject/IMG/Report.svg"
+                  alt="Reports Icon"
+                />
                 Reports
               </a>
             </li>
             <li class="py-4">
               <a
-                href="./Suppliers.html"
+                href="/MinorProject/Pages/Suppliers.html"
                 class="flex gap-4 text-md"
                 aria-label="Suppliers"
               >
-                <img src="../IMG/Suppliers.svg" alt="Suppliers Icon" />
+                <img
+                  src="/MinorProject/IMG/Suppliers.svg"
+                  alt="Suppliers Icon"
+                />
                 Suppliers
               </a>
             </li>
             <li class="py-4">
               <a
-                href="./Orders.html"
+                href="/MinorProject/Pages/Orders.html"
                 class="flex gap-4 text-md"
                 aria-label="Orders"
               >
-                <img src="../IMG/Orders.svg" alt="Orders Icon" />
+                <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
                 Orders
               </a>
             </li>
             <li class="py-4">
               <a
-                href="./Store.html"
+                href="/MinorProject/Pages/Store.html"
                 class="flex gap-4 text-md"
                 aria-label="Manage Store"
               >
-                <img src="../IMG/Store.svg" alt="Manage Store Icon" />
+                <img
+                  src="/MinorProject/IMG/Store.svg"
+                  alt="Manage Store Icon"
+                />
                 Manage Store
               </a>
             </li>
@@ -92,24 +105,24 @@
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
             <a
-              href="./Settings.html"
+              href="/MinorProject/Pages/Settings.html"
               class="flex gap-4 text-md"
               aria-label="Settings"
             >
-              <img src="../IMG/Settings.svg" alt="Settings Icon" />
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
               Settings
             </a>
           </li>
           <li class="py-4">
             <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
-              <img src="../IMG/LogOut.svg" alt="Log Out Icon" />
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
           </li>
         </ul>
       </nav>
 
-      <main class="flex-1">
+      <div class="flex flex-col flex-1 gap-1">
         <div
           class="search-bar flex bg-white justify-between items-center rounded-md p-3 shadow-md w-full max-w-[1200px] mx-auto"
         >
@@ -123,13 +136,13 @@
 
           <div class="flex items-center space-x-6">
             <img
-              src="../IMG/Bell.svg"
+              src="/MinorProject/IMG/Bell.svg"
               alt="Notifications"
               class="h-6 w-6 cursor-pointer"
             />
             <div class="rounded-full h-10 w-10 overflow-hidden">
               <img
-                src="./IMG/user.jpg"
+                src="/MinorProject/IMG/user.jpg"
                 alt="User Profile"
                 class="h-full w-full object-cover bg-red-500"
               />
@@ -137,8 +150,10 @@
           </div>
         </div>
 
-        <div class="mt-6 text-xl font-semibold text-center">ORDERS</div>
-      </main>
+        <main class="flex-1 bg-red-400 rounded-md">
+          <div class="mt-6 text-xl font-semibold text-center">ORDERS</div>
+        </main>
+      </div>
     </div>
   </body>
 </html>

@@ -191,7 +191,7 @@ main {
 
 .submit-button-base {
     display: flex;
-    padding: 0.625rem 1.125rem;
+    
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
@@ -201,6 +201,13 @@ main {
     background: #1366D9;
     /* Shadow/xs */
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+.sign-in-btn {
+    height: 100%;
+    width: 100%;
+    padding: 0.625rem 1.125rem;
+
 }
 
 .submit-button-base:hover {

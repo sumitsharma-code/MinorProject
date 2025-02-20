@@ -191,7 +191,7 @@ main {
 
 .submit-button-base {
     display: flex;
-    padding: 0.625rem 1.125rem;
+    
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
@@ -222,7 +222,11 @@ input[type=submit] {
     cursor: pointer;
 }
 
-
+.sign-in-btn {
+    height: 100%;
+    width: 100%;
+    padding: 0.625rem 1.125rem;
+}
 
 
 .foot {

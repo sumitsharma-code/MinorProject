@@ -147,10 +147,232 @@
           </div>
         </div>
 
-        <main class="flex-1 bg-red-500 rounded-md overflow-y-auto">
-          <div class="mt-6 text-xl font-semibold text-center">INVENTORY</div>
+        <main class="flex-1 rounded-md overflow-y-auto">
+          <div class="text-xl font-semibold">
+            <div
+              class="bg-white rounded-lg shadow-md flex flex-col gap-3 px-4 py-5 mb-4 mt-2"
+            >
+              <h2 class="text-lg text-gray-500 font-semibold">
+                Overall Inventory
+              </h2>
+
+              <div class="text-sm flex justify-between">
+                <div class="flex flex-col items-start">
+                  <h3 class="text-blue-500 font-medium mb-2">Categories</h3>
+                  <p class="text-gray-800 font-semibold mb-1">14</p>
+                  <p class="text-gray-500 font-light">Last 7 days</p>
+                </div>
+                <div class="h-20 border-l-2 border-gray-200"></div>
+
+                <div class="flex flex-col items-start">
+                  <h3 class="text-orange-400 font-medium mb-2">
+                    Total Products
+                  </h3>
+                  <div class="flex space-x-12">
+                    <div class="flex flex-col items-start">
+                      <p class="text-gray-800 font-semibold mb-1">868</p>
+                      <p class="text-gray-500 font-light">Last 7 days</p>
+                    </div>
+                    <div class="flex flex-col items-start">
+                      <p class="text-gray-800 font-semibold mb-1">₹25000</p>
+                      <p class="text-gray-500 font-light">Revenue</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="h-20 border-l-2 border-gray-200"></div>
+                <div class="flex flex-col items-start">
+                  <h3 class="text-purple-700 font-medium mb-2">Top Selling</h3>
+                  <div class="flex space-x-12">
+                    <div class="flex flex-col items-start">
+                      <p class="text-gray-800 font-semibold mb-1">5</p>
+                      <p class="text-gray-500 font-light">Last 7 days</p>
+                    </div>
+                    <div class="flex flex-col items-start">
+                      <p class="text-gray-800 font-semibold mb-1">₹2500</p>
+                      <p class="text-gray-500 font-light">Cost</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="h-20 border-l-2 border-gray-200"></div>
+                <div class="flex flex-col items-start">
+                  <h3 class="text-red-500 font-medium mb-2">Low Stocks</h3>
+                  <div class="flex space-x-12">
+                    <div class="flex flex-col items-start">
+                      <p class="text-gray-800 font-semibold mb-1">12</p>
+                      <p class="text-gray-500 font-light">Ordered</p>
+                    </div>
+                    <div class="flex flex-col items-start">
+                      <p class="text-gray-800 font-semibold mb-1">2</p>
+                      <p class="text-gray-500 font-light">Not in Stock</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Products Section -->
+            <div class="bg-white rounded-lg shadow p-5">
+              <div class="flex justify-between items-center mb-3">
+                <h1 class="text-xl font-medium">Products</h1>
+                <div class="flex space-x-2 text-sm">
+                  <button
+                    class="bg-blue-500 font-light text-white px-3 py-2 rounded"
+                  >
+                    Add Product
+                  </button>
+                  <button
+                    class="bg-white border-2 font-light text-gray-500 border-gray-400 px-3 py-2 rounded hover:bg-gray-400"
+                  >
+                    Filters
+                  </button>
+                  <button
+                    class="bg-white border-2 font-light text-gray-500 border-gray-400 px-3 py-2 rounded hover:bg-gray-400"
+                  >
+                    Download all
+                  </button>
+                </div>
+              </div>
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="border-b text-[14px] border-gray-300">
+                    <th class="py-3 font-light text-gray-500">Products</th>
+                    <th class="py-3 font-light text-gray-500">Buying Price</th>
+                    <th class="py-3 font-light text-gray-500">Quantity</th>
+                    <th class="py-3 font-light text-gray-500">
+                      Threshold Value
+                    </th>
+                    <th class="py-3 font-light text-gray-500">Expiry Date</th>
+                    <th class="py-3 font-light text-gray-500">Availability</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[14px]">
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Maggi</td>
+                    <td class="py-3">₹430</td>
+                    <td class="py-3">43</td>
+                    <td class="py-3">12</td>
+                    <td class="py-3">11/12/22</td>
+                    <td class="py-3">In-stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Bru</td>
+                    <td class="py-3">₹257</td>
+                    <td class="py-3">22</td>
+                    <td class="py-3">12</td>
+                    <td class="py-3">21/12/22</td>
+                    <td class="py-3">Out of stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Red Bull</td>
+                    <td class="py-3">₹405</td>
+                    <td class="py-3">36 Packets</td>
+                    <td class="py-3">9 Packets</td>
+                    <td class="py-3">5/12/22</td>
+                    <td class="py-3">In-stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Bourn Vita</td>
+                    <td class="py-3">₹502</td>
+                    <td class="py-3">14 Packets</td>
+                    <td class="py-3">6 Packets</td>
+                    <td class="py-3">8/12/22</td>
+                    <td class="py-3">Out of stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Horlicks</td>
+                    <td class="py-3">₹530</td>
+                    <td class="py-3">5 Packets</td>
+                    <td class="py-3">5 Packets</td>
+                    <td class="py-3">9/1/23</td>
+                    <td class="py-3">In-stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Harpic</td>
+                    <td class="py-3">₹605</td>
+                    <td class="py-3">10 Packets</td>
+                    <td class="py-3">5 Packets</td>
+                    <td class="py-3">9/1/23</td>
+                    <td class="py-3">In-stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Ariel</td>
+                    <td class="py-3">₹408</td>
+                    <td class="py-3">23 Packets</td>
+                    <td class="py-3">7 Packets</td>
+                    <td class="py-3">15/12/23</td>
+                    <td class="py-3">Out of stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Scotch Brite</td>
+                    <td class="py-3">₹359</td>
+                    <td class="py-3">43 Packets</td>
+                    <td class="py-3">8 Packets</td>
+                    <td class="py-3">6/6/23</td>
+                    <td class="py-3">In-stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Coca Cola</td>
+                    <td class="py-3">₹205</td>
+                    <td class="py-3">41 Packets</td>
+                    <td class="py-3">10 Packets</td>
+                    <td class="py-3">11/12/22</td>
+                    <td class="py-3">Low stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Nescafe</td>
+                    <td class="py-3">₹300</td>
+                    <td class="py-3">25 Packets</td>
+                    <td class="py-3">10 Packets</td>
+                    <td class="py-3">20/2/23</td>
+                    <td class="py-3">In-stock</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Dettol</td>
+                    <td class="py-3">₹150</td>
+                    <td class="py-3">30 Packets</td>
+                    <td class="py-3">15 Packets</td>
+                    <td class="py-3">15/3/23</td>
+                    <td class="py-3">In-stock</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="flex justify-between items-center mt-4">
+                <button
+                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border-1 rounded-md hover:bg-gray-100"
+                >
+                  Previous
+                </button>
+                <p class="text-gray-600 font-light">Page 1 of 10</p>
+                <button
+                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border-1 rounded-sm hover:bg-gray-100"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </div>
+    <script>
+      function updateStockColors() {
+        let cells = document.querySelectorAll("td");
+
+        cells.forEach((td) => {
+          let text = td.innerText;
+
+          if (text === "In-stock") {
+            td.style.color = "green";
+          } else if (text === "Out of stock") {
+            td.style.color = "red";
+          } else if (text === "Low stock") {
+            td.style.color = "orange";
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", updateStockColors);
+    </script>
   </body>
 </html>

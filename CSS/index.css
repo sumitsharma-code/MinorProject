@@ -14,9 +14,13 @@ a:hover {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(203, 202, 202);
+  background-color: rgb(244, 241, 241);
   margin: 0;
   padding: 0;
+}
+
+td {
+  font-weight: normal;
 }
 
 nav {

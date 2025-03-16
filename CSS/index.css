@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+    --color-heading-me: #383E49;
+  }
+
 a {
   color: rgb(93, 92, 92);
 }

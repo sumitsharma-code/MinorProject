@@ -1,102 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SETTINGS Page</title>
+    <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
+    <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SETTINGS Page</title>
-  <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
-  <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
-</head>
+  <body>
+    <div class="flex gap-1 h-screen">
+      <!-- Navigation bar section -->
+      <nav
+        class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        role="navigation"
+      >
+        <!-- Navigation content container -->
+        <div class="flex flex-col gap-8 w-[280px] h-[960px]">
+          <!-- Company logo -->
+          <img
+            width="150"
+            class="px-4 py-1"
+            src="/MinorProject/IMG/Logo.svg"
+            alt="Company Logo"
+          />
 
-<body>
-  <div class="flex gap-1 h-screen">
-    <!-- Navigation bar section -->
-    <nav class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white" role="navigation">
-      <!-- Navigation content container -->
-      <div class="flex flex-col gap-8 w-[280px] h-[960px]">
-        <!-- Company logo -->
-        <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logo.svg" alt="Company Logo" />
+          <!-- Main navigation links -->
+          <ul class="flex flex-col gap-3 px-4 py-2">
+            <li class="py-4">
+              <a
+                href="/MinorProject/index.html"
+                class="flex gap-4 text-md"
+                aria-label="Dashboard"
+              >
+                <img
+                  src="/MinorProject/IMG/DashIcon.svg"
+                  alt="Dashboard Icon"
+                />
+                <div>Dashboard</div>
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Inventory.html"
+                class="flex gap-4 text-md"
+                aria-label="Inventory"
+              >
+                <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+                Inventory
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Reports.html"
+                class="flex gap-4 text-md"
+                aria-label="Reports"
+              >
+                <img
+                  width="24"
+                  src="/MinorProject/IMG/ReportN.svg"
+                  alt="Reports Icon"
+                />
+                <div class="">Reports</div>
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Suppliers.html"
+                class="flex gap-4 text-md"
+                aria-label="Suppliers"
+              >
+                <img
+                  src="/MinorProject/IMG/Suppliers.svg"
+                  alt="Suppliers Icon"
+                />
+                Suppliers
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Orders.html"
+                class="flex gap-4 text-md"
+                aria-label="Orders"
+              >
+                <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+                Orders
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Store.html"
+                class="flex gap-4 text-md"
+                aria-label="Manage Store"
+              >
+                <img
+                  src="/MinorProject/IMG/Store.svg"
+                  alt="Manage Store Icon"
+                />
+                Manage Store
+              </a>
+            </li>
+          </ul>
+        </div>
 
-        <!-- Main navigation links -->
+        <!-- Additional navigation links (Settings and Log Out) -->
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
-            <a href="/MinorProject/index.html" class="flex gap-4 text-md " aria-label="Dashboard">
-              <img src="/MinorProject/IMG/HomeC.svg" alt="Dashboard Icon" />
-              <div class="text-[#1570EF]">Dashboard</div>
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex items-center gap-4 text-md"
+              aria-label="Settings"
+            >
+              <img
+                src="/MinorProject/Animation/Setting.gif"
+                class="w-7 h-7"
+                alt="Settings Icon"
+              />
+              <div class="text-[#1570EF]">Settings</div>
             </a>
           </li>
           <li class="py-4">
-            <a href="/MinorProject/Pages/Inventory.html" class="flex gap-4 text-md" aria-label="Inventory">
-              <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
-              Inventory
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/Pages/Reports.html" class="flex gap-4 text-md" aria-label="Reports">
-              <img width="24" src="/MinorProject/IMG/ReportN.svg" alt="Reports Icon" />
-              <div class="">Reports</div>
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/Pages/Suppliers.html" class="flex gap-4 text-md" aria-label="Suppliers">
-              <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
-              Suppliers
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/Pages/Orders.html" class="flex gap-4 text-md" aria-label="Orders">
-              <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
-              Orders
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md" aria-label="Manage Store">
-              <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
-              Manage Store
+            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
 
-      <!-- Additional navigation links (Settings and Log Out) -->
-      <ul class="flex flex-col gap-3 px-4 py-2">
-        <li class="py-4">
-          <a href="/MinorProject/Pages/Settings.html" class="flex gap-4 text-md" aria-label="Settings">
-            <img src="/MinorProject/Animation/Setting.gif" alt="Settings Icon" />
-            Settings
-          </a>
-        </li>
-        <li class="py-4">
-          <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
-            <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
-            Log Out
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <div class="flex flex-col flex-1 gap-1">
+        <div
+          class="search-bar flex bg-white justify-between items-center rounded-md p-3 shadow-md w-full max-w-[1300px]"
+        >
+          <div class="w-1/2">
+            <input
+              class="w-full outline-none border border-gray-300 rounded-sm pl-12 pr-4 py-2 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-blue-500"
+              type="text"
+              placeholder="Search product, supplier, order"
+            />
+          </div>
 
-    <div class="flex flex-col flex-1 gap-1">
-      <div class="search-bar flex bg-white justify-between items-center rounded-md p-3 shadow-md w-full max-w-[1300px]">
-        <div class="w-1/2">
-          <input
-            class="w-full outline-none border border-gray-300 rounded-sm pl-12 pr-4 py-2 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-blue-500"
-            type="text" placeholder="Search product, supplier, order" />
-        </div>
-
-        <div class="flex items-center space-x-6">
-          <img src="/MinorProject/IMG/Bell.svg" alt="Notifications" class="h-6 w-6 cursor-pointer" />
-          <div class="rounded-full h-10 w-10 overflow-hidden">
-            <img src="/MinorProject/IMG/user.jpg" alt="User Profile" class="h-full w-full object-cover bg-red-500" />
+          <div class="flex items-center space-x-6">
+            <img
+              src="/MinorProject/IMG/Bell.svg"
+              alt="Notifications"
+              class="h-6 w-6 cursor-pointer"
+            />
+            <div class="rounded-full h-10 w-10 overflow-hidden">
+              <img
+                src="/MinorProject/IMG/user.jpg"
+                alt="User Profile"
+                class="h-full w-full object-cover bg-red-500"
+              />
+            </div>
           </div>
         </div>
+
+        <main class="flex-1 bg-red-400 rounded-md overflow-y-auto">
+          <div class="mt-6 text-xl font-semibold text-center">SETTINGS</div>
+        </main>
       </div>
-
-      <main class="flex-1 bg-red-400 rounded-md overflow-y-auto">
-        <div class="mt-6 text-xl font-semibold text-center">SETTINGS</div>
-      </main>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

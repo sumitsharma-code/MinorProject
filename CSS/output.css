@@ -871,7 +871,6 @@ a:hover {
   background: #ffffff;
   border-radius: 3px;
   border-width: 2px;
-  border-color: #ffffff;
   transition: all 0.5s ease-in-out;
 }
 .switch input[type="checkbox"] + label:before {
@@ -898,7 +897,7 @@ a:hover {
 .switch input[type="checkbox"] + label i {
   position: absolute;
   width: 3px;
-  height: 24px;
+  height: 10px;
   background: #0d0d0d;
 }
 .switch input[type="checkbox"]:checked + label {

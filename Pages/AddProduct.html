@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Page</title>
+    <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
+    <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
+  </head>
+
+  <body>
+    <div class="flex gap-1 h-screen">
+      <nav
+        class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        role="navigation"
+      >
+        <div class="flex flex-col gap-8 w-[280px] h-[960px]">
+          <img
+            width="150"
+            class="px-4 py-1"
+            src="/MinorProject/IMG/Logo.svg"
+            alt="Company Logo"
+          />
+
+          <ul class="flex flex-col gap-3 px-4 py-2">
+            <li class="py-4">
+              <a
+                href="/MinorProject/index.html"
+                class="flex gap-4 text-md"
+                aria-label="Dashboard"
+              >
+                <img
+                  src="/MinorProject/IMG/DashIcon.svg"
+                  alt="Dashboard Icon"
+                />
+                Dashboard
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Inventory.html"
+                class="flex gap-4 text-md"
+                aria-label="Inventory"
+              >
+                <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+                Inventory
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Reports.html"
+                class="flex gap-4 text-md"
+                aria-label="Reports"
+              >
+                <img
+                  width="24"
+                  src="/MinorProject/IMG/Report.svg"
+                  alt="Reports Icon"
+                />
+                Reports
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Suppliers.html"
+                class="flex gap-4 text-md"
+                aria-label="Suppliers"
+              >
+                <img
+                  src="/MinorProject/IMG/Suppliers.svg"
+                  alt="Suppliers Icon"
+                />
+                Suppliers
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Orders.html"
+                class="flex gap-4 text-md"
+                aria-label="Orders"
+              >
+                <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+                Orders
+              </a>
+            </li>
+            <li class="py-4">
+              <a
+                href="/MinorProject/Pages/Store.html"
+                class="flex gap-4 text-md"
+                aria-label="Manage Store"
+              >
+                <img
+                  src="/MinorProject/IMG/Store.svg"
+                  alt="Manage Store Icon"
+                />
+                Manage Store
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="flex flex-col gap-3 px-4 py-2">
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex gap-4 text-md"
+              aria-label="Settings"
+            >
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="flex flex-col flex-1 gap-1">
+        <div
+          class="search-bar flex bg-white justify-between items-center rounded-md p-3 shadow-md w-full max-w-[1300px]"
+        >
+          <div class="w-1/2">
+            <input
+              class="w-full outline-none border border-gray-300 rounded-sm pl-12 pr-4 py-2 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-blue-500"
+              type="text"
+              placeholder="Search product, supplier, order"
+            />
+          </div>
+
+          <div class="flex items-center space-x-6">
+            <img
+              src="/MinorProject/IMG/Bell.svg"
+              alt="Notifications"
+              class="h-6 w-6 cursor-pointer"
+            />
+            <div class="rounded-full h-10 w-10 overflow-hidden">
+              <img
+                src="/MinorProject/IMG/user.jpg"
+                alt="User Profile"
+                class="h-full w-full object-cover bg-red-500"
+              />
+            </div>
+          </div>
+        </div>
+
+
+
+      <main class="flex-1 rounded-md overflow-y-auto p-4">
+          
+
+            <div class="bg-white rounded-lg shadow p-5">
+              <div class="flex justify-between items-center mb-3">
+                <h1 class="text-xl font-semibold">Maggi</h1>
+                <div class="flex space-x-2 text-sm">
+                
+                  <button
+                  class="bg-white border-2 font-light text-gray-600 border-gray-400 px-3 py-2 rounded hover:bg-gray-400 flex items-center gap-2"
+                  >
+                   <img src="/MinorProject/IMG/edit.svg" alt="Edit" height="12" width="12" />
+                  Edit
+                  </button>
+
+
+                  <button
+                    class="bg-white border-2 font-light text-gray-600 border-gray-400 px-3 py-2 rounded hover:bg-gray-400"
+                  >
+                    Download
+                  </button>
+                </div>
+              </div> 
+
+
+               <!-- Navbar !-->
+               <div class="flex border-b border-gray-200 relative">
+                <a href="#" class="tab text-gray-600 hover:text-blue-600 py-4 px- block relative focus:outline-none focus:text-gray-800 transition duration-300 ease-in-out">
+                    Overview
+                </a>
+                <a href="#" class="tab text-gray-600 hover:text-blue-600 py-4 px-6 block relative focus:outline-none focus:text-gray-800 transition duration-300 ease-in-out">
+                    Purchases
+                </a>
+                <a href="#" class="tab text-gray-600 hover:text-blue-600 py-4 px-6 block relative focus:outline-none focus:text-gray-800 transition duration-300 ease-in-out">
+                    Adjustments
+                </a>
+                <a href="#" class="tab text-gray-600 hover:text-blue-600 py-4 px-6 block relative focus:outline-none focus:text-gray-800 transition duration-300 ease-in-out">
+                    History
+                </a>
+            </div>
+
+            <!--Product Info-->
+
+
+            <!-- Primary Details -->
+             
+            <div class="pl-5 pr-25 mt-4 flex justify-between">
+              
+          
+              <div class="w-[50%]">
+                <h2 class="text-lg font-semibold text-gray-950 mb-4">Primary Details</h2>
+                  <div class="mt-5 flex">
+                      <p class="text-gray-700 w-80">Product Name</p>
+                      <p class="text-gray-700">Maggi</p>
+                  </div>
+                  <div class="mt-5 flex">
+                      <p class="text-gray-700 w-80">Product ID</p>
+                      <p class="text-gray-700">234241</p>
+                  </div>
+                  <div class="mt-5 flex">
+                      <p class="text-gray-700 w-80">Product Category</p>
+                      <p class="text-gray-700">Instant Food</p>
+                  </div>
+                  <div class="mt-5 flex">
+                      <p class="text-gray-700 w-80">Expiry Date</p>
+                      <p class="text-gray-700">10/04/2025</p>
+                  </div>
+                  <div class="mt-5 flex">
+                      <p class="text-gray-700 w-80">Threshold Value</p>
+                      <p class="text-gray-700">12</p>
+                  </div>
+              </div>
+
+                <div class="relative h-44 w-44 border-2 border-dashed border-gray-800">
+                <img src="/MinorProject/IMG/maggi.jpg" alt="product" class="h-full w-full">
+
+                <div class="absolute w-60 left-[-24px]">
+                <div class="mt-10 flex justify-between">
+                  <p class="text-gray-700">Opening Stock</p>
+                  <p class="text-gray-700">40</p>
+              </div>
+              <div class="mt-8 flex justify-between">
+                <p class="text-gray-700 ">Remaining Stock</p>
+                <p class="text-gray-700">34</p>
+            </div>
+            <div class="mt-8 flex justify-between">
+              <p class="text-gray-700 ">On the way</p>
+              <p class="text-gray-700">12</p>
+            </div>
+            <div class="mt-8 flex justify-between">
+              <p class="text-gray-700 ">Threshold Value</p>
+              <p class="text-gray-700">15</p>
+             </div>
+            </div>
+              </div>
+            </div>
+           
+
+
+          <!-- Supplier Details -->
+          <div class="p-5 mt-6">
+        
+            <div class="w-[50%]">
+              <h2 class="text-lg font-semibold text-gray-950 mb-4">Supplier Details</h2>
+
+                <div class="mt-5 flex">
+                    <p class="text-gray-700 w-80">Supplier Name</p>
+                    <p class="text-gray-700">Ronald Martin</p>
+                </div>
+                <div class="mt-5 flex">
+                    <p class="text-gray-700 w-80">Contact No</p>
+                    <p class="text-gray-700">9785928124</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Stock Locations -->
+        <div class="p-5 mt-6">
+          <table class="border border-gray-200 w-[50%]">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Stock Locations</h2>
+
+              <thead>
+                  <tr class="bg-gray-100 text-gray-700 font-semibold">
+                      <th class="px-6 py-3 text-left">Store Name</th>
+                      <th class="px-6 py-3 text-right">Stock in hand</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                  <tr class="border-b">
+                      <td class="px-6 py-3 text-gray-700">Sulur Branch</td>
+                      <td class="px-6 py-3 text-blue-600 text-right">15</td>
+                  </tr>
+                  <tr>
+                      <td class="px-6 py-3 text-gray-700">Singanallur Branch</td>
+                      <td class="px-6 py-3 text-blue-600 text-right">19</td>
+                  </tr>
+              </tbody>
+              
+          </table>
+          
+        </div>
+          
+          
+        </div></main>
+
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

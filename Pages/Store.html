@@ -9,13 +9,117 @@
   </head>
 
   <body>
+    <!-- Mobile Sidebar and Overlay -->
+    <div
+      id="mobile-sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+    >
+      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+        <!-- Company logo -->
+        <img
+          width="150"
+          class="px-4 py-1"
+          src="/MinorProject/IMG/Logo.svg"
+          alt="Company Logo"
+        />
+
+        <!-- Main navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2">
+          <li class="py-4">
+            <a href="/MinorProject/index.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/DashIcon.svg" alt="Dashboard Icon" />
+              Dashboard
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Inventory.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+              Inventory
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Reports.html"
+              class="flex gap-4 text-md"
+            >
+              <img
+                width="24"
+                src="/MinorProject/IMG/ReportN.svg"
+                alt="Reports Icon"
+              />
+              Reports
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Suppliers.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
+              Suppliers
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Orders.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+              Orders
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Store.html"
+              class="flex gap-4 text-md items-center"
+            >
+              <img
+                src="/MinorProject/Animation/Store.gif"
+                class="w-7 h-7"
+                alt="Manage Store Icon"
+              />
+              <div class="text-[#1570EF]">Manage Store</div>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Additional navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="#" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for when mobile sidebar is open -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
+    ></div>
+
+    <!-- Main container -->
     <div class="flex gap-1 h-screen">
-      <!-- Navigation bar section -->
+      <!-- Desktop Navigation bar -->
       <nav
-        class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
         role="navigation"
       >
-        <!-- Navigation content container -->
         <div class="flex flex-col gap-8 w-[280px] h-[960px]">
           <!-- Company logo -->
           <img
@@ -28,24 +132,18 @@
           <!-- Main navigation links -->
           <ul class="flex flex-col gap-3 px-4 py-2">
             <li class="py-4">
-              <a
-                href="/MinorProject/index.html"
-                class="flex gap-4 text-md"
-                aria-label="Dashboard"
-              >
+              <a href="/MinorProject/index.html" class="flex gap-4 text-md">
                 <img
                   src="/MinorProject/IMG/DashIcon.svg"
                   alt="Dashboard Icon"
                 />
-
-                <div class="">Dashboard</div>
+                Dashboard
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Inventory.html"
                 class="flex gap-4 text-md"
-                aria-label="Inventory"
               >
                 <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
                 Inventory
@@ -55,21 +153,19 @@
               <a
                 href="/MinorProject/Pages/Reports.html"
                 class="flex gap-4 text-md"
-                aria-label="Reports"
               >
                 <img
                   width="24"
                   src="/MinorProject/IMG/ReportN.svg"
                   alt="Reports Icon"
                 />
-                <div class="">Reports</div>
+                Reports
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Suppliers.html"
                 class="flex gap-4 text-md"
-                aria-label="Suppliers"
               >
                 <img
                   src="/MinorProject/IMG/Suppliers.svg"
@@ -82,7 +178,6 @@
               <a
                 href="/MinorProject/Pages/Orders.html"
                 class="flex gap-4 text-md"
-                aria-label="Orders"
               >
                 <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
                 Orders
@@ -92,9 +187,7 @@
               <a
                 href="/MinorProject/Pages/Store.html"
                 class="flex gap-4 text-md items-center"
-                aria-label="Manage Store"
               >
-                <!-- <img src="/MinorProject/IMG/StoreC.svg" alt="Manage Store Icon" /> -->
                 <img
                   src="/MinorProject/Animation/Store.gif"
                   class="w-7 h-7"
@@ -106,20 +199,19 @@
           </ul>
         </div>
 
-        <!-- Additional navigation links (Settings and Log Out) -->
+        <!-- Additional navigation links -->
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
             <a
               href="/MinorProject/Pages/Settings.html"
               class="flex gap-4 text-md"
-              aria-label="Settings"
             >
               <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
               Settings
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+            <a href="#" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -127,87 +219,102 @@
         </ul>
       </nav>
 
+      <!-- Main content area -->
       <div class="flex flex-col flex-1 gap-1">
         <div id="search-bar"></div>
 
         <main class="flex-1 rounded-md overflow-y-auto">
-          <div class="bg-white w-full h- p-4">
-            <div class="flex justify-between">
+          <div class="bg-white w-full p-4">
+            <div
+              class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4"
+            >
               <h1 class="text-2xl font-normal">Manage Store</h1>
               <button
-                class="bg-blue-600 cursor-pointer text-white w-[100px] h-[40px] rounded-lg hover:bg-blue-500 active:bg-blue-700"
+                class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 active:bg-blue-700 transition-colors"
               >
                 Add Store
               </button>
             </div>
-            <div class="p-8 pr-24 space-y-10">
-              <div class="flex h-[150px]">
+
+            <div class="p-4 lg:p-8 lg:pr-24 space-y-6">
+              <!-- Store Card 1 -->
+              <div class="flex flex-col md:flex-row h-auto md:h-[150px]">
                 <div
-                  class="w-1/5 rounded-l-lg flex items-center justify-center bg-gray-200 font-semibold text-gray-500 text-xl"
+                  class="w-full md:w-1/5 rounded-t-lg md:rounded-l-lg md:rounded-tr-none flex items-center justify-center bg-gray-200 font-semibold text-gray-500 text-lg md:text-xl p-4"
                 >
                   Singanallur Branch
                 </div>
                 <div
-                  class="w-4/5 h-full rounded-r-lg flex justify-between border-2 p-4 border-gray-200"
+                  class="w-full md:w-4/5 h-full rounded-b-lg md:rounded-r-lg md:rounded-bl-none flex flex-col md:flex-row justify-between border-2 p-4 border-gray-200 gap-4"
                 >
-                  <div class="flex flex-col justify-between">
+                  <div class="flex flex-col justify-between gap-2">
                     <h1 class="text-xl text-gray-600">Lisy Store</h1>
-                    <h4 class="text-gray-400">
-                      1A/Krihnarajapuram, 3 rd street sulur
-                    </h4>
-                    <h4 class="text-gray-400">Coimbatore - 6313403</h4>
-                    <h4 class="text-gray-400">044- 653578</h4>
+                    <div class="space-y-1">
+                      <h4 class="text-gray-400">
+                        1A/Krihnarajapuram, 3 rd street sulur
+                      </h4>
+                      <h4 class="text-gray-400">Coimbatore - 6313403</h4>
+                      <h4 class="text-gray-400">044- 653578</h4>
+                    </div>
                   </div>
                   <button
-                    class="text-blue-400 p-2 hover:bg-gray-100 active:bg-white cursor-pointer px-8 rounded-lg border-2 h-fit border-gray-100"
+                    class="text-blue-400 hover:bg-gray-100 active:bg-white px-4 py-2 rounded-lg border-2 border-gray-200 self-end md:self-center"
                   >
                     Edit
                   </button>
                 </div>
               </div>
-              <div class="flex h-[150px]">
+
+              <!-- Store Card 2 -->
+              <div class="flex flex-col md:flex-row h-auto md:h-[150px]">
                 <div
-                  class="w-1/5 rounded-l-lg flex items-center justify-center bg-gray-200 font-semibold text-gray-500 text-xl"
+                  class="w-full md:w-1/5 rounded-t-lg md:rounded-l-lg md:rounded-tr-none flex items-center justify-center bg-gray-200 font-semibold text-gray-500 text-lg md:text-xl p-4"
                 >
                   Singanallur Branch
                 </div>
                 <div
-                  class="w-4/5 h-full rounded-r-lg flex justify-between border-2 p-4 border-gray-200"
+                  class="w-full md:w-4/5 h-full rounded-b-lg md:rounded-r-lg md:rounded-bl-none flex flex-col md:flex-row justify-between border-2 p-4 border-gray-200 gap-4"
                 >
-                  <div class="flex flex-col justify-between">
+                  <div class="flex flex-col justify-between gap-2">
                     <h1 class="text-xl text-gray-600">Lisy Store</h1>
-                    <h4 class="text-gray-400">
-                      1A/Krihnarajapuram, 3 rd street sulur
-                    </h4>
-                    <h4 class="text-gray-400">Coimbatore - 6313403</h4>
-                    <h4 class="text-gray-400">044- 653578</h4>
+                    <div class="space-y-1">
+                      <h4 class="text-gray-400">
+                        1A/Krihnarajapuram, 3 rd street sulur
+                      </h4>
+                      <h4 class="text-gray-400">Coimbatore - 6313403</h4>
+                      <h4 class="text-gray-400">044- 653578</h4>
+                    </div>
                   </div>
                   <button
-                    class="text-blue-400 cursor-pointer hover:bg-gray-100 active:bg-white p-2 px-8 rounded-lg border-2 h-fit border-gray-100"
+                    class="text-blue-400 hover:bg-gray-100 active:bg-white px-4 py-2 rounded-lg border-2 border-gray-200 self-end md:self-center"
                   >
                     Edit
                   </button>
                 </div>
               </div>
-              <div class="flex h-[150px]">
+
+              <!-- Store Card 3 -->
+              <div class="flex flex-col md:flex-row h-auto md:h-[150px]">
                 <div
-                  class="w-1/5 rounded-l-lg flex items-center justify-center bg-gray-200 font-semibold text-gray-500 text-xl"
+                  class="w-full md:w-1/5 rounded-t-lg md:rounded-l-lg md:rounded-tr-none flex items-center justify-center bg-gray-200 font-semibold text-gray-500 text-lg md:text-xl p-4"
                 >
                   Singanallur Branch
                 </div>
                 <div
-                  class="w-4/5 h-full rounded-r-lg flex justify-between border-2 p-4 border-gray-200"
+                  class="w-full md:w-4/5 h-full rounded-b-lg md:rounded-r-lg md:rounded-bl-none flex flex-col md:flex-row justify-between border-2 p-4 border-gray-200 gap-4"
                 >
-                  <div class="flex flex-col justify-between">
+                  <div class="flex flex-col justify-between gap-2">
                     <h1 class="text-xl text-gray-600">Lisy Store</h1>
-                    <h4 class="text-gray-400">
-                      1A/Krihnarajapuram, 3 rd street sulur
-                    </h4>
-                    <h4 class="text-gray-400">Coimbatore - 6313403</h4>
-                    <h4 class="text-gray-400">044- 653578</h4>
+                    <div class="space-y-1">
+                      <h4 class="text-gray-400">
+                        1A/Krihnarajapuram, 3 rd street sulur
+                      </h4>
+                      <h4 class="text-gray-400">Coimbatore - 6313403</h4>
+                      <h4 class="text-gray-400">044- 653578</h4>
+                    </div>
                   </div>
                   <button
-                    class="text-blue-400 cursor-pointer hover:bg-gray-100 active:bg-white p-2 px-8 rounded-lg border-2 h-fit border-gray-100"
+                    class="text-blue-400 hover:bg-gray-100 active:bg-white px-4 py-2 rounded-lg border-2 border-gray-200 self-end md:self-center"
                   >
                     Edit
                   </button>
@@ -218,12 +325,32 @@
         </main>
       </div>
     </div>
+
     <script>
       fetch("/MinorProject/Components/Searchbar.html")
         .then((response) => response.text())
         .then((data) => {
-          console.log(data);
           document.getElementById("search-bar").innerHTML = data;
+
+          // Add event listener after search bar is loaded
+          document
+            .getElementById("hamburger-menu")
+            ?.addEventListener("click", function () {
+              const sidebar = document.getElementById("mobile-sidebar");
+              const overlay = document.getElementById("sidebar-overlay");
+
+              sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle("hidden");
+
+              // Close sidebar when clicking on overlay
+              overlay.addEventListener("click", function () {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+              });
+            });
+        })
+        .catch((error) => {
+          console.error("Error loading search bar:", error);
         });
     </script>
   </body>

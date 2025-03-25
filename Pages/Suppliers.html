@@ -4,19 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SUPPLIERS Page</title>
-
     <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
     <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
   </head>
 
   <body>
+    <!-- Mobile Sidebar and Overlay -->
+    <div
+      id="mobile-sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+    >
+      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+        <!-- Company logo -->
+        <img
+          width="150"
+          class="px-4 py-1"
+          src="/MinorProject/IMG/Logo.svg"
+          alt="Company Logo"
+        />
+
+        <!-- Main navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2">
+          <li class="py-4">
+            <a href="/MinorProject/index.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/DashIcon.svg" alt="Dashboard Icon" />
+              Dashboard
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Inventory.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+              Inventory
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Reports.html"
+              class="flex gap-4 text-md"
+            >
+              <img
+                width="24"
+                src="/MinorProject/IMG/ReportN.svg"
+                alt="Reports Icon"
+              />
+              Reports
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Suppliers.html"
+              class="flex gap-4 text-md items-center"
+            >
+              <img
+                src="/MinorProject/Animation/suppliers.gif"
+                class="w-7 h-7"
+                alt="Suppliers Icon"
+              />
+              <div class="text-[#1570EF]">Suppliers</div>
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Orders.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+              Orders
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
+              Manage Store
+            </a>
+          </li>
+        </ul>
+
+        <!-- Additional navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="#" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for when mobile sidebar is open -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
+    ></div>
+
+    <!-- Main container -->
     <div class="flex gap-1 h-screen">
-      <!-- Navigation bar section -->
+      <!-- Desktop Navigation bar -->
       <nav
-        class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
         role="navigation"
       >
-        <!-- Navigation content container -->
         <div class="flex flex-col gap-8 w-[280px] h-[960px]">
           <!-- Company logo -->
           <img
@@ -29,23 +129,18 @@
           <!-- Main navigation links -->
           <ul class="flex flex-col gap-3 px-4 py-2">
             <li class="py-4">
-              <a
-                href="/MinorProject/index.html"
-                class="flex gap-4 text-md"
-                aria-label="Dashboard"
-              >
+              <a href="/MinorProject/index.html" class="flex gap-4 text-md">
                 <img
                   src="/MinorProject/IMG/DashIcon.svg"
                   alt="Dashboard Icon"
                 />
-                <div class="">Dashboard</div>
+                Dashboard
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Inventory.html"
                 class="flex gap-4 text-md"
-                aria-label="Inventory"
               >
                 <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
                 Inventory
@@ -55,23 +150,20 @@
               <a
                 href="/MinorProject/Pages/Reports.html"
                 class="flex gap-4 text-md"
-                aria-label="Reports"
               >
                 <img
                   width="24"
                   src="/MinorProject/IMG/ReportN.svg"
                   alt="Reports Icon"
                 />
-                <div class="">Reports</div>
+                Reports
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Suppliers.html"
                 class="flex gap-4 text-md items-center"
-                aria-label="Suppliers"
               >
-                <!-- <img src="/MinorProject/IMG/SuppliersC.svg" alt="Suppliers Icon" /> -->
                 <img
                   src="/MinorProject/Animation/suppliers.gif"
                   class="w-7 h-7"
@@ -84,7 +176,6 @@
               <a
                 href="/MinorProject/Pages/Orders.html"
                 class="flex gap-4 text-md"
-                aria-label="Orders"
               >
                 <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
                 Orders
@@ -94,7 +185,6 @@
               <a
                 href="/MinorProject/Pages/Store.html"
                 class="flex gap-4 text-md"
-                aria-label="Manage Store"
               >
                 <img
                   src="/MinorProject/IMG/Store.svg"
@@ -106,20 +196,19 @@
           </ul>
         </div>
 
-        <!-- Additional navigation links (Settings and Log Out) -->
+        <!-- Additional navigation links -->
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
             <a
               href="/MinorProject/Pages/Settings.html"
               class="flex gap-4 text-md"
-              aria-label="Settings"
             >
               <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
               Settings
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+            <a href="#" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -127,33 +216,42 @@
         </ul>
       </nav>
 
+      <!-- Main content area -->
       <div class="flex flex-col flex-1 gap-1">
         <div id="search-bar"></div>
 
-        <main class="flex-1 rounded-md overflow-y-auto">
-          <div class="mt-2 text-xl font-semibold text-center">
-            <div class="bg-white rounded-lg shadow p-5">
-              <div class="flex justify-between items-center mb-3">
-                <h1 class="text-xl font-medium">Suppliers</h1>
-                <div class="flex space-x-2 text-sm">
-                  <button
-                    class="bg-blue-500 font-light cursor-pointer hover:bg-blue-700 active:bg-blue-600 text-white px-3 py-2 rounded"
-                  >
-                    Add Product
-                  </button>
-                  <button
-                    class="bg-white border-2 font-light text-gray-500 border-gray-400 px-3 py-2 rounded cursor-pointer active:bg-gray-100 hover:bg-gray-200"
-                  >
-                    Filters
-                  </button>
-                  <button
-                    class="bg-white border-2 font-light text-gray-500 border-gray-400 px-3 py-2 rounded cursor-pointer active:bg-gray-100 hover:bg-gray-200"
-                  >
-                    Download all
-                  </button>
-                </div>
+        <main class="flex-1 rounded-md overflow-y-auto p-2">
+          <!-- Suppliers Table Section -->
+          <div class="bg-white rounded-lg shadow p-4 lg:p-5 overflow-x-auto">
+            <div
+              class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4"
+            >
+              <h1 class="text-xl font-medium">Suppliers</h1>
+              <div
+                class="flex flex-wrap gap-2 text-sm w-full lg:w-auto justify-end"
+              >
+                <button
+                  class="bg-blue-500 font-light cursor-pointer hover:bg-blue-700 active:bg-blue-600 text-white px-3 py-2 rounded whitespace-nowrap"
+                >
+                  Add Supplier
+                </button>
+                <button
+                  class="bg-white border font-light text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  Filters
+                </button>
+                <button
+                  class="bg-white border font-light text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  Download all
+                </button>
               </div>
-              <table class="w-full text-left text-xs border-collapse">
+            </div>
+
+            <div class="overflow-x-auto">
+              <table
+                class="w-full text-left text-xs border-collapse min-w-[800px]"
+              >
                 <thead>
                   <tr class="border-b text-[14px] border-gray-300">
                     <th class="py-3 font-light text-gray-500">Supplier Name</th>
@@ -172,7 +270,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">-</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -180,7 +278,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">-</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -188,7 +286,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">-</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -196,7 +294,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">12</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -204,7 +302,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Not Taking return</td>
+                    <td class="py-3 text-red-600">Not Taking return</td>
                     <td class="py-3">-</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -212,7 +310,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">9</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -220,7 +318,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Not Taking return</td>
+                    <td class="py-3 text-red-600">Not Taking return</td>
                     <td class="py-3">-</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -228,7 +326,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Not Taking return</td>
+                    <td class="py-3 text-red-600">Not Taking return</td>
                     <td class="py-3">-</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -236,7 +334,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">7</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -244,7 +342,7 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">-</td>
                   </tr>
                   <tr class="border-b border-gray-300">
@@ -252,51 +350,59 @@
                     <td class="py-3">I Phone 60 Pro Max</td>
                     <td class="py-3">9112233445</td>
                     <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3">Taking return</td>
+                    <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">7</td>
                   </tr>
                 </tbody>
               </table>
-              <div class="flex justify-between items-center mt-4">
-                <button
-                  class="px-3 py-2 active:bg-gray-100 text-sm text-gray-600 font-light cursor-pointer border-1 rounded-md hover:bg-gray-200"
-                >
-                  Previous
-                </button>
-                <p class="text-gray-600 font-light">Page 1 of 10</p>
-                <button
-                  class="px-3 py-2 text-sm active:bg-gray-100 text-gray-600 font-light cursor-pointer border-1 rounded-sm hover:bg-gray-200"
-                >
-                  Next
-                </button>
-              </div>
+            </div>
+
+            <div
+              class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2"
+            >
+              <button
+                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
+              >
+                Previous
+              </button>
+              <p class="text-gray-600 font-light">Page 1 of 10</p>
+              <button
+                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
+              >
+                Next
+              </button>
             </div>
           </div>
         </main>
       </div>
     </div>
+
     <script>
-      function updateStockColors() {
-        let cells = document.querySelectorAll("td");
-
-        cells.forEach((td) => {
-          let text = td.innerText;
-
-          if (text === "Taking return") {
-            td.style.color = "green";
-          } else if (text === "Not Taking return") {
-            td.style.color = "red";
-          }
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", updateStockColors);
-
+      // Load search bar
       fetch("/MinorProject/Components/Searchbar.html")
         .then((response) => response.text())
         .then((data) => {
-          console.log(data);
           document.getElementById("search-bar").innerHTML = data;
+
+          // Add event listener after search bar is loaded
+          document
+            .getElementById("hamburger-menu")
+            ?.addEventListener("click", function () {
+              const sidebar = document.getElementById("mobile-sidebar");
+              const overlay = document.getElementById("sidebar-overlay");
+
+              sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle("hidden");
+
+              // Close sidebar when clicking on overlay
+              overlay.addEventListener("click", function () {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+              });
+            });
+        })
+        .catch((error) => {
+          console.error("Error loading search bar:", error);
         });
     </script>
   </body>

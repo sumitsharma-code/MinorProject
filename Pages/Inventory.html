@@ -9,13 +9,114 @@
   </head>
 
   <body>
+    <!-- Mobile Sidebar and Overlay -->
+    <div
+      id="mobile-sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+    >
+      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+        <!-- Company logo -->
+        <img
+          width="150"
+          class="px-4 py-1"
+          src="/MinorProject/IMG/Logo.svg"
+          alt="Company Logo"
+        />
+
+        <!-- Main navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2">
+          <li class="py-4">
+            <a href="/MinorProject/index.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/DashIcon.svg" alt="Dashboard Icon" />
+              Dashboard
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Inventory.html"
+              class="flex gap-4 text-md items-center"
+            >
+              <img
+                src="/MinorProject/Animation/invent.gif"
+                class="w-7 h-7"
+                alt="Inventory Icon"
+              />
+              <div class="text-[#1570EF]">Inventory</div>
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Reports.html"
+              class="flex gap-4 text-md"
+            >
+              <img
+                width="24"
+                src="/MinorProject/IMG/ReportN.svg"
+                alt="Reports Icon"
+              />
+              Reports
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Suppliers.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
+              Suppliers
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Orders.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+              Orders
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
+              Manage Store
+            </a>
+          </li>
+        </ul>
+
+        <!-- Additional navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="#" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for when mobile sidebar is open -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
+    ></div>
+
+    <!-- Main container -->
     <div class="flex gap-1 h-screen">
-      <!-- Navigation bar section -->
+      <!-- Desktop Navigation bar -->
       <nav
-        class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
         role="navigation"
       >
-        <!-- Navigation content container -->
         <div class="flex flex-col gap-8 w-[280px] h-[960px]">
           <!-- Company logo -->
           <img
@@ -28,25 +129,19 @@
           <!-- Main navigation links -->
           <ul class="flex flex-col gap-3 px-4 py-2">
             <li class="py-4">
-              <a
-                href="/MinorProject/index.html"
-                class="flex gap-4 text-md"
-                aria-label="Dashboard"
-              >
+              <a href="/MinorProject/index.html" class="flex gap-4 text-md">
                 <img
                   src="/MinorProject/IMG/DashIcon.svg"
                   alt="Dashboard Icon"
                 />
-                <div class="">Dashboard</div>
+                Dashboard
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Inventory.html"
                 class="flex gap-4 text-md items-center"
-                aria-label="Inventory"
               >
-                <!-- <img src="/MinorProject/IMG/InventC.svg" alt="Inventory Icon" /> -->
                 <img
                   src="/MinorProject/Animation/invent.gif"
                   class="w-7 h-7"
@@ -59,21 +154,19 @@
               <a
                 href="/MinorProject/Pages/Reports.html"
                 class="flex gap-4 text-md"
-                aria-label="Reports"
               >
                 <img
                   width="24"
                   src="/MinorProject/IMG/ReportN.svg"
                   alt="Reports Icon"
                 />
-                <div class="">Reports</div>
+                Reports
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Suppliers.html"
                 class="flex gap-4 text-md"
-                aria-label="Suppliers"
               >
                 <img
                   src="/MinorProject/IMG/Suppliers.svg"
@@ -86,7 +179,6 @@
               <a
                 href="/MinorProject/Pages/Orders.html"
                 class="flex gap-4 text-md"
-                aria-label="Orders"
               >
                 <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
                 Orders
@@ -96,7 +188,6 @@
               <a
                 href="/MinorProject/Pages/Store.html"
                 class="flex gap-4 text-md"
-                aria-label="Manage Store"
               >
                 <img
                   src="/MinorProject/IMG/Store.svg"
@@ -108,20 +199,19 @@
           </ul>
         </div>
 
-        <!-- Additional navigation links (Settings and Log Out) -->
+        <!-- Additional navigation links -->
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
             <a
               href="/MinorProject/Pages/Settings.html"
               class="flex gap-4 text-md"
-              aria-label="Settings"
             >
               <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
               Settings
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+            <a href="#" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -129,66 +219,78 @@
         </ul>
       </nav>
 
+      <!-- Main content area -->
       <div class="flex flex-col flex-1 gap-1">
         <div id="search-bar"></div>
 
         <main class="flex-1 rounded-md overflow-y-auto">
-          <div class="text-xl font-semibold">
+          <div class="text-xl font-semibold p-2">
+            <!-- Inventory Summary Cards -->
             <div
-              class="bg-white rounded-lg shadow-md flex flex-col gap-3 px-4 py-5 mb-4 mt-2"
+              class="bg-white rounded-lg shadow-md flex flex-col gap-3 px-4 py-5 mb-4"
             >
               <h2 class="text-lg text-gray-500 font-semibold">
                 Overall Inventory
               </h2>
 
-              <div class="text-sm flex justify-between">
-                <div class="flex flex-col items-start">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm"
+              >
+                <!-- Categories Card -->
+                <div class="bg-blue-50 p-4 rounded-lg">
                   <h3 class="text-blue-500 font-medium mb-2">Categories</h3>
-                  <p class="text-gray-800 font-semibold mb-1">14</p>
+                  <p class="text-gray-800 font-semibold text-xl mb-1">14</p>
                   <p class="text-gray-500 font-light">Last 7 days</p>
                 </div>
-                <div class="h-20 border-l-2 border-gray-200"></div>
 
-                <div class="flex flex-col items-start">
+                <!-- Total Products Card -->
+                <div class="bg-orange-50 p-4 rounded-lg">
                   <h3 class="text-orange-400 font-medium mb-2">
                     Total Products
                   </h3>
-                  <div class="flex space-x-12">
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">868</p>
+                  <div class="flex justify-between">
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">
+                        868
+                      </p>
                       <p class="text-gray-500 font-light">Last 7 days</p>
                     </div>
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">₹25000</p>
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">
+                        ₹25000
+                      </p>
                       <p class="text-gray-500 font-light">Revenue</p>
                     </div>
                   </div>
                 </div>
 
-                <div class="h-20 border-l-2 border-gray-200"></div>
-                <div class="flex flex-col items-start">
+                <!-- Top Selling Card -->
+                <div class="bg-purple-50 p-4 rounded-lg">
                   <h3 class="text-purple-700 font-medium mb-2">Top Selling</h3>
-                  <div class="flex space-x-12">
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">5</p>
+                  <div class="flex justify-between">
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">5</p>
                       <p class="text-gray-500 font-light">Last 7 days</p>
                     </div>
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">₹2500</p>
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">
+                        ₹2500
+                      </p>
                       <p class="text-gray-500 font-light">Cost</p>
                     </div>
                   </div>
                 </div>
-                <div class="h-20 border-l-2 border-gray-200"></div>
-                <div class="flex flex-col items-start">
+
+                <!-- Low Stocks Card -->
+                <div class="bg-red-50 p-4 rounded-lg">
                   <h3 class="text-red-500 font-medium mb-2">Low Stocks</h3>
-                  <div class="flex space-x-12">
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">12</p>
+                  <div class="flex justify-between">
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">12</p>
                       <p class="text-gray-500 font-light">Ordered</p>
                     </div>
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">2</p>
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">2</p>
                       <p class="text-gray-500 font-light">Not in Stock</p>
                     </div>
                   </div>
@@ -197,140 +299,157 @@
             </div>
 
             <!-- Products Section -->
-            <div class="bg-white rounded-lg shadow p-5">
-              <div class="flex justify-between items-center mb-3">
+            <div class="bg-white rounded-lg shadow p-4 lg:p-5 overflow-x-auto">
+              <div
+                class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4"
+              >
                 <h1 class="text-xl font-medium">Products</h1>
-                <div class="flex space-x-2 text-sm">
+                <div
+                  class="flex flex-wrap gap-2 text-sm w-full lg:w-auto justify-end"
+                >
                   <button
-                    class="bg-blue-500 font-light cursor-pointer active:bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded"
+                    class="bg-blue-500 font-light cursor-pointer active:bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded whitespace-nowrap"
                   >
                     Add Product
                   </button>
                   <button
-                    class="bg-white border cursor-pointer font-light text-gray-500 border-gray-500 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-400"
+                    class="bg-white border cursor-pointer font-light text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
                   >
                     Filters
                   </button>
                   <button
-                    class="bg-white border font-light cursor-pointer text-gray-500 border-gray-500 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-400"
+                    class="bg-white border font-light cursor-pointer text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
                   >
                     Download all
                   </button>
                 </div>
               </div>
-              <table class="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr class="border-b text-[14px] border-gray-300">
-                    <th class="py-3 font-light text-gray-500">Products</th>
-                    <th class="py-3 font-light text-gray-500">Buying Price</th>
-                    <th class="py-3 font-light text-gray-500">Quantity</th>
-                    <th class="py-3 font-light text-gray-500">
-                      Threshold Value
-                    </th>
-                    <th class="py-3 font-light text-gray-500">Expiry Date</th>
-                    <th class="py-3 font-light text-gray-500">Availability</th>
-                  </tr>
-                </thead>
-                <tbody class="text-[14px]">
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Maggi</td>
-                    <td class="py-3">₹430</td>
-                    <td class="py-3">43</td>
-                    <td class="py-3">12</td>
-                    <td class="py-3">11/12/22</td>
-                    <td class="py-3">In-stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Bru</td>
-                    <td class="py-3">₹257</td>
-                    <td class="py-3">22</td>
-                    <td class="py-3">12</td>
-                    <td class="py-3">21/12/22</td>
-                    <td class="py-3">Out of stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Red Bull</td>
-                    <td class="py-3">₹405</td>
-                    <td class="py-3">36 Packets</td>
-                    <td class="py-3">9 Packets</td>
-                    <td class="py-3">5/12/22</td>
-                    <td class="py-3">In-stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Bourn Vita</td>
-                    <td class="py-3">₹502</td>
-                    <td class="py-3">14 Packets</td>
-                    <td class="py-3">6 Packets</td>
-                    <td class="py-3">8/12/22</td>
-                    <td class="py-3">Out of stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Horlicks</td>
-                    <td class="py-3">₹530</td>
-                    <td class="py-3">5 Packets</td>
-                    <td class="py-3">5 Packets</td>
-                    <td class="py-3">9/1/23</td>
-                    <td class="py-3">In-stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Harpic</td>
-                    <td class="py-3">₹605</td>
-                    <td class="py-3">10 Packets</td>
-                    <td class="py-3">5 Packets</td>
-                    <td class="py-3">9/1/23</td>
-                    <td class="py-3">In-stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Ariel</td>
-                    <td class="py-3">₹408</td>
-                    <td class="py-3">23 Packets</td>
-                    <td class="py-3">7 Packets</td>
-                    <td class="py-3">15/12/23</td>
-                    <td class="py-3">Out of stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Scotch Brite</td>
-                    <td class="py-3">₹359</td>
-                    <td class="py-3">43 Packets</td>
-                    <td class="py-3">8 Packets</td>
-                    <td class="py-3">6/6/23</td>
-                    <td class="py-3">In-stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Coca Cola</td>
-                    <td class="py-3">₹205</td>
-                    <td class="py-3">41 Packets</td>
-                    <td class="py-3">10 Packets</td>
-                    <td class="py-3">11/12/22</td>
-                    <td class="py-3">Low stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Nescafe</td>
-                    <td class="py-3">₹300</td>
-                    <td class="py-3">25 Packets</td>
-                    <td class="py-3">10 Packets</td>
-                    <td class="py-3">20/2/23</td>
-                    <td class="py-3">In-stock</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Dettol</td>
-                    <td class="py-3">₹150</td>
-                    <td class="py-3">30 Packets</td>
-                    <td class="py-3">15 Packets</td>
-                    <td class="py-3">15/3/23</td>
-                    <td class="py-3">In-stock</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="flex justify-between items-center mt-4">
+
+              <div class="overflow-x-auto">
+                <table
+                  class="w-full text-left text-xs border-collapse min-w-[800px]"
+                >
+                  <thead>
+                    <tr class="border-b text-[14px] border-gray-300">
+                      <th class="py-3 font-light text-gray-500">Products</th>
+                      <th class="py-3 font-light text-gray-500">
+                        Buying Price
+                      </th>
+                      <th class="py-3 font-light text-gray-500">Quantity</th>
+                      <th class="py-3 font-light text-gray-500">
+                        Threshold Value
+                      </th>
+                      <th class="py-3 font-light text-gray-500">Expiry Date</th>
+                      <th class="py-3 font-light text-gray-500">
+                        Availability
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-[14px]">
+                    <!-- Product rows... (same as your original) -->
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Maggi</td>
+                      <td class="py-3">₹430</td>
+                      <td class="py-3">43</td>
+                      <td class="py-3">12</td>
+                      <td class="py-3">11/12/22</td>
+                      <td class="py-3 text-green-600">In-stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Bru</td>
+                      <td class="py-3">₹257</td>
+                      <td class="py-3">22</td>
+                      <td class="py-3">12</td>
+                      <td class="py-3">21/12/22</td>
+                      <td class="py-3 text-red-600">Out of stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Red Bull</td>
+                      <td class="py-3">₹405</td>
+                      <td class="py-3">36 Packets</td>
+                      <td class="py-3">9 Packets</td>
+                      <td class="py-3">5/12/22</td>
+                      <td class="py-3 text-green-600">In-stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Bourn Vita</td>
+                      <td class="py-3">₹502</td>
+                      <td class="py-3">14 Packets</td>
+                      <td class="py-3">6 Packets</td>
+                      <td class="py-3">8/12/22</td>
+                      <td class="py-3 text-red-600">Out of stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Horlicks</td>
+                      <td class="py-3">₹530</td>
+                      <td class="py-3">5 Packets</td>
+                      <td class="py-3">5 Packets</td>
+                      <td class="py-3">9/1/23</td>
+                      <td class="py-3 text-green-600">In-stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Harpic</td>
+                      <td class="py-3">₹605</td>
+                      <td class="py-3">10 Packets</td>
+                      <td class="py-3">5 Packets</td>
+                      <td class="py-3">9/1/23</td>
+                      <td class="py-3 text-green-600">In-stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Ariel</td>
+                      <td class="py-3">₹408</td>
+                      <td class="py-3">23 Packets</td>
+                      <td class="py-3">7 Packets</td>
+                      <td class="py-3">15/12/23</td>
+                      <td class="py-3 text-red-600">Out of stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Scotch Brite</td>
+                      <td class="py-3">₹359</td>
+                      <td class="py-3">43 Packets</td>
+                      <td class="py-3">8 Packets</td>
+                      <td class="py-3">6/6/23</td>
+                      <td class="py-3 text-green-600">In-stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Coca Cola</td>
+                      <td class="py-3">₹205</td>
+                      <td class="py-3">41 Packets</td>
+                      <td class="py-3">10 Packets</td>
+                      <td class="py-3">11/12/22</td>
+                      <td class="py-3 text-orange-500">Low stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Nescafe</td>
+                      <td class="py-3">₹300</td>
+                      <td class="py-3">25 Packets</td>
+                      <td class="py-3">10 Packets</td>
+                      <td class="py-3">20/2/23</td>
+                      <td class="py-3 text-green-600">In-stock</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Dettol</td>
+                      <td class="py-3">₹150</td>
+                      <td class="py-3">30 Packets</td>
+                      <td class="py-3">15 Packets</td>
+                      <td class="py-3">15/3/23</td>
+                      <td class="py-3 text-green-600">In-stock</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div
+                class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2"
+              >
                 <button
-                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border-1 rounded-md hover:bg-gray-400"
+                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
                 >
                   Previous
                 </button>
                 <p class="text-gray-600 font-light">Page 1 of 10</p>
                 <button
-                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border-1 rounded-sm hover:bg-gray-400"
+                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
                 >
                   Next
                 </button>
@@ -340,30 +459,32 @@
         </main>
       </div>
     </div>
+
     <script>
-      function updateStockColors() {
-        let cells = document.querySelectorAll("td");
-
-        cells.forEach((td) => {
-          let text = td.innerText;
-
-          if (text === "In-stock") {
-            td.style.color = "green";
-          } else if (text === "Out of stock") {
-            td.style.color = "red";
-          } else if (text === "Low stock") {
-            td.style.color = "orange";
-          }
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", updateStockColors);
-
       fetch("/MinorProject/Components/Searchbar.html")
         .then((response) => response.text())
         .then((data) => {
-          console.log(data);
           document.getElementById("search-bar").innerHTML = data;
+
+          // Add event listener after search bar is loaded
+          document
+            .getElementById("hamburger-menu")
+            ?.addEventListener("click", function () {
+              const sidebar = document.getElementById("mobile-sidebar");
+              const overlay = document.getElementById("sidebar-overlay");
+
+              sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle("hidden");
+
+              // Close sidebar when clicking on overlay
+              overlay.addEventListener("click", function () {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+              });
+            });
+        })
+        .catch((error) => {
+          console.error("Error loading search bar:", error);
         });
     </script>
   </body>

@@ -9,12 +9,112 @@
   </head>
 
   <body>
+    <!-- Mobile Sidebar and Overlay -->
+    <div
+      id="mobile-sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+    >
+      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+        <!-- Company logo -->
+        <img
+          width="150"
+          class="px-4 py-1"
+          src="/MinorProject/IMG/Logo.svg"
+          alt="Company Logo"
+        />
+
+        <!-- Main navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2">
+          <li class="py-4">
+            <a href="/MinorProject/index.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/DashIcon.svg" alt="Dashboard Icon" />
+              Dashboard
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Inventory.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+              Inventory
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Reports.html"
+              class="flex gap-4 text-md items-center"
+            >
+              <img
+                src="/MinorProject/Animation/Reports.gif"
+                class="w-7 h-7"
+                alt="Reports Icon"
+              />
+              <div class="text-[#1570EF]">Reports</div>
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Suppliers.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
+              Suppliers
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Orders.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+              Orders
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
+              Manage Store
+            </a>
+          </li>
+        </ul>
+
+        <!-- Additional navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="#" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for when mobile sidebar is open -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
+    ></div>
+
+    <!-- Main container -->
     <div class="flex gap-1 h-screen">
+      <!-- Desktop Navigation bar -->
       <nav
-        class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
         role="navigation"
       >
         <div class="flex flex-col gap-8 w-[280px] h-[960px]">
+          <!-- Company logo -->
           <img
             width="150"
             class="px-4 py-1"
@@ -22,13 +122,10 @@
             alt="Company Logo"
           />
 
+          <!-- Main navigation links -->
           <ul class="flex flex-col gap-3 px-4 py-2">
             <li class="py-4">
-              <a
-                href="/MinorProject/index.html"
-                class="flex gap-4 text-md"
-                aria-label="Dashboard"
-              >
+              <a href="/MinorProject/index.html" class="flex gap-4 text-md">
                 <img
                   src="/MinorProject/IMG/DashIcon.svg"
                   alt="Dashboard Icon"
@@ -40,7 +137,6 @@
               <a
                 href="/MinorProject/Pages/Inventory.html"
                 class="flex gap-4 text-md"
-                aria-label="Inventory"
               >
                 <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
                 Inventory
@@ -50,15 +146,8 @@
               <a
                 href="/MinorProject/Pages/Reports.html"
                 class="flex gap-4 text-md items-center"
-                aria-label="Reports"
               >
-                <!-- <img
-                  width="24"
-                  src="/MinorProject/IMG/ReportC.svg"
-                  alt="Reports Icon"
-                /> -->
                 <img
-                  width="24"
                   src="/MinorProject/Animation/Reports.gif"
                   class="w-7 h-7"
                   alt="Reports Icon"
@@ -70,7 +159,6 @@
               <a
                 href="/MinorProject/Pages/Suppliers.html"
                 class="flex gap-4 text-md"
-                aria-label="Suppliers"
               >
                 <img
                   src="/MinorProject/IMG/Suppliers.svg"
@@ -83,7 +171,6 @@
               <a
                 href="/MinorProject/Pages/Orders.html"
                 class="flex gap-4 text-md"
-                aria-label="Orders"
               >
                 <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
                 Orders
@@ -93,7 +180,6 @@
               <a
                 href="/MinorProject/Pages/Store.html"
                 class="flex gap-4 text-md"
-                aria-label="Manage Store"
               >
                 <img
                   src="/MinorProject/IMG/Store.svg"
@@ -105,19 +191,19 @@
           </ul>
         </div>
 
+        <!-- Additional navigation links -->
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
             <a
               href="/MinorProject/Pages/Settings.html"
               class="flex gap-4 text-md"
-              aria-label="Settings"
             >
               <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
               Settings
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+            <a href="#" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -125,333 +211,237 @@
         </ul>
       </nav>
 
+      <!-- Main content area -->
       <div class="flex flex-col flex-1 gap-1">
         <div id="search-bar"></div>
-        <main class="flex-1 overflow-y-auto">
-          <div class="flex flex-col">
-            <!-- first row of main -->
-            <div class="flex gap-2 p-1">
-              <!-- 1st box of 1st row-->
-              <div class="bg-white flex flex-col w-full rounded-2xl p-1">
-                <!-- overview part -->
-                <div class="h-17 flex flex-col justify-center">
-                  <div class="text-[#383e49] text-xl font-medium pl-2">
-                    Overview
-                  </div>
+
+        <main class="flex-1 overflow-y-auto p-2">
+          <div class="flex flex-col gap-2">
+            <!-- First row - Overview and Best Selling Category -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+              <!-- Overview Card -->
+              <div class="bg-white rounded-2xl p-4 shadow">
+                <div class="text-xl font-medium text-[#383e49] mb-4">
+                  Overview
                 </div>
 
-                <!-- 2nd row -->
-
-                <div class="flex flex-row pl-[0.8rem] pb-4 gap-32">
-                  <div class="flex flex-col gap-3">
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                  <div class="flex flex-col">
                     <div class="text-gray-600 font-medium">₹21,190</div>
-                    <div class="text-sm text-[#555] font-normal">
-                      Total Profit
-                    </div>
+                    <div class="text-sm text-[#555]">Total Profit</div>
                   </div>
-                  <div class="flex flex-col gap-3">
+                  <div class="flex flex-col">
                     <div class="text-gray-600 font-medium">₹18,300</div>
-                    <div class="text-sm text-[#DBA362] font-normal">
-                      Revenue
-                    </div>
+                    <div class="text-sm text-[#DBA362]">Revenue</div>
                   </div>
-                  <div class="flex flex-col gap-3">
+                  <div class="flex flex-col">
                     <div class="text-gray-600 font-medium">₹17,432</div>
-                    <div class="text-sm text-[#845EBC] font-normal">Sales</div>
+                    <div class="text-sm text-[#845EBC]">Sales</div>
                   </div>
                 </div>
 
-                <hr class="border-gray-200" />
-                <!-- 3rd row -->
-                <div class="flex flex-row justify-between p-5">
-                  <div class="flex flex-col gap-3">
+                <hr class="border-gray-200 my-3" />
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div class="flex flex-col">
                     <div class="text-gray-600 font-medium">₹1,95,546</div>
-                    <div class="text-gray-500">Net purchase value</div>
+                    <div class="text-gray-500 text-sm">Net purchase value</div>
                   </div>
-                  <div class="flex flex-col gap-3">
+                  <div class="flex flex-col">
                     <div class="text-gray-600 font-medium">₹80,432</div>
-                    <div class="text-gray-500">Net sales value</div>
+                    <div class="text-gray-500 text-sm">Net sales value</div>
                   </div>
-                  <div class="flex flex-col gap-3">
+                  <div class="flex flex-col">
                     <div class="text-gray-600 font-medium">₹30,432</div>
-                    <div class="text-gray-500">MoM Profit</div>
+                    <div class="text-gray-500 text-sm">MoM Profit</div>
                   </div>
-                  <div class="flex flex-col gap-3">
+                  <div class="flex flex-col">
                     <div class="text-gray-600 font-medium">₹1,10,432</div>
-                    <div class="text-gray-500">YoY Profit</div>
+                    <div class="text-gray-500 text-sm">YoY Profit</div>
                   </div>
                 </div>
               </div>
 
-              <!-- 2nd box of first row -->
-              <div class="bg-white flex flex-col w-full rounded-2xl p-1">
-                <!-- overview part -->
-                <div
-                  class="h-17 flex flex-row items-center justify-between pl-3 pr-3.5"
-                >
-                  <div class="text-[#383e49] text-xl font-medium">
+              <!-- Best Selling Category Card -->
+              <div class="bg-white rounded-2xl p-4 shadow">
+                <div class="flex justify-between items-center mb-4">
+                  <div class="text-xl font-medium text-[#383e49]">
                     Best selling category
                   </div>
-                  <div class="text-[#0F50AA] text-sm font-medium">See All</div>
-                </div>
-
-                <!-- 2nd row -->
-                <!-- 3rd row -->
-                <div
-                  class="font-medium flex flex-row justify-between pl-3 pr-8 pb-3.5 text-[#667085] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Category</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Turn Over</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Increase By</div>
-                  </div>
-                </div>
-                <hr class="border-gray-200" />
-                <div
-                  class="text-[#48505E] flex flex-row justify-between pl-3 pr-8 pb-3.5 pt-[0.69rem] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Vegetable</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">₹26,000</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">3.2%</div>
-                  </div>
-                </div>
-                <hr class="border-gray-200" />
-                <div
-                  class="text-[#48505E] flex flex-row justify-between pl-3 pr-8 pb-3.5 pt-[0.69rem] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Instant Food</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">₹26,000</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">3.2%</div>
-                  </div>
-                </div>
-                <hr class="border-gray-200" />
-                <div
-                  class="text-[#48505E] flex flex-row justify-between pl-3 pr-8 pb-3.5 pt-[0.69rem] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Households</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">₹26,000</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">3.2%</div>
-                  </div>
-                </div>
-                <hr class="border-gray-200" />
-              </div>
-            </div>
-
-            <!-- 2nd row of main -->
-            <div class="flex p-1">
-              <div class="bg-white flex flex-col w-full rounded-2xl p-1">
-                <!-- overview part -->
-                <div class="h-17 flex flex-col justify-center">
-                  <div class="text-[#383e49] text-xl font-medium pl-2">
-                    Profit & Revenue
+                  <div
+                    class="text-sm font-medium text-[#0F50AA] cursor-pointer"
+                  >
+                    See All
                   </div>
                 </div>
 
-                <!-- 2nd row -->
-
-                <div class="flex flex-row pl-[0.8rem] pb-4 gap-32">
-                  <div class="flex flex-col gap-3">
-                    <div class="text-gray-600 font-medium">₹21,190</div>
-                    <div class="text-sm text-[#555] font-normal">
-                      Total Profit
+                <div class="space-y-3">
+                  <div
+                    class="flex justify-between items-center pb-2 border-b border-gray-200"
+                  >
+                    <div class="text-[#48505E]">Vegetable</div>
+                    <div class="flex gap-8">
+                      <div>₹26,000</div>
+                      <div class="text-[#10A760]">3.2%</div>
                     </div>
                   </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="text-gray-600 font-medium">₹18,300</div>
-                    <div class="text-sm text-[#DBA362] font-normal">
-                      Revenue
+                  <div
+                    class="flex justify-between items-center pb-2 border-b border-gray-200"
+                  >
+                    <div class="text-[#48505E]">Instant Food</div>
+                    <div class="flex gap-8">
+                      <div>₹26,000</div>
+                      <div class="text-[#10A760]">3.2%</div>
                     </div>
                   </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="text-gray-600 font-medium">₹17,432</div>
-                    <div class="text-sm text-[#845EBC] font-normal">Sales</div>
-                  </div>
-                </div>
-
-                <hr class="border-gray-200" />
-                <!-- 3rd row -->
-                <div class="flex flex-row justify-between p-5">
-                  <div class="flex flex-col gap-3">
-                    <div class="text-gray-600 font-medium">₹1,95,546</div>
-                    <div class="text-gray-500">Net purchase value</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="text-gray-600 font-medium">₹80,432</div>
-                    <div class="text-gray-500">Net sales value</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="text-gray-600 font-medium">₹30,432</div>
-                    <div class="text-gray-500">MoM Profit</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="text-gray-600 font-medium">₹1,10,432</div>
-                    <div class="text-gray-500">YoY Profit</div>
+                  <div
+                    class="flex justify-between items-center pb-2 border-b border-gray-200"
+                  >
+                    <div class="text-[#48505E]">Households</div>
+                    <div class="flex gap-8">
+                      <div>₹26,000</div>
+                      <div class="text-[#10A760]">3.2%</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- 3rd row of main -->
-            <div class="w-full">
-              <div class="bg-white flex flex-col w-full rounded-2xl p-1">
-                <!-- overview part -->
-                <div
-                  class="h-17 flex flex-row items-center justify-between pl-3 pr-3.5"
-                >
-                  <div class="text-[#383e49] text-xl font-medium">
-                    Best selling product
-                  </div>
-                  <div class="text-[#0F50AA] text-sm font-medium">See All</div>
-                </div>
+            <!-- Second row - Profit & Revenue -->
+            <div class="bg-white rounded-2xl p-4 shadow">
+              <div class="text-xl font-medium text-[#383e49] mb-4">
+                Profit & Revenue
+              </div>
 
-                <!-- 2nd row -->
-                <div
-                  class="font-medium flex flex-row justify-between pl-3 pr-8 pb-3.5 text-[#667085] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Product</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Product IF</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Category</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Remaining Quantity</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Turn Over</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Increase By</div>
-                  </div>
+              <div class="grid grid-cols-3 gap-4 mb-4">
+                <div class="flex flex-col">
+                  <div class="text-gray-600 font-medium">₹21,190</div>
+                  <div class="text-sm text-[#555]">Total Profit</div>
                 </div>
-                <hr class="border-gray-200" />
-                <div
-                  class="text-[#48505E] flex flex-row justify-between pl-3 pr-8 pb-3.5 pt-[0.69rem] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Tomato</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">13561</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Vegetable</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">225 kg</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">₹26,000</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">3.2%</div>
-                  </div>
+                <div class="flex flex-col">
+                  <div class="text-gray-600 font-medium">₹18,300</div>
+                  <div class="text-sm text-[#DBA362]">Revenue</div>
                 </div>
-                <hr class="border-gray-200" />
-                <div
-                  class="text-[#48505E] flex flex-row justify-between pl-3 pr-8 pb-3.5 pt-[0.69rem] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Tomato</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">13561</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Vegetable</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">225 kg</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">₹26,000</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">3.2%</div>
-                  </div>
+                <div class="flex flex-col">
+                  <div class="text-gray-600 font-medium">₹17,432</div>
+                  <div class="text-sm text-[#845EBC]">Sales</div>
                 </div>
-                <hr class="border-gray-200" />
-                <div
-                  class="text-[#48505E] flex flex-row justify-between pl-3 pr-8 pb-3.5 pt-[0.69rem] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Tomato</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">13561</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Vegetable</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">225 kg</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">₹26,000</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">3.2%</div>
-                  </div>
-                </div>
-                <hr class="border-gray-200" />
-                <div
-                  class="text-[#48505E] flex flex-row justify-between pl-3 pr-8 pb-3.5 pt-[0.69rem] text-sm"
-                >
-                  <div class="flex flex-col gap-3">
-                    <div class="">Tomato</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">13561</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">Vegetable</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">225 kg</div>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <div class="">₹26,000</div>
-                  </div>
-                  <div class="flex flex-col gap-3 text-[#10A760]">
-                    <div class="">3.2%</div>
-                  </div>
-                </div>
+              </div>
 
-                <hr class="border-gray-200" />
+              <hr class="border-gray-200 my-3" />
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="flex flex-col">
+                  <div class="text-gray-600 font-medium">₹1,95,546</div>
+                  <div class="text-gray-500 text-sm">Net purchase value</div>
+                </div>
+                <div class="flex flex-col">
+                  <div class="text-gray-600 font-medium">₹80,432</div>
+                  <div class="text-gray-500 text-sm">Net sales value</div>
+                </div>
+                <div class="flex flex-col">
+                  <div class="text-gray-600 font-medium">₹30,432</div>
+                  <div class="text-gray-500 text-sm">MoM Profit</div>
+                </div>
+                <div class="flex flex-col">
+                  <div class="text-gray-600 font-medium">₹1,10,432</div>
+                  <div class="text-gray-500 text-sm">YoY Profit</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Third row - Best Selling Product -->
+            <div class="bg-white rounded-2xl p-4 shadow overflow-x-auto">
+              <div class="flex justify-between items-center mb-4">
+                <div class="text-xl font-medium text-[#383e49]">
+                  Best selling product
+                </div>
+                <div class="text-sm font-medium text-[#0F50AA] cursor-pointer">
+                  See All
+                </div>
+              </div>
+
+              <div class="min-w-[800px]">
+                <table class="w-full text-left text-sm">
+                  <thead>
+                    <tr class="border-b border-gray-300">
+                      <th class="py-3 font-light text-gray-500">Product</th>
+                      <th class="py-3 font-light text-gray-500">Product ID</th>
+                      <th class="py-3 font-light text-gray-500">Category</th>
+                      <th class="py-3 font-light text-gray-500">
+                        Remaining Quantity
+                      </th>
+                      <th class="py-3 font-light text-gray-500">Turn Over</th>
+                      <th class="py-3 font-light text-gray-500">Increase By</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3 text-[#48505E]">Tomato</td>
+                      <td class="py-3 text-[#48505E]">13561</td>
+                      <td class="py-3 text-[#48505E]">Vegetable</td>
+                      <td class="py-3 text-[#10A760]">225 kg</td>
+                      <td class="py-3 text-[#48505E]">₹26,000</td>
+                      <td class="py-3 text-[#10A760]">3.2%</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3 text-[#48505E]">Tomato</td>
+                      <td class="py-3 text-[#48505E]">13561</td>
+                      <td class="py-3 text-[#48505E]">Vegetable</td>
+                      <td class="py-3 text-[#10A760]">225 kg</td>
+                      <td class="py-3 text-[#48505E]">₹26,000</td>
+                      <td class="py-3 text-[#10A760]">3.2%</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3 text-[#48505E]">Tomato</td>
+                      <td class="py-3 text-[#48505E]">13561</td>
+                      <td class="py-3 text-[#48505E]">Vegetable</td>
+                      <td class="py-3 text-[#10A760]">225 kg</td>
+                      <td class="py-3 text-[#48505E]">₹26,000</td>
+                      <td class="py-3 text-[#10A760]">3.2%</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3 text-[#48505E]">Tomato</td>
+                      <td class="py-3 text-[#48505E]">13561</td>
+                      <td class="py-3 text-[#48505E]">Vegetable</td>
+                      <td class="py-3 text-[#10A760]">225 kg</td>
+                      <td class="py-3 text-[#48505E]">₹26,000</td>
+                      <td class="py-3 text-[#10A760]">3.2%</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </main>
       </div>
     </div>
+
     <script>
       fetch("/MinorProject/Components/Searchbar.html")
         .then((response) => response.text())
         .then((data) => {
-          console.log(data);
           document.getElementById("search-bar").innerHTML = data;
+
+          // Add event listener after search bar is loaded
+          document
+            .getElementById("hamburger-menu")
+            ?.addEventListener("click", function () {
+              const sidebar = document.getElementById("mobile-sidebar");
+              const overlay = document.getElementById("sidebar-overlay");
+
+              sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle("hidden");
+
+              // Close sidebar when clicking on overlay
+              overlay.addEventListener("click", function () {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+              });
+            });
+        })
+        .catch((error) => {
+          console.error("Error loading search bar:", error);
         });
     </script>
   </body>

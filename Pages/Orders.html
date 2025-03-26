@@ -9,13 +9,114 @@
   </head>
 
   <body>
+    <!-- Mobile Sidebar and Overlay -->
+    <div
+      id="mobile-sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+    >
+      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+        <!-- Company logo -->
+        <img
+          width="150"
+          class="px-4 py-1"
+          src="/MinorProject/IMG/Logo.svg"
+          alt="Company Logo"
+        />
+
+        <!-- Main navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2">
+          <li class="py-4">
+            <a href="/MinorProject/index.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/DashIcon.svg" alt="Dashboard Icon" />
+              Dashboard
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Inventory.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+              Inventory
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Reports.html"
+              class="flex gap-4 text-md"
+            >
+              <img
+                width="24"
+                src="/MinorProject/IMG/ReportN.svg"
+                alt="Reports Icon"
+              />
+              Reports
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Suppliers.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
+              Suppliers
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Orders.html"
+              class="flex gap-4 text-md items-center"
+            >
+              <img
+                src="/MinorProject/Animation/Orders.gif"
+                class="w-7 h-7"
+                alt="Orders Icon"
+              />
+              <div class="text-[#1570EF]">Orders</div>
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
+              Manage Store
+            </a>
+          </li>
+        </ul>
+
+        <!-- Additional navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="#" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for when mobile sidebar is open -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
+    ></div>
+
+    <!-- Main container -->
     <div class="flex gap-1 h-screen">
-      <!-- Navigation bar section -->
+      <!-- Desktop Navigation bar -->
       <nav
-        class="flex flex-col rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
         role="navigation"
       >
-        <!-- Navigation content container -->
         <div class="flex flex-col gap-8 w-[280px] h-[960px]">
           <!-- Company logo -->
           <img
@@ -28,23 +129,18 @@
           <!-- Main navigation links -->
           <ul class="flex flex-col gap-3 px-4 py-2">
             <li class="py-4">
-              <a
-                href="/MinorProject/index.html"
-                class="flex gap-4 text-md"
-                aria-label="Dashboard"
-              >
+              <a href="/MinorProject/index.html" class="flex gap-4 text-md">
                 <img
                   src="/MinorProject/IMG/DashIcon.svg"
                   alt="Dashboard Icon"
                 />
-                <div class="">Dashboard</div>
+                Dashboard
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Inventory.html"
                 class="flex gap-4 text-md"
-                aria-label="Inventory"
               >
                 <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
                 Inventory
@@ -54,21 +150,19 @@
               <a
                 href="/MinorProject/Pages/Reports.html"
                 class="flex gap-4 text-md"
-                aria-label="Reports"
               >
                 <img
                   width="24"
                   src="/MinorProject/IMG/ReportN.svg"
                   alt="Reports Icon"
                 />
-                <div class="">Reports</div>
+                Reports
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Suppliers.html"
                 class="flex gap-4 text-md"
-                aria-label="Suppliers"
               >
                 <img
                   src="/MinorProject/IMG/Suppliers.svg"
@@ -81,9 +175,7 @@
               <a
                 href="/MinorProject/Pages/Orders.html"
                 class="flex gap-4 text-md items-center"
-                aria-label="Orders"
               >
-                <!-- <img src="/MinorProject/IMG/OrdersC.svg" alt="Orders Icon" /> -->
                 <img
                   src="/MinorProject/Animation/Orders.gif"
                   class="w-7 h-7"
@@ -96,7 +188,6 @@
               <a
                 href="/MinorProject/Pages/Store.html"
                 class="flex gap-4 text-md"
-                aria-label="Manage Store"
               >
                 <img
                   src="/MinorProject/IMG/Store.svg"
@@ -108,20 +199,19 @@
           </ul>
         </div>
 
-        <!-- Additional navigation links (Settings and Log Out) -->
+        <!-- Additional navigation links -->
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
             <a
               href="/MinorProject/Pages/Settings.html"
               class="flex gap-4 text-md"
-              aria-label="Settings"
             >
               <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
               Settings
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+            <a href="#" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -129,131 +219,136 @@
         </ul>
       </nav>
 
+      <!-- Main content area -->
       <div class="flex flex-col flex-1 gap-1">
         <div id="search-bar"></div>
 
-        <main class="flex-1 rounded-md overflow-y-auto">
-          <div class="text-xl font-semibold">
+        <main class="flex-1 rounded-md overflow-y-auto p-2">
+          <!-- Orders Summary Cards -->
+          <div
+            class="bg-white rounded-lg shadow-md flex flex-col gap-3 px-4 py-5 mb-4"
+          >
+            <h2 class="text-lg text-gray-500 font-semibold">Overall Orders</h2>
+
             <div
-              class="bg-white rounded-lg shadow-md flex flex-col gap-3 px-4 py-5 mb-4 mt-2"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm"
             >
-              <h2 class="text-lg text-gray-500 font-semibold">
-                Overall Orders
-              </h2>
+              <!-- Total Orders Card -->
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h3 class="text-blue-500 font-medium mb-2">Total Orders</h3>
+                <p class="text-gray-800 font-semibold text-xl mb-1">14</p>
+                <p class="text-gray-500 font-light">Last 7 days</p>
+              </div>
 
-              <div class="text-sm flex justify-between">
-                <div class="flex flex-col items-start">
-                  <h3 class="text-blue-500 font-medium mb-2">Total Orders</h3>
-                  <p class="text-gray-800 font-semibold mb-1">14</p>
-                  <p class="text-gray-500 font-light">Last 7 days</p>
-                </div>
-                <div class="h-20 border-l-2 border-gray-200"></div>
-
-                <div class="flex flex-col items-start">
-                  <h3 class="text-orange-400 font-medium mb-2">
-                    Total Received
-                  </h3>
-                  <div class="flex space-x-12">
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">868</p>
-                      <p class="text-gray-500 font-light">Last 7 days</p>
-                    </div>
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">₹25000</p>
-                      <p class="text-gray-500 font-light">Revenue</p>
-                    </div>
+              <!-- Total Received Card -->
+              <div class="bg-orange-50 p-4 rounded-lg">
+                <h3 class="text-orange-400 font-medium mb-2">Total Received</h3>
+                <div class="flex justify-between">
+                  <div>
+                    <p class="text-gray-800 font-semibold text-xl mb-1">868</p>
+                    <p class="text-gray-500 font-light">Last 7 days</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-800 font-semibold text-xl mb-1">
+                      ₹25000
+                    </p>
+                    <p class="text-gray-500 font-light">Revenue</p>
                   </div>
                 </div>
+              </div>
 
-                <div class="h-20 border-l-2 border-gray-200"></div>
-                <div class="flex flex-col items-start">
-                  <h3 class="text-purple-700 font-medium mb-2">
-                    Total Returned
-                  </h3>
-                  <div class="flex space-x-12">
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">5</p>
-                      <p class="text-gray-500 font-light">Last 7 days</p>
-                    </div>
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">₹2500</p>
-                      <p class="text-gray-500 font-light">Cost</p>
-                    </div>
+              <!-- Total Returned Card -->
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h3 class="text-purple-700 font-medium mb-2">Total Returned</h3>
+                <div class="flex justify-between">
+                  <div>
+                    <p class="text-gray-800 font-semibold text-xl mb-1">5</p>
+                    <p class="text-gray-500 font-light">Last 7 days</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-800 font-semibold text-xl mb-1">
+                      ₹2500
+                    </p>
+                    <p class="text-gray-500 font-light">Cost</p>
                   </div>
                 </div>
-                <div class="h-20 border-l-2 border-gray-200"></div>
-                <div class="flex flex-col items-start">
-                  <h3 class="text-red-500 font-medium mb-2">On the way</h3>
-                  <div class="flex space-x-12">
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">12</p>
-                      <p class="text-gray-500 font-light">Ordered</p>
-                    </div>
-                    <div class="flex flex-col items-start">
-                      <p class="text-gray-800 font-semibold mb-1">₹2500</p>
-                      <p class="text-gray-500 font-light">Cost</p>
-                    </div>
+              </div>
+
+              <!-- On the Way Card -->
+              <div class="bg-red-50 p-4 rounded-lg">
+                <h3 class="text-red-500 font-medium mb-2">On the way</h3>
+                <div class="flex justify-between">
+                  <div>
+                    <p class="text-gray-800 font-semibold text-xl mb-1">12</p>
+                    <p class="text-gray-500 font-light">Ordered</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-800 font-semibold text-xl mb-1">
+                      ₹2500
+                    </p>
+                    <p class="text-gray-500 font-light">Cost</p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Products Section -->
-            <div class="bg-white rounded-lg shadow p-5">
-              <div class="flex justify-between items-center mb-3">
-                <h1 class="text-xl font-medium">Orders</h1>
-                <div class="flex space-x-2 text-sm">
-                  <button
-                    class="bg-blue-500 open-modal font-light cursor-pointer active:bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded"
-                  >
-                    Add Order
-                  </button>
-                  <button
-                    class="bg-white border-2 cursor-pointer font-light text-gray-500 border-gray-400 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-200"
-                  >
-                    Filters
-                  </button>
-                  <button
-                    class="bg-white border-2 font-light cursor-pointer text-gray-500 border-gray-400 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-200"
-                  >
-                    Download all
-                  </button>
-                </div>
-              </div>
-              <div class="modal" id="orderModal">
-                <div
-                  class="modal-content flex flex-col items-start justify-around"
+          <!-- Orders Table Section -->
+          <div class="bg-white rounded-lg shadow p-4 lg:p-5 overflow-x-auto">
+            <div
+              class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4"
+            >
+              <h1 class="text-xl font-medium">Orders</h1>
+              <div
+                class="flex flex-wrap gap-2 text-sm w-full lg:w-auto justify-end"
+              >
+                <button
+                  class="bg-blue-500 open-modal font-light cursor-pointer active:bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded whitespace-nowrap"
                 >
-                  <!-- <span class="close-modal">&times;</span> -->
-                  <div class="text-2xl modal-header">New Order</div>
-                  <div class="flex justify-between gap-14 w-full items-center">
-                    <label for="" class="font-light text-lg text-gray-800"
-                      >Product Name</label
-                    >
+                  Add Order
+                </button>
+                <button
+                  class="bg-white border cursor-pointer font-light text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  Filters
+                </button>
+                <button
+                  class="bg-white border font-light cursor-pointer text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  Download all
+                </button>
+              </div>
+            </div>
+
+            <!-- Order Modal -->
+            <div
+              class="modal fixed z-50 left-0 top-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center"
+              id="orderModal"
+            >
+              <div
+                class="modal-content bg-white p-6 rounded-lg w-full max-w-md"
+              >
+                <div class="text-2xl font-medium mb-4">New Order</div>
+                <div class="space-y-2">
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Product Name</label>
                     <input
                       type="text"
-                      class="text-gray-600 px-4 py-1 outline-1 outline-gray-400 rounded-md font-light placeholder:font-light placeholder:text-md"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
                       placeholder="Enter product name"
                     />
                   </div>
-                  <div class="flex justify-between w-full items-center gap-10">
-                    <label for="" class="font-light text-lg text-gray-800"
-                      >Product Id</label
-                    >
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Product Id</label>
                     <input
                       type="text"
-                      class="text-gray-600 px-4 py-1 outline-1 outline-gray-400 rounded-md font-light placeholder:font-light placeholder:text-md"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
                       placeholder="Enter product Id"
                     />
                   </div>
-                  <div class="flex justify-between w-full items-center gap-8">
-                    <label for="" class="font-light text-lg text-gray-800"
-                      >Category</label
-                    >
-
-                    <select
-                      class="text-gray-600 px-3 py-1 outline-1 outline-gray-400 rounded-md font-light placeholder:font-light placeholder:text-md w-[283.2px]"
-                    >
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Category</label>
+                    <select class="border border-gray-300 px-4 py-2 rounded-md">
                       <option value="" disabled selected>
                         Select order status
                       </option>
@@ -263,71 +358,67 @@
                       <option value="out_for_delivery">Out for Delivery</option>
                     </select>
                   </div>
-                  <div class="flex justify-between w-full items-center gap-8">
-                    <label for="" class="font-light text-lg text-gray-800"
-                      >Order Value</label
-                    >
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Order Value</label>
                     <input
                       type="text"
-                      class="text-gray-600 px-4 py-1 outline-1 outline-gray-400 rounded-md font-light placeholder:font-light placeholder:text-md"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
                       placeholder="Enter order Value"
                     />
                   </div>
-                  <div class="flex justify-between w-full items-center gap-8">
-                    <label for="" class="font-light text-lg text-gray-800"
-                      >Quantity</label
-                    >
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Quantity</label>
                     <input
                       type="text"
-                      class="text-gray-600 px-4 py-1 outline-1 outline-gray-400 rounded-md font-light placeholder:font-light placeholder:text-md"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
                       placeholder="Enter Product Quantity"
                     />
                   </div>
-                  <div class="flex justify-between w-full items-center gap-8">
-                    <label for="" class="font-light text-lg text-gray-800"
-                      >Unit</label
-                    >
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Unit</label>
                     <input
                       type="text"
-                      class="text-gray-600 px-4 py-1 outline-1 outline-gray-400 rounded-md font-light placeholder:font-light placeholder:text-md"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
                       placeholder="Enter product Unit"
                     />
                   </div>
-                  <div class="flex justify-between w-full items-center gap-8">
-                    <label for="" class="font-light text-lg text-gray-800"
-                      >Buying Price</label
-                    >
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Buying Price</label>
                     <input
                       type="text"
-                      class="text-gray-600 px-4 py-1 outline-1 outline-gray-400 rounded-md font-light placeholder:font-light placeholder:text-md"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
                       placeholder="Enter buying price"
                     />
                   </div>
-                  <div class="flex justify-between w-full items-center gap-8">
-                    <label for="" class="font-light text-lg text-gray-800"
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800"
                       >Date of delivery</label
                     >
                     <input
                       type="date"
-                      class="text-gray-600 px-4 py-1 outline-1 outline-gray-400 w-[283.2px] rounded-md font-light placeholder:font-light placeholder:text-md"
-                      placeholder="Enter date of delivery"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
                     />
                   </div>
-                  <div class="flex items-center justify-end w-full gap-3">
-                    <button
-                      class="bg-white border-2 cursor-pointer close-modal font-light text-gray-500 text-md border-gray-400 px-2 py-1 rounded active:bg-gray-100 hover:bg-gray-200"
-                    >
-                      Discard
-                    </button>
-                    <button
-                      class="bg-blue-500 font-light cursor-pointer text-md active:bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
-                    >
-                      Add Product
-                    </button>
-                  </div>
+                </div>
+                <div class="flex justify-end gap-3 mt-6">
+                  <button
+                    class="close-modal bg-white border border-gray-300 text-gray-500 px-4 py-2 rounded hover:bg-gray-100"
+                  >
+                    Discard
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                  >
+                    Add Product
+                  </button>
                 </div>
               </div>
-              <table class="w-full text-left text-xs border-collapse">
+            </div>
+
+            <div class="overflow-x-auto">
+              <table
+                class="w-full text-left text-xs border-collapse min-w-[800px]"
+              >
                 <thead>
                   <tr class="border-b text-[14px] border-gray-300">
                     <th class="py-3 font-light text-gray-500">Products</th>
@@ -347,7 +438,7 @@
                     <td class="py-3">43 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">11/12/22</td>
-                    <td class="py-3">Delayed</td>
+                    <td class="py-3 text-orange-500">Delayed</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Bru</td>
@@ -355,7 +446,7 @@
                     <td class="py-3">22 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">21/12/22</td>
-                    <td class="py-3">Confirmed</td>
+                    <td class="py-3 text-blue-500">Confirmed</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Red Bull</td>
@@ -363,7 +454,7 @@
                     <td class="py-3">36 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">5/12/22</td>
-                    <td class="py-3">Returned</td>
+                    <td class="py-3 text-gray-500">Returned</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Bourn Vita</td>
@@ -371,7 +462,7 @@
                     <td class="py-3">14 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">8/12/22</td>
-                    <td class="py-3">Out for Delivery</td>
+                    <td class="py-3 text-green-500">Out for Delivery</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Horlicks</td>
@@ -379,7 +470,7 @@
                     <td class="py-3">5 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">9/1/23</td>
-                    <td class="py-3">Returned</td>
+                    <td class="py-3 text-gray-500">Returned</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Harpic</td>
@@ -387,7 +478,7 @@
                     <td class="py-3">10 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">9/1/23</td>
-                    <td class="py-3">Out for Delivery</td>
+                    <td class="py-3 text-green-500">Out for Delivery</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Ariel</td>
@@ -395,7 +486,7 @@
                     <td class="py-3">23 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">15/12/23</td>
-                    <td class="py-3">Delayed</td>
+                    <td class="py-3 text-orange-500">Delayed</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Scotch Brite</td>
@@ -403,7 +494,7 @@
                     <td class="py-3">43 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">6/6/23</td>
-                    <td class="py-3">Confirmed</td>
+                    <td class="py-3 text-blue-500">Confirmed</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Coca Cola</td>
@@ -411,7 +502,7 @@
                     <td class="py-3">41 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">11/12/22</td>
-                    <td class="py-3">Delayed</td>
+                    <td class="py-3 text-orange-500">Delayed</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Nescafe</td>
@@ -419,7 +510,7 @@
                     <td class="py-3">25 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">20/2/23</td>
-                    <td class="py-3">Confirmed</td>
+                    <td class="py-3 text-blue-500">Confirmed</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Dettol</td>
@@ -427,54 +518,58 @@
                     <td class="py-3">30 Packets</td>
                     <td class="py-3">12345</td>
                     <td class="py-3">15/3/23</td>
-                    <td class="py-3">Out for Delivery</td>
+                    <td class="py-3 text-green-500">Out for Delivery</td>
                   </tr>
                 </tbody>
               </table>
-              <div class="flex justify-between items-center mt-4">
-                <button
-                  class="px-3 py-2 active:bg-gray-100 text-sm text-gray-600 font-light cursor-pointer border-1 rounded-md hover:bg-gray-200"
-                >
-                  Previous
-                </button>
-                <p class="text-gray-600 font-light">Page 1 of 10</p>
-                <button
-                  class="px-3 py-2 text-sm active:bg-gray-100 text-gray-600 font-light cursor-pointer border-1 rounded-sm hover:bg-gray-200"
-                >
-                  Next
-                </button>
-              </div>
+            </div>
+
+            <div
+              class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2"
+            >
+              <button
+                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
+              >
+                Previous
+              </button>
+              <p class="text-gray-600 font-light">Page 1 of 10</p>
+              <button
+                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
+              >
+                Next
+              </button>
             </div>
           </div>
         </main>
       </div>
     </div>
+
     <script>
-      function updateStockColors() {
-        let cells = document.querySelectorAll("td");
-
-        cells.forEach((td) => {
-          let text = td.innerText;
-
-          if (text === "Confirmed") {
-            td.style.color = "blue";
-          } else if (text === "Delayed") {
-            td.style.color = "orange";
-          } else if (text === "Returned") {
-            td.style.color = "gray";
-          } else if (text === "Out for Delivery") {
-            td.style.color = "green";
-          }
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", updateStockColors);
-
+      // Load search bar
       fetch("/MinorProject/Components/Searchbar.html")
         .then((response) => response.text())
         .then((data) => {
-          console.log(data);
           document.getElementById("search-bar").innerHTML = data;
+
+          // Add event listener after search bar is loaded
+          document
+            .getElementById("hamburger-menu")
+            ?.addEventListener("click", function () {
+              const sidebar = document.getElementById("mobile-sidebar");
+              const overlay = document.getElementById("sidebar-overlay");
+
+              sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle("hidden");
+
+              // Close sidebar when clicking on overlay
+              overlay.addEventListener("click", function () {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+              });
+            });
+        })
+        .catch((error) => {
+          console.error("Error loading search bar:", error);
         });
 
       const modal = document.getElementById("orderModal");

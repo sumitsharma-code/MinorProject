@@ -12,14 +12,117 @@
   </head>
 
   <body>
+    <!-- Mobile Sidebar and Overlay -->
+    <div
+      id="mobile-sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+    >
+      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+        <!-- Company logo -->
+        <img
+          width="150"
+          class="px-4 py-1"
+          src="/MinorProject/IMG/Logo.svg"
+          alt="Company Logo"
+        />
+
+        <!-- Main navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2">
+          <li class="py-4">
+            <a
+              href="/MinorProject/index.html"
+              class="flex gap-4 text-md items-center"
+            >
+              <img
+                src="/MinorProject/Animation/home.gif"
+                class="w-7 h-7"
+                alt="Dashboard Icon"
+              />
+              <div class="text-[#1570EF]">Dashboard</div>
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Inventory.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+              Inventory
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Reports.html"
+              class="flex gap-4 text-md"
+            >
+              <img
+                width="24"
+                src="/MinorProject/IMG/ReportN.svg"
+                alt="Reports Icon"
+              />
+              Reports
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Suppliers.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
+              Suppliers
+            </a>
+          </li>
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Orders.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+              Orders
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
+              Manage Store
+            </a>
+          </li>
+        </ul>
+
+        <!-- Additional navigation links -->
+        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+          <li class="py-4">
+            <a
+              href="/MinorProject/Pages/Settings.html"
+              class="flex gap-4 text-md"
+            >
+              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+              Settings
+            </a>
+          </li>
+          <li class="py-4">
+            <a href="#" class="flex gap-4 text-md">
+              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for when mobile sidebar is open -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
+    ></div>
+
     <!-- Main container for the entire page layout -->
     <div class="flex gap-1 max-h-screen">
-      <!-- Navigation bar section -->
+      <!-- Desktop Navigation bar section -->
       <nav
         class="lg:flex flex-col hidden bg-white rounded-md justify-between px-6 pb-8 pt-6"
         role="navigation"
       >
-        <!-- Navigation content container -->
         <div class="lg:flex hidden flex-col gap-8 w-[280px] h-[960px]">
           <!-- Company logo -->
           <img
@@ -35,9 +138,7 @@
               <a
                 href="/MinorProject/index.html"
                 class="flex gap-4 text-md items-center"
-                aria-label="Dashboard"
               >
-                <!-- <img src="/MinorProject/IMG/HomeC.svg" alt="Dashboard Icon" /> -->
                 <img
                   src="/MinorProject/Animation/home.gif"
                   class="w-7 h-7"
@@ -50,7 +151,6 @@
               <a
                 href="/MinorProject/Pages/Inventory.html"
                 class="flex gap-4 text-md"
-                aria-label="Inventory"
               >
                 <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
                 Inventory
@@ -60,21 +160,19 @@
               <a
                 href="/MinorProject/Pages/Reports.html"
                 class="flex gap-4 text-md"
-                aria-label="Reports"
               >
                 <img
                   width="24"
                   src="/MinorProject/IMG/ReportN.svg"
                   alt="Reports Icon"
                 />
-                <div class="">Reports</div>
+                Reports
               </a>
             </li>
             <li class="py-4">
               <a
                 href="/MinorProject/Pages/Suppliers.html"
                 class="flex gap-4 text-md"
-                aria-label="Suppliers"
               >
                 <img
                   src="/MinorProject/IMG/Suppliers.svg"
@@ -87,7 +185,6 @@
               <a
                 href="/MinorProject/Pages/Orders.html"
                 class="flex gap-4 text-md"
-                aria-label="Orders"
               >
                 <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
                 Orders
@@ -97,7 +194,6 @@
               <a
                 href="/MinorProject/Pages/Store.html"
                 class="flex gap-4 text-md"
-                aria-label="Manage Store"
               >
                 <img
                   src="/MinorProject/IMG/Store.svg"
@@ -115,14 +211,13 @@
             <a
               href="/MinorProject/Pages/Settings.html"
               class="flex gap-4 text-md"
-              aria-label="Settings"
             >
               <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
               Settings
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md" aria-label="Log Out">
+            <a href="#" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -684,8 +779,27 @@
       fetch("/MinorProject/Components/Searchbar.html")
         .then((response) => response.text())
         .then((data) => {
-          console.log(data);
           document.getElementById("search-bar").innerHTML = data;
+
+          // Add event listener after search bar is loaded
+          document
+            .getElementById("hamburger-menu")
+            .addEventListener("click", function () {
+              const sidebar = document.getElementById("mobile-sidebar");
+              const overlay = document.getElementById("sidebar-overlay");
+
+              sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle("hidden");
+
+              // Close sidebar when clicking on overlay
+              overlay.addEventListener("click", function () {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+              });
+            });
+        })
+        .catch((error) => {
+          console.error("Error loading search bar:", error);
         });
     </script>
   </body>

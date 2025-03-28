@@ -614,11 +614,7 @@
                 </div>
 
                 <div class="flex flex-row justify-center w-full" dir="ltr">
-                  <img
-                    src="/MinorProject/graphs/Graph2.svg"
-                    alt="Order Summary Graph"
-                    class="w-full"
-                  />
+                  <canvas id="graph2"></canvas>
                 </div>
               </div>
             </div>
@@ -854,6 +850,68 @@
           { month: "Nov", Purchase: 34000, Sales: 22000 },
           { month: "Dec", Purchase: 34000, Sales: 35000 },
         ];
+
+        const data2 = [
+          { month: "Jan", Ordered: 3800, Delivered: 3800 },
+          { month: "Feb", Ordered: 1500, Delivered: 2200 },
+          { month: "Mar", Ordered: 2500, Delivered: 3100 },
+          { month: "Apr", Ordered: 2100, Delivered: 2800 },
+          { month: "May", Ordered: 2400, Delivered: 2600 },
+          { month: "Jun", Ordered: 1300, Delivered: 1800 },
+        ];
+
+        new Chart(document.getElementById("graph2"), {
+          type: "line",
+          data: {
+            labels: data2.map((row) => row.month),
+            datasets: [
+              {
+                tension: 0.4,
+                label: "Ordered",
+                data: data2.map((row) => row.Ordered),
+                backgroundColor: "rgba(255, 215, 0, 0.2)", // Blue
+                borderColor: "rgb(255, 215, 0)",
+                borderWidth: 2,
+                fill: true,
+                pointRadius: 0,
+              },
+              {
+                tension: 0.4,
+                label: "Delivered",
+                data: data2.map((row) => row.Delivered),
+                borderColor: "rgba(54, 162, 235, 1)",
+                backgroundColor: "rgba(54, 162, 235, 0.2)",
+                borderWidth: 2,
+                fill: true,
+                pointRadius: 0,
+              },
+            ],
+          },
+          options: {
+            // responsive: true,
+            scales: {
+              y: {
+                min: 1000,
+                grid: {
+                  display: false,
+                },
+                max: 4000,
+                ticks: {
+                  stepSize: 1000,
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: "circle",
+                },
+              },
+            },
+          },
+        });
 
         new Chart(document.getElementById("acquisitions"), {
           type: "bar",

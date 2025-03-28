@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
   </head>
 
-  <body>
+  <body class="bg-gray-100">
     <!-- Mobile Sidebar and Overlay -->
     <div
       id="mobile-sidebar"
-      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg"
     >
       <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
         <!-- Company logo -->
@@ -110,10 +110,10 @@
     <div class="flex gap-1 h-screen">
       <!-- Desktop Navigation bar -->
       <nav
-        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white shadow-md"
         role="navigation"
       >
-        <div class="flex flex-col gap-8 w-[280px] h-[960px]">
+        <div class="flex flex-col gap-8 w-[280px]">
           <!-- Company logo -->
           <img
             width="150"
@@ -212,15 +212,16 @@
       </nav>
 
       <!-- Main content area -->
-      <div class="flex flex-col flex-1 gap-1">
-        <div id="search-bar"></div>
+      <div class="flex flex-col flex-1 overflow-hidden">
+        <!-- Search bar section -->
+        <div id="search-bar" class="sticky top-0 z-30"></div>
 
-        <main class="flex-1 overflow-y-auto p-2">
+        <main class="flex-1 overflow-y-auto p-1">
           <div class="flex flex-col gap-2">
             <!-- First row - Overview and Best Selling Category -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
               <!-- Overview Card -->
-              <div class="bg-white rounded-2xl p-4 shadow">
+              <div class="bg-white rounded-2xl p-4 h-full shadow">
                 <div class="text-xl font-medium text-[#383e49] mb-4">
                   Overview
                 </div>

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ORDERS Page</title>
+    <!-- External CSS files for styling -->
     <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
     <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
   </head>
 
-  <body>
+  <body class="bg-gray-100">
     <!-- Mobile Sidebar and Overlay -->
     <div
       id="mobile-sidebar"
-      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg"
     >
       <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
         <!-- Company logo -->
@@ -110,14 +112,14 @@
       class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
     ></div>
 
-    <!-- Main container -->
-    <div class="flex gap-1 h-screen">
-      <!-- Desktop Navigation bar -->
+    <!-- Main container for the entire page layout -->
+    <div class="flex gap-1 max-h-screen">
+      <!-- Desktop Navigation bar section -->
       <nav
-        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden bg-white rounded-md justify-between px-6 pb-8 pt-6 shadow-md"
         role="navigation"
       >
-        <div class="flex flex-col gap-8 w-[280px] h-[960px]">
+        <div class="flex flex-col gap-8 w-[280px]">
           <!-- Company logo -->
           <img
             width="150"
@@ -219,325 +221,332 @@
         </ul>
       </nav>
 
-      <!-- Main content area -->
-      <div class="flex flex-col flex-1 gap-1">
-        <div id="search-bar"></div>
+      <!-- Content section containing search bar and main content -->
+      <div class="flex flex-col flex-1 gap-1 overflow-hidden">
+        <!-- Search bar section -->
+        <div id="search-bar" class="sticky top-0 z-30"></div>
 
-        <main class="flex-1 rounded-md overflow-y-auto p-2">
-          <!-- Orders Summary Cards -->
-          <div
-            class="bg-white rounded-lg shadow-md flex flex-col gap-3 px-4 py-5 mb-4"
-          >
-            <h2 class="text-lg text-gray-500 font-semibold">Overall Orders</h2>
-
+        <!-- Main content section -->
+        <main class="flex-1 overflow-y-auto p-1">
+          <!-- Container for all main content -->
+          <div class="flex flex-col gap-2">
+            <!-- Orders Summary Cards -->
             <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm"
+              class="bg-white rounded-lg shadow-md flex flex-col gap-3 px-4 py-5 mb-4"
             >
-              <!-- Total Orders Card -->
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h3 class="text-blue-500 font-medium mb-2">Total Orders</h3>
-                <p class="text-gray-800 font-semibold text-xl mb-1">14</p>
-                <p class="text-gray-500 font-light">Last 7 days</p>
-              </div>
+              <h2 class="text-lg text-gray-500 font-semibold">Overall Orders</h2>
 
-              <!-- Total Received Card -->
-              <div class="bg-orange-50 p-4 rounded-lg">
-                <h3 class="text-orange-400 font-medium mb-2">Total Received</h3>
-                <div class="flex justify-between">
-                  <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">868</p>
-                    <p class="text-gray-500 font-light">Last 7 days</p>
-                  </div>
-                  <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">
-                      ₹25000
-                    </p>
-                    <p class="text-gray-500 font-light">Revenue</p>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm"
+              >
+                <!-- Total Orders Card -->
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h3 class="text-blue-500 font-medium mb-2">Total Orders</h3>
+                  <p class="text-gray-800 font-semibold text-xl mb-1">14</p>
+                  <p class="text-gray-500 font-light">Last 7 days</p>
+                </div>
+
+                <!-- Total Received Card -->
+                <div class="bg-orange-50 p-4 rounded-lg">
+                  <h3 class="text-orange-400 font-medium mb-2">
+                    Total Received
+                  </h3>
+                  <div class="flex justify-between">
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">868</p>
+                      <p class="text-gray-500 font-light">Last 7 days</p>
+                    </div>
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">
+                        ₹25000
+                      </p>
+                      <p class="text-gray-500 font-light">Revenue</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Total Returned Card -->
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h3 class="text-purple-700 font-medium mb-2">Total Returned</h3>
-                <div class="flex justify-between">
-                  <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">5</p>
-                    <p class="text-gray-500 font-light">Last 7 days</p>
-                  </div>
-                  <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">
-                      ₹2500
-                    </p>
-                    <p class="text-gray-500 font-light">Cost</p>
+                <!-- Total Returned Card -->
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h3 class="text-purple-700 font-medium mb-2">Total Returned</h3>
+                  <div class="flex justify-between">
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">5</p>
+                      <p class="text-gray-500 font-light">Last 7 days</p>
+                    </div>
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">
+                        ₹2500
+                      </p>
+                      <p class="text-gray-500 font-light">Cost</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- On the Way Card -->
-              <div class="bg-red-50 p-4 rounded-lg">
-                <h3 class="text-red-500 font-medium mb-2">On the way</h3>
-                <div class="flex justify-between">
-                  <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">12</p>
-                    <p class="text-gray-500 font-light">Ordered</p>
-                  </div>
-                  <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">
-                      ₹2500
-                    </p>
-                    <p class="text-gray-500 font-light">Cost</p>
+                <!-- On the Way Card -->
+                <div class="bg-red-50 p-4 rounded-lg">
+                  <h3 class="text-red-500 font-medium mb-2">On the way</h3>
+                  <div class="flex justify-between">
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">12</p>
+                      <p class="text-gray-500 font-light">Ordered</p>
+                    </div>
+                    <div>
+                      <p class="text-gray-800 font-semibold text-xl mb-1">
+                        ₹2500
+                      </p>
+                      <p class="text-gray-500 font-light">Cost</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Orders Table Section -->
-          <div class="bg-white rounded-lg shadow p-4 lg:p-5 overflow-x-auto">
-            <div
-              class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4"
-            >
-              <h1 class="text-xl font-medium">Orders</h1>
+            <!-- Orders Table Section -->
+            <div class="bg-white rounded-lg shadow p-4 lg:p-5 overflow-x-auto">
               <div
-                class="flex flex-wrap gap-2 text-sm w-full lg:w-auto justify-end"
+                class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4"
               >
-                <button
-                  class="bg-blue-500 open-modal font-light cursor-pointer active:bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded whitespace-nowrap"
+                <h1 class="text-xl font-medium">Orders</h1>
+                <div
+                  class="flex flex-wrap gap-2 text-sm w-full lg:w-auto justify-end"
                 >
-                  Add Order
-                </button>
-                <button
-                  class="bg-white border cursor-pointer font-light text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
-                >
-                  Filters
-                </button>
-                <button
-                  class="bg-white border font-light cursor-pointer text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
-                >
-                  Download all
-                </button>
+                  <button
+                    class="bg-blue-500 open-modal font-light cursor-pointer active:bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded whitespace-nowrap"
+                  >
+                    Add Order
+                  </button>
+                  <button
+                    class="bg-white border cursor-pointer font-light text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
+                  >
+                    Filters
+                  </button>
+                  <button
+                    class="bg-white border font-light cursor-pointer text-gray-500 border-gray-300 px-3 py-2 rounded active:bg-gray-100 hover:bg-gray-100 whitespace-nowrap"
+                  >
+                    Download all
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Order Modal -->
-            <div
-              class="modal fixed z-50 left-0 top-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center"
-              id="orderModal"
-            >
+              <!-- Order Modal -->
               <div
-                class="modal-content bg-white p-6 rounded-lg w-full max-w-md"
+                class="modal fixed z-50 left-0 top-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center"
+                id="orderModal"
               >
-                <div class="text-2xl font-medium mb-4">New Order</div>
-                <div class="space-y-2">
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800">Product Name</label>
-                    <input
-                      type="text"
-                      class="border border-gray-300 px-4 py-2 rounded-md"
-                      placeholder="Enter product name"
-                    />
+                <div
+                  class="modal-content bg-white p-6 rounded-lg w-full max-w-md"
+                >
+                  <div class="text-2xl font-medium mb-4">New Order</div>
+                  <div class="space-y-2">
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800">Product Name</label>
+                      <input
+                        type="text"
+                        class="border border-gray-300 px-4 py-2 rounded-md"
+                        placeholder="Enter product name"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800">Product Id</label>
+                      <input
+                        type="text"
+                        class="border border-gray-300 px-4 py-2 rounded-md"
+                        placeholder="Enter product Id"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800">Category</label>
+                      <select class="border border-gray-300 px-4 py-2 rounded-md">
+                        <option value="" disabled selected>
+                          Select order status
+                        </option>
+                        <option value="delayed">Delayed</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="returned">Returned</option>
+                        <option value="out_for_delivery">Out for Delivery</option>
+                      </select>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800">Order Value</label>
+                      <input
+                        type="text"
+                        class="border border-gray-300 px-4 py-2 rounded-md"
+                        placeholder="Enter order Value"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800">Quantity</label>
+                      <input
+                        type="text"
+                        class="border border-gray-300 px-4 py-2 rounded-md"
+                        placeholder="Enter Product Quantity"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800">Unit</label>
+                      <input
+                        type="text"
+                        class="border border-gray-300 px-4 py-2 rounded-md"
+                        placeholder="Enter product Unit"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800">Buying Price</label>
+                      <input
+                        type="text"
+                        class="border border-gray-300 px-4 py-2 rounded-md"
+                        placeholder="Enter buying price"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-light text-gray-800"
+                        >Date of delivery</label
+                      >
+                      <input
+                        type="date"
+                        class="border border-gray-300 px-4 py-2 rounded-md"
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800">Product Id</label>
-                    <input
-                      type="text"
-                      class="border border-gray-300 px-4 py-2 rounded-md"
-                      placeholder="Enter product Id"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800">Category</label>
-                    <select class="border border-gray-300 px-4 py-2 rounded-md">
-                      <option value="" disabled selected>
-                        Select order status
-                      </option>
-                      <option value="delayed">Delayed</option>
-                      <option value="confirmed">Confirmed</option>
-                      <option value="returned">Returned</option>
-                      <option value="out_for_delivery">Out for Delivery</option>
-                    </select>
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800">Order Value</label>
-                    <input
-                      type="text"
-                      class="border border-gray-300 px-4 py-2 rounded-md"
-                      placeholder="Enter order Value"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800">Quantity</label>
-                    <input
-                      type="text"
-                      class="border border-gray-300 px-4 py-2 rounded-md"
-                      placeholder="Enter Product Quantity"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800">Unit</label>
-                    <input
-                      type="text"
-                      class="border border-gray-300 px-4 py-2 rounded-md"
-                      placeholder="Enter product Unit"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800">Buying Price</label>
-                    <input
-                      type="text"
-                      class="border border-gray-300 px-4 py-2 rounded-md"
-                      placeholder="Enter buying price"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label class="font-light text-gray-800"
-                      >Date of delivery</label
+                  <div class="flex justify-end gap-3 mt-6">
+                    <button
+                      class="close-modal bg-white border border-gray-300 text-gray-500 px-4 py-2 rounded hover:bg-gray-100"
                     >
-                    <input
-                      type="date"
-                      class="border border-gray-300 px-4 py-2 rounded-md"
-                    />
+                      Discard
+                    </button>
+                    <button
+                      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    >
+                      Add Product
+                    </button>
                   </div>
                 </div>
-                <div class="flex justify-end gap-3 mt-6">
-                  <button
-                    class="close-modal bg-white border border-gray-300 text-gray-500 px-4 py-2 rounded hover:bg-gray-100"
-                  >
-                    Discard
-                  </button>
-                  <button
-                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                  >
-                    Add Product
-                  </button>
-                </div>
               </div>
-            </div>
 
-            <div class="overflow-x-auto">
-              <table
-                class="w-full text-left text-xs border-collapse min-w-[800px]"
-              >
-                <thead>
-                  <tr class="border-b text-[14px] border-gray-300">
-                    <th class="py-3 font-light text-gray-500">Products</th>
-                    <th class="py-3 font-light text-gray-500">Order Value</th>
-                    <th class="py-3 font-light text-gray-500">Quantity</th>
-                    <th class="py-3 font-light text-gray-500">Order ID</th>
-                    <th class="py-3 font-light text-gray-500">
-                      Expected Delivery
-                    </th>
-                    <th class="py-3 font-light text-gray-500">Status</th>
-                  </tr>
-                </thead>
-                <tbody class="text-[14px]">
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Maggi</td>
-                    <td class="py-3">₹430</td>
-                    <td class="py-3">43 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">11/12/22</td>
-                    <td class="py-3 text-orange-500">Delayed</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Bru</td>
-                    <td class="py-3">₹257</td>
-                    <td class="py-3">22 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">21/12/22</td>
-                    <td class="py-3 text-blue-500">Confirmed</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Red Bull</td>
-                    <td class="py-3">₹405</td>
-                    <td class="py-3">36 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">5/12/22</td>
-                    <td class="py-3 text-gray-500">Returned</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Bourn Vita</td>
-                    <td class="py-3">₹502</td>
-                    <td class="py-3">14 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">8/12/22</td>
-                    <td class="py-3 text-green-500">Out for Delivery</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Horlicks</td>
-                    <td class="py-3">₹530</td>
-                    <td class="py-3">5 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">9/1/23</td>
-                    <td class="py-3 text-gray-500">Returned</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Harpic</td>
-                    <td class="py-3">₹605</td>
-                    <td class="py-3">10 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">9/1/23</td>
-                    <td class="py-3 text-green-500">Out for Delivery</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Ariel</td>
-                    <td class="py-3">₹408</td>
-                    <td class="py-3">23 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">15/12/23</td>
-                    <td class="py-3 text-orange-500">Delayed</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Scotch Brite</td>
-                    <td class="py-3">₹359</td>
-                    <td class="py-3">43 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">6/6/23</td>
-                    <td class="py-3 text-blue-500">Confirmed</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Coca Cola</td>
-                    <td class="py-3">₹205</td>
-                    <td class="py-3">41 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">11/12/22</td>
-                    <td class="py-3 text-orange-500">Delayed</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Nescafe</td>
-                    <td class="py-3">₹300</td>
-                    <td class="py-3">25 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">20/2/23</td>
-                    <td class="py-3 text-blue-500">Confirmed</td>
-                  </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Dettol</td>
-                    <td class="py-3">₹150</td>
-                    <td class="py-3">30 Packets</td>
-                    <td class="py-3">12345</td>
-                    <td class="py-3">15/3/23</td>
-                    <td class="py-3 text-green-500">Out for Delivery</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <div class="overflow-x-auto">
+                <table
+                  class="w-full text-left text-xs border-collapse min-w-[800px]"
+                >
+                  <thead>
+                    <tr class="border-b text-[14px] border-gray-300">
+                      <th class="py-3 font-light text-gray-500">Products</th>
+                      <th class="py-3 font-light text-gray-500">Order Value</th>
+                      <th class="py-3 font-light text-gray-500">Quantity</th>
+                      <th class="py-3 font-light text-gray-500">Order ID</th>
+                      <th class="py-3 font-light text-gray-500">
+                        Expected Delivery
+                      </th>
+                      <th class="py-3 font-light text-gray-500">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-[14px]">
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Maggi</td>
+                      <td class="py-3">₹430</td>
+                      <td class="py-3">43 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">11/12/22</td>
+                      <td class="py-3 text-orange-500">Delayed</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Bru</td>
+                      <td class="py-3">₹257</td>
+                      <td class="py-3">22 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">21/12/22</td>
+                      <td class="py-3 text-blue-500">Confirmed</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Red Bull</td>
+                      <td class="py-3">₹405</td>
+                      <td class="py-3">36 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">5/12/22</td>
+                      <td class="py-3 text-gray-500">Returned</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Bourn Vita</td>
+                      <td class="py-3">₹502</td>
+                      <td class="py-3">14 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">8/12/22</td>
+                      <td class="py-3 text-green-500">Out for Delivery</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Horlicks</td>
+                      <td class="py-3">₹530</td>
+                      <td class="py-3">5 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">9/1/23</td>
+                      <td class="py-3 text-gray-500">Returned</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Harpic</td>
+                      <td class="py-3">₹605</td>
+                      <td class="py-3">10 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">9/1/23</td>
+                      <td class="py-3 text-green-500">Out for Delivery</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Ariel</td>
+                      <td class="py-3">₹408</td>
+                      <td class="py-3">23 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">15/12/23</td>
+                      <td class="py-3 text-orange-500">Delayed</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Scotch Brite</td>
+                      <td class="py-3">₹359</td>
+                      <td class="py-3">43 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">6/6/23</td>
+                      <td class="py-3 text-blue-500">Confirmed</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Coca Cola</td>
+                      <td class="py-3">₹205</td>
+                      <td class="py-3">41 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">11/12/22</td>
+                      <td class="py-3 text-orange-500">Delayed</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Nescafe</td>
+                      <td class="py-3">₹300</td>
+                      <td class="py-3">25 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">20/2/23</td>
+                      <td class="py-3 text-blue-500">Confirmed</td>
+                    </tr>
+                    <tr class="border-b border-gray-300">
+                      <td class="py-3">Dettol</td>
+                      <td class="py-3">₹150</td>
+                      <td class="py-3">30 Packets</td>
+                      <td class="py-3">12345</td>
+                      <td class="py-3">15/3/23</td>
+                      <td class="py-3 text-green-500">Out for Delivery</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-            <div
-              class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2"
-            >
-              <button
-                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
+              <div
+                class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2"
               >
-                Previous
-              </button>
-              <p class="text-gray-600 font-light">Page 1 of 10</p>
-              <button
-                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
-              >
-                Next
-              </button>
+                <button
+                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
+                >
+                  Previous
+                </button>
+                <p class="text-gray-600 font-light">Page 1 of 10</p>
+                <button
+                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </main>

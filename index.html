@@ -9,6 +9,7 @@
     <!-- External CSS files for styling -->
     <link rel="stylesheet" href="./CSS/output.css" />
     <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <body class="bg-gray-100">
@@ -598,11 +599,7 @@
                   class="flex flex-row justify-center w-full pt-6 pb-4"
                   dir="ltr"
                 >
-                  <img
-                    src="/MinorProject/graphs/Vector.svg"
-                    alt="Sales & Purchase Graph"
-                    class="w-full"
-                  />
+                  <canvas id="acquisitions"></canvas>
                 </div>
               </div>
 
@@ -841,6 +838,76 @@
         .catch((error) => {
           console.error("Error loading search bar:", error);
         });
+
+      (function () {
+        const data = [
+          { month: "Jan", Purchase: 55000, Sales: 48000 },
+          { month: "Feb", Purchase: 58000, Sales: 46000 },
+          { month: "Mar", Purchase: 41000, Sales: 50000 },
+          { month: "Apr", Purchase: 35000, Sales: 40000 },
+          { month: "May", Purchase: 40000, Sales: 43000 },
+          { month: "Jun", Purchase: 28000, Sales: 39000 },
+          { month: "Jul", Purchase: 54000, Sales: 30000 },
+          { month: "Aug", Purchase: 34000, Sales: 25000 },
+          { month: "Sep", Purchase: 44000, Sales: 51000 },
+          { month: "Oct", Purchase: 34000, Sales: 18000 },
+          { month: "Nov", Purchase: 34000, Sales: 22000 },
+          { month: "Dec", Purchase: 34000, Sales: 35000 },
+        ];
+
+        new Chart(document.getElementById("acquisitions"), {
+          type: "bar",
+          data: {
+            labels: data.map((row) => row.month),
+            datasets: [
+              {
+                barThickness: 20,
+                label: "Purchase",
+                borderRadius: 10,
+                data: data.map((row) => row.Purchase),
+                backgroundColor: "rgba(54, 162, 235, 0.6)", // Blue
+                borderColor: "rgba(54, 162, 235, 1)",
+                borderWidth: 1,
+                innerWidth: 1,
+              },
+
+              {
+                barThickness: 20,
+                label: "Sales",
+                borderRadius: 10,
+                data: data.map((row) => row.Sales),
+                backgroundColor: "rgba(255, 99, 132, 0.6)", // Red
+                borderColor: "rgba(255, 99, 132, 1)",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                min: 10000,
+                grid: {
+                  display: false,
+                },
+                max: 60000,
+                ticks: {
+                  stepSize: 10000,
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: "circle",
+                },
+              },
+            },
+          },
+        });
+      })();
     </script>
   </body>
 </html>

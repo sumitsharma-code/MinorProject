@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
   </head>
 
-  <body>
+  <body class="bg-gray-100">
     <!-- Mobile Sidebar and Overlay -->
     <div
       id="mobile-sidebar"
-      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg"
     >
       <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
         <!-- Company logo -->
@@ -114,10 +114,10 @@
     <div class="flex gap-1 h-screen">
       <!-- Desktop Navigation bar -->
       <nav
-        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white"
+        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white shadow-md"
         role="navigation"
       >
-        <div class="flex flex-col gap-8 w-[280px] h-[960px]">
+        <div class="flex flex-col gap-8 w-[280px]">
           <!-- Company logo -->
           <img
             width="150"
@@ -217,12 +217,15 @@
       </nav>
 
       <!-- Main content area -->
-      <div class="flex flex-col flex-1 gap-1">
-        <div id="search-bar"></div>
+      <div class="flex flex-col flex-1 overflow-hidden">
+        <!-- Search bar section -->
+        <div id="search-bar" class="sticky top-0 z-30"></div>
 
-        <main class="flex-1 rounded-md overflow-y-auto p-2">
+        <main class="flex-1 overflow-y-auto max-h-screen p-1">
           <!-- Suppliers Table Section -->
-          <div class="bg-white rounded-lg shadow p-4 lg:p-5 overflow-x-auto">
+          <div
+            class="bg-white flex flex-col h-full lg:h-fit justify-between rounded-lg shadow p-4 lg:p-5 overflow-x-auto"
+          >
             <div
               class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4"
             >
@@ -265,6 +268,14 @@
                   </tr>
                 </thead>
                 <tbody class="text-[14px]">
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Satyam Upadhyay</td>
+                    <td class="py-3">I Phone 60 Pro Max</td>
+                    <td class="py-3">9112233445</td>
+                    <td class="py-3">nikhildoproject@gmail.com</td>
+                    <td class="py-3 text-green-600">Taking return</td>
+                    <td class="py-3">-</td>
+                  </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Satyam Upadhyay</td>
                     <td class="py-3">I Phone 60 Pro Max</td>
@@ -344,6 +355,30 @@
                     <td class="py-3">nikhildoproject@gmail.com</td>
                     <td class="py-3 text-green-600">Taking return</td>
                     <td class="py-3">-</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Satyam Upadhyay</td>
+                    <td class="py-3">I Phone 60 Pro Max</td>
+                    <td class="py-3">9112233445</td>
+                    <td class="py-3">nikhildoproject@gmail.com</td>
+                    <td class="py-3 text-green-600">Taking return</td>
+                    <td class="py-3">7</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Satyam Upadhyay</td>
+                    <td class="py-3">I Phone 60 Pro Max</td>
+                    <td class="py-3">9112233445</td>
+                    <td class="py-3">nikhildoproject@gmail.com</td>
+                    <td class="py-3 text-green-600">Taking return</td>
+                    <td class="py-3">7</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-3">Satyam Upadhyay</td>
+                    <td class="py-3">I Phone 60 Pro Max</td>
+                    <td class="py-3">9112233445</td>
+                    <td class="py-3">nikhildoproject@gmail.com</td>
+                    <td class="py-3 text-green-600">Taking return</td>
+                    <td class="py-3">7</td>
                   </tr>
                   <tr class="border-b border-gray-300">
                     <td class="py-3">Satyam Upadhyay</td>

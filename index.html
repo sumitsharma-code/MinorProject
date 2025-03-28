@@ -613,8 +613,12 @@
                   </div>
                 </div>
 
-                <div class="flex flex-row justify-center w-full" dir="ltr">
+                <div
+                  class="flex flex-col justify-center w-full h-full"
+                  dir="ltr"
+                >
                   <canvas id="graph2"></canvas>
+                  <canvas id="graph3"></canvas>
                 </div>
               </div>
             </div>
@@ -852,7 +856,7 @@
         ];
 
         const data2 = [
-          { month: "Jan", Ordered: 3800, Delivered: 3800 },
+          { month: "Jan", Ordered: 3800, Delivered: 2000 },
           { month: "Feb", Ordered: 1500, Delivered: 2200 },
           { month: "Mar", Ordered: 2500, Delivered: 3100 },
           { month: "Apr", Ordered: 2100, Delivered: 2800 },
@@ -875,6 +879,38 @@
                 fill: true,
                 pointRadius: 0,
               },
+            ],
+          },
+          options: {
+            // responsive: true,
+            scales: {
+              y: {
+                min: 1000,
+                grid: {
+                  display: false,
+                },
+                max: 4000,
+                ticks: {
+                  stepSize: 1000,
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: "circle",
+                },
+              },
+            },
+          },
+        });
+        new Chart(document.getElementById("graph3"), {
+          type: "line",
+          data: {
+            labels: data2.map((row) => row.month),
+            datasets: [
               {
                 tension: 0.4,
                 label: "Delivered",

@@ -19,7 +19,7 @@ include("/xampp/htdocs/MinorProject/php/logincheck.php");
             <div class="w-32 h-32 bg-blue-400 rounded-lg flex items-center justify-center">
                 <span class="text-white text-3xl font-bold">LOGO</span>
             </div>
-            <h1 class="text-white text-3xl font-semibold mt-4">TEMPNAME</h1>
+            <h1 class="text-white text-3xl font-semibold mt-4">INVENTRA</h1>
         </div>
 
         <!-- Right Section -->

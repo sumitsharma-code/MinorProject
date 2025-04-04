@@ -17,9 +17,9 @@ include("/xampp/htdocs/MinorProject/php/connection.php");
         <!-- Left Section -->
         <div class="w-1/2 bg-blue-500 flex flex-col items-center justify-center p-10">
             <div class="w-32 h-32 bg-blue-400 rounded-lg flex items-center justify-center">
-                <span class="text-white text-3xl font-bold">LOGO</span>
+                <div class="text-white text-3xl font-bold"><img src="/MinorProject/IMG/logo/logo.png" alt="" srcset=""></div>
             </div>
-            <h1 class="text-white text-3xl font-semibold mt-4">TEMPNAME</h1>
+            <h1 class="text-white text-3xl font-semibold mt-4">INVENTRA</h1>
         </div>
 
         <!-- Right Section -->

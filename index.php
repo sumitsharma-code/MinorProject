@@ -35,7 +35,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
         <ul class="flex flex-col gap-3 px-4 py-2">
           <li class="py-4">
             <a
-              href="/MinorProject/index.html"
+              href="/MinorProject/index.php"
               class="flex gap-4 text-md items-center"
             >
               <img
@@ -106,7 +106,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md">
+            <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -141,7 +141,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
           <ul class="flex flex-col gap-3 px-4 py-2">
             <li class="py-4">
               <a
-                href="/MinorProject/index.html"
+                href="/MinorProject/index.php"
                 class="flex gap-4 text-md items-center"
               >
                 <img
@@ -222,7 +222,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
             </a>
           </li>
           <li class="py-4">
-            <a href="#" class="flex gap-4 text-md">
+            <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
               Log Out
             </a>
@@ -271,7 +271,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
                           <div class="text-[#5D6679] font-semibold">
-                            ₹&nbsp;832
+                            ₹&nbsp;0
                           </div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
@@ -294,7 +294,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
                           <div class="text-[#5D6679] font-semibold">
-                            ₹&nbsp;18,300
+                            ₹&nbsp;0
                           </div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
@@ -317,7 +317,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
                           <div class="text-[#5D6679] font-semibold">
-                            ₹&nbsp;868
+                            ₹&nbsp;0
                           </div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
@@ -340,7 +340,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
                           <div class="text-[#5D6679] font-semibold">
-                            ₹&nbsp;17,432
+                            ₹&nbsp;0
                           </div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
@@ -381,7 +381,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           />
                         </div>
                         <div class="flex flex-col items-center">
-                          <div class="text-[#5D6679] font-semibold">832</div>
+                          <div class="text-[#5D6679] font-semibold">0</div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base text-center"
                           >
@@ -400,7 +400,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           />
                         </div>
                         <div class="flex flex-col items-center">
-                          <div class="text-[#5D6679] font-semibold">300</div>
+                          <div class="text-[#5D6679] font-semibold">0</div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base text-center"
                           >
@@ -445,7 +445,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                         <div
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
-                          <div class="text-[#5D6679] font-semibold">82</div>
+                          <div class="text-[#5D6679] font-semibold">0</div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
                           >
@@ -467,7 +467,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
                           <div class="text-[#5D6679] font-semibold">
-                            ₹&nbsp;18,300
+                            ₹&nbsp;0
                           </div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
@@ -490,7 +490,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
                           <div class="text-[#5D6679] font-semibold">
-                            ₹&nbsp;868
+                            ₹&nbsp;0
                           </div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
@@ -513,7 +513,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           class="flex flex-col items-center md:flex-row md:gap-2"
                         >
                           <div class="text-[#5D6679] font-semibold">
-                            ₹&nbsp;17,432
+                            ₹&nbsp;0
                           </div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base"
@@ -555,7 +555,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           />
                         </div>
                         <div class="flex flex-col items-center">
-                          <div class="text-[#5D6679] font-semibold">832</div>
+                          <div class="text-[#5D6679] font-semibold">0</div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base text-center"
                           >
@@ -574,7 +574,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                           />
                         </div>
                         <div class="flex flex-col items-center">
-                          <div class="text-[#5D6679] font-semibold">300</div>
+                          <div class="text-[#5D6679] font-semibold">0</div>
                           <div
                             class="text-[#667085] font-medium text-sm md:text-base text-center"
                           >

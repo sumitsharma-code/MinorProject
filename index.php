@@ -1,3 +1,7 @@
+<?php
+include("/xampp/htdocs/MinorProject/php/protection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

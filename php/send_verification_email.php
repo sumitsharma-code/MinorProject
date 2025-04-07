@@ -1,29 +1,61 @@
 <?php
 session_start();
-include '../connection.php';
 
-// Assuming the user is logged in and their email is stored in session
-if (!isset($_SESSION['email'])) {
-    die("User not logged in.");
+if (!isset($_SESSION['user_id'])) {
+    echo "User not logged in.";
+    exit();
 }
 
-$email = $_SESSION['email'];
-$token = bin2hex(random_bytes(32)); // Generate a secure token
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "inventorydb";
 
-// Save token to DB
-$sql = "UPDATE users SET reset_token = '$token', token_expiry = DATE_ADD(NOW(), INTERVAL 15 MINUTE) WHERE email = '$email'";
-$conn->query($sql);
+// Connect to database
+$conn = new mysqli($host, $user, $pass, $db, 4306);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-// Send email
-$resetLink = "/MinorProject/php/reset_password.php?token=$token";
+$userId = $_SESSION['user_id'];
 
-$subject = "Reset Your Password";
-$message = "Click the link below to reset your password:\n\n$resetLink\n\nThis link is valid for 15 minutes.";
-$headers = "From: no-reply@yourdomain.com";
+// Step 1: Fetch user's email from the `user` table
+$stmt = $conn->prepare("SELECT email FROM user WHERE id = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if (mail($email, $subject, $message, $headers)) {
-    echo "Verification email sent!";
+if ($result->num_rows === 0) {
+    echo "User not found.";
+    exit();
+}
+
+$row = $result->fetch_assoc();
+$userEmail = $row['email'];
+
+// Step 2: Generate token and expiry
+$token = bin2hex(random_bytes(16));
+$expiry = date('Y-m-d H:i:s', strtotime('+1 hour'));
+
+// Step 3: Store token in database
+$stmt = $conn->prepare("UPDATE user SET reset_token = ?, reset_token_expiry = ? WHERE id = ?");
+$stmt->bind_param("ssi", $token, $expiry, $userId);
+$stmt->execute();
+
+if ($stmt->affected_rows > 0) {
+    $subject = "Password Reset Request";
+    $resetLink = "http://localhost/MinorProject/php/reset_password.php?token=$token";
+    $message = "Hi,\n\nClick the link below to reset your password:\n$resetLink\n\nThis link will expire in 1 hour.";
+    $headers = "From: sumitsha711@gmail.com";
+
+    if (mail($userEmail, $subject, $message, $headers)) {
+        echo "✅ Verification email sent to <strong>$userEmail</strong>.";
+    } else {
+        echo "❌ Failed to send email.";
+    }
 } else {
-    echo "Failed to send email.";
+    echo "❌ Could not update reset token in the database.";
 }
+
+$conn->close();
 ?>

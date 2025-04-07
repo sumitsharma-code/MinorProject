@@ -1,55 +1,50 @@
 <?php
 session_start();
 
-// Database connection
 $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "inventorydb";
 
-$conn = new mysqli($host, $user, $pass, $db, 4306); // Use 3306 if 4306 doesn't work
-
+// Connect to database
+$conn = new mysqli($host, $user, $pass, $db, 4306);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+// Handle POST request from login form
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-    // Get and validate input
-    $email = trim($_POST["email"]);
-    $password = trim($_POST["password"]); // Keep raw password — do NOT hash it again here!
-
-    if (empty($email) || empty($password)) {
-        die("Error: Please enter both email and password.");
-    }
-
-    // Fetch user by email
-    $stmt = $conn->prepare("SELECT username, password FROM user WHERE email = ?");
+    // Prepare SQL statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // If user found
+    // Check if a user with this email exists
     if ($result->num_rows === 1) {
         $row = $result->fetch_assoc();
 
-        // ✅ Correct password verification
-        if (password_verify($password, $row["password"])) {
-            $_SESSION["username"] = $row["username"];
+        // Verify password
+        if (password_verify($password, $row['password'])) {
+            // ✅ Store user ID in session
+            $_SESSION['user_id'] = $row['id'];
 
-            // Redirect to dashboard or home page
-            header("Location: /MinorProject/index.php");
+            // (Optional) Store more info if needed
+            $_SESSION['username'] = $row['username']; // only if you want it
+
+            // Redirect to dashboard/homepage
+            header("Location: ../index.php");
             exit();
         } else {
-            echo "Error: Incorrect password!";
+            echo "❌ Incorrect password.";
         }
     } else {
-        echo "Error: Email not registered!";
+        echo "❌ No user found with this email.";
     }
 
     $stmt->close();
+    $conn->close();
 }
-
-$conn->close();
-?>

@@ -1,27 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SUPPLIERS Page</title>
-    <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
-    <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
-  </head>
 
-  <body class="bg-gray-100">
-    <!-- Mobile Sidebar and Overlay -->
-    <div
-      id="mobile-sidebar"
-      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg"
-    >
-      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPPLIERS Page</title>
+  <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
+  <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
+</head>
+
+<body class="bg-gray-100">
+  <!-- Mobile Sidebar and Overlay -->
+  <div id="mobile-sidebar"
+    class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg">
+    <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+      <!-- Company logo -->
+      <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logo.svg" alt="Company Logo" />
+
+      <!-- Main navigation links -->
+      <ul class="flex flex-col gap-3 px-4 py-2">
+        <li class="py-4">
+          <a href="/MinorProject/index.php" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/DashIcon.svg" alt="Dashboard Icon" />
+            Dashboard
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Inventory.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+            Inventory
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Reports.html" class="flex gap-4 text-md">
+            <img width="24" src="/MinorProject/IMG/ReportN.svg" alt="Reports Icon" />
+            Reports
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Suppliers.html" class="flex gap-4 text-md items-center">
+            <img src="/MinorProject/Animation/suppliers.gif" class="w-7 h-7" alt="Suppliers Icon" />
+            <div class="text-[#1570EF]">Suppliers</div>
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Orders.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+            Orders
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
+            Manage Store
+          </a>
+        </li>
+      </ul>
+
+      <!-- Additional navigation links -->
+      <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Settings.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+            Settings
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay for when mobile sidebar is open -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"></div>
+
+  <!-- Main container -->
+  <div class="flex gap-1 h-screen">
+    <!-- Desktop Navigation bar -->
+    <nav class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white shadow-md" role="navigation">
+      <div class="flex flex-col gap-8 w-[280px]">
         <!-- Company logo -->
-        <img
-          width="150"
-          class="px-4 py-1"
-          src="/MinorProject/IMG/Logo.svg"
-          alt="Company Logo"
-        />
+        <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logo.svg" alt="Company Logo" />
 
         <!-- Main navigation links -->
         <ul class="flex flex-col gap-3 px-4 py-2">
@@ -32,45 +95,25 @@
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Inventory.html"
-              class="flex gap-4 text-md"
-            >
+            <a href="/MinorProject/Pages/Inventory.html" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
               Inventory
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Reports.html"
-              class="flex gap-4 text-md"
-            >
-              <img
-                width="24"
-                src="/MinorProject/IMG/ReportN.svg"
-                alt="Reports Icon"
-              />
+            <a href="/MinorProject/Pages/Reports.html" class="flex gap-4 text-md">
+              <img width="24" src="/MinorProject/IMG/ReportN.svg" alt="Reports Icon" />
               Reports
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Suppliers.html"
-              class="flex gap-4 text-md items-center"
-            >
-              <img
-                src="/MinorProject/Animation/suppliers.gif"
-                class="w-7 h-7"
-                alt="Suppliers Icon"
-              />
+            <a href="/MinorProject/Pages/Suppliers.html" class="flex gap-4 text-md items-center">
+              <img src="/MinorProject/Animation/suppliers.gif" class="w-7 h-7" alt="Suppliers Icon" />
               <div class="text-[#1570EF]">Suppliers</div>
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Orders.html"
-              class="flex gap-4 text-md"
-            >
+            <a href="/MinorProject/Pages/Orders.html" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
               Orders
             </a>
@@ -82,239 +125,155 @@
             </a>
           </li>
         </ul>
-
-        <!-- Additional navigation links -->
-        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
-          <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Settings.html"
-              class="flex gap-4 text-md"
-            >
-              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
-              Settings
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
-              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
-              Log Out
-            </a>
-          </li>
-        </ul>
       </div>
-    </div>
 
-    <!-- Overlay for when mobile sidebar is open -->
-    <div
-      id="sidebar-overlay"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
-    ></div>
+      <!-- Additional navigation links -->
+      <ul class="flex flex-col gap-3 px-4 py-2">
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Settings.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+            Settings
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    <!-- Main container -->
-    <div class="flex gap-1 h-screen">
-      <!-- Desktop Navigation bar -->
-      <nav
-        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white shadow-md"
-        role="navigation"
-      >
-        <div class="flex flex-col gap-8 w-[280px]">
-          <!-- Company logo -->
-          <img
-            width="150"
-            class="px-4 py-1"
-            src="/MinorProject/IMG/Logo.svg"
-            alt="Company Logo"
-          />
+    <!-- Main content area -->
+    <div class="flex flex-col flex-1 overflow-hidden">
+      <!-- Search bar section -->
+      <div id="search-bar" class="sticky top-0 z-30"></div>
 
-          <!-- Main navigation links -->
-          <ul class="flex flex-col gap-3 px-4 py-2">
-            <li class="py-4">
-              <a href="/MinorProject/index.php" class="flex gap-4 text-md">
-                <img
-                  src="/MinorProject/IMG/DashIcon.svg"
-                  alt="Dashboard Icon"
-                />
-                Dashboard
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Inventory.html"
-                class="flex gap-4 text-md"
-              >
-                <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
-                Inventory
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Reports.html"
-                class="flex gap-4 text-md"
-              >
-                <img
-                  width="24"
-                  src="/MinorProject/IMG/ReportN.svg"
-                  alt="Reports Icon"
-                />
-                Reports
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Suppliers.html"
-                class="flex gap-4 text-md items-center"
-              >
-                <img
-                  src="/MinorProject/Animation/suppliers.gif"
-                  class="w-7 h-7"
-                  alt="Suppliers Icon"
-                />
-                <div class="text-[#1570EF]">Suppliers</div>
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Orders.html"
-                class="flex gap-4 text-md"
-              >
-                <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
-                Orders
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Store.html"
-                class="flex gap-4 text-md"
-              >
-                <img
-                  src="/MinorProject/IMG/Store.svg"
-                  alt="Manage Store Icon"
-                />
-                Manage Store
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Additional navigation links -->
-        <ul class="flex flex-col gap-3 px-4 py-2">
-          <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Settings.html"
-              class="flex gap-4 text-md"
-            >
-              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
-              Settings
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
-              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
-              Log Out
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Main content area -->
-      <div class="flex flex-col flex-1 overflow-hidden">
-        <!-- Search bar section -->
-        <div id="search-bar" class="sticky top-0 z-30"></div>
-
-        <main class="flex-1 overflow-y-auto max-h-screen p-1">
-          <!-- Suppliers Table Section -->
-          <div
-            class="bg-white flex flex-col h-full lg:h-fit justify-between rounded-lg shadow p-4 lg:p-5 overflow-x-auto"
-          >
-            <div
-              class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4"
-            >
-              <h1 class="text-xl font-medium">Suppliers</h1>
-              <div
-                class="flex flex-wrap gap-2 text-sm w-full lg:w-auto justify-end"
-              >
-                <button
-                  class="bg-blue-500 font-light cursor-pointer hover:bg-blue-700 active:bg-blue-600 text-white px-3 py-2 rounded whitespace-nowrap"
-                >
-                  Add Supplier
-                </button>
-              </div>
-            </div>
-
-            <div class="overflow-x-auto">
-              <table
-                class="w-full text-left text-xs border-collapse min-w-[800px]"
-              >
-                <thead>
-                  <tr class="border-b text-[14px] border-gray-300">
-                    <th class="py-3 font-light text-gray-500">Supplier Name</th>
-                    <th class="py-3 font-light text-gray-500">Product</th>
-                    <th class="py-3 font-light text-gray-500">
-                      Contact Number
-                    </th>
-                    <th class="py-3 font-light text-gray-500">Email</th>
-                    <th class="py-3 font-light text-gray-500">Type</th>
-                  </tr>
-                </thead>
-                <tbody class="text-[14px]">
-                  <tr class="border-b border-gray-300">
-                    <td class="py-3">Satyam Upadhyay</td>
-                    <td class="py-3">I Phone 60 Pro Max</td>
-                    <td class="py-3">9112233445</td>
-                    <td class="py-3">nikhildoproject@gmail.com</td>
-                    <td class="py-3 text-green-600">Taking return</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div
-              class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2"
-            >
-              <button
-                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
-              >
-                Previous
-              </button>
-              <p class="text-gray-600 font-light">Page 1 of 10</p>
-              <button
-                class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
-              >
-                Next
+      <main class="flex-1 overflow-y-auto max-h-screen p-1">
+        <!-- Suppliers Table Section -->
+        <div
+          class="bg-white flex flex-col h-full lg:h-fit justify-between rounded-lg shadow p-4 lg:p-5 overflow-x-auto">
+          <div class="flex flex-col lg:flex-row justify-between items-center mb-3 gap-4">
+            <h1 class="text-xl font-medium">Suppliers</h1>
+            <div class="flex flex-wrap gap-2 text-sm w-full lg:w-auto justify-end">
+              <button onclick="toggleSupplierModal()"
+                class="bg-blue-500 font-light cursor-pointer hover:bg-blue-700 active:bg-blue-600 text-white px-3 py-2 rounded whitespace-nowrap">
+                Add Supplier
               </button>
             </div>
           </div>
-        </main>
-      </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse min-w-[800px]">
+              <thead>
+                <tr class="border-b text-[14px] border-gray-300">
+                  <th class="py-3 font-light text-gray-500">Supplier Name</th>
+                  <th class="py-3 font-light text-gray-500">Product</th>
+                  <th class="py-3 font-light text-gray-500">
+                    Contact Number
+                  </th>
+                  <th class="py-3 font-light text-gray-500">Email</th>
+                  <th class="py-3 font-light text-gray-500">Type</th>
+                </tr>
+              </thead>
+              <tbody class="text-[14px]">
+                <tr class="border-b border-gray-300">
+                  <td class="py-3">Satyam Upadhyay</td>
+                  <td class="py-3">I Phone 60 Pro Max</td>
+                  <td class="py-3">9112233445</td>
+                  <td class="py-3">nikhildoproject@gmail.com</td>
+                  <td class="py-3 text-green-600">Taking return</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2">
+            <button
+              class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap">
+              Previous
+            </button>
+            <p class="text-gray-600 font-light">Page 1 of 10</p>
+            <button
+              class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap">
+              Next
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
+  </div>
 
-    <script>
-      // Load search bar
-      fetch("/MinorProject/Components/Searchbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("search-bar").innerHTML = data;
 
-          // Add event listener after search bar is loaded
-          document
-            .getElementById("hamburger-menu")
-            ?.addEventListener("click", function () {
-              const sidebar = document.getElementById("mobile-sidebar");
-              const overlay = document.getElementById("sidebar-overlay");
+  <!-- Overlay Modal -->
+  <div id="supplierModal"
+    class="fixed inset-0 bg-black/30 backdrop-blur-md flex justify-center items-center hidden z-50 transition duration-300 ease-in-out border"
+    onclick="outsideClick(event)">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative" onclick="event.stopPropagation()">
+      <button onclick="toggleSupplierModal()"
+        class="absolute top-2 right-3 text-xl font-bold text-gray-500 hover:text-black">&times;</button>
+      <h2 class="text-xl font-semibold mb-4">Add New Supplier</h2>
 
-              sidebar.classList.toggle("-translate-x-full");
-              overlay.classList.toggle("hidden");
+      <form action="/MinorProject/php/add_supplier.php" method="POST" class="space-y-3">
+        <input type="text" name="supplier_name" placeholder="Supplier Name" required class="w-full border p-2 rounded">
+        <input type="text" name="product" placeholder="Product" required class="w-full border p-2 rounded">
+        <input type="text" name="contact_number" placeholder="Contact Number" required
+          class="w-full border p-2 rounded">
+        <input type="email" name="email" placeholder="Email" required class="w-full border p-2 rounded">
 
-              // Close sidebar when clicking on overlay
-              overlay.addEventListener("click", function () {
-                sidebar.classList.add("-translate-x-full");
-                overlay.classList.add("hidden");
-              });
+        <select name="type" required class="w-full border p-2 rounded">
+          <option value="">Select Return Policy</option>
+          <option value="Taking return">Taking return</option>
+          <option value="No return">No return</option>
+        </select>
+
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          Add Supplier
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+    // Load search bar
+    function toggleSupplierModal() {
+      const modal = document.getElementById("supplierModal");
+      modal.classList.toggle("hidden");
+    }
+
+    function outsideClick(event) {
+      const modal = document.getElementById("supplierModal");
+      if (event.target === modal) {
+        toggleSupplierModal();
+      }
+    }
+    fetch("/MinorProject/Components/Searchbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("search-bar").innerHTML = data;
+
+        // Add event listener after search bar is loaded
+        document
+          .getElementById("hamburger-menu")
+          ?.addEventListener("click", function () {
+            const sidebar = document.getElementById("mobile-sidebar");
+            const overlay = document.getElementById("sidebar-overlay");
+
+            sidebar.classList.toggle("-translate-x-full");
+            overlay.classList.toggle("hidden");
+
+            // Close sidebar when clicking on overlay
+            overlay.addEventListener("click", function () {
+              sidebar.classList.add("-translate-x-full");
+              overlay.classList.add("hidden");
             });
-        })
-        .catch((error) => {
-          console.error("Error loading search bar:", error);
-        });
-    </script>
-  </body>
+          });
+      })
+      .catch((error) => {
+        console.error("Error loading search bar:", error);
+      });
+  </script>
+</body>
+
 </html>

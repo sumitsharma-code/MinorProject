@@ -230,10 +230,67 @@
             >
               <h1 class="text-2xl font-normal">Manage Store</h1>
               <button
-                class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 active:bg-blue-700 transition-colors"
+                class="bg-blue-600 open-modal text-white px-6 py-2 rounded-lg hover:bg-blue-500 active:bg-blue-700 transition-colors"
               >
                 Add Store
               </button>
+            </div>
+
+            <div
+              class="modal fixed z-50 left-0 top-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center"
+              id="orderModal"
+            >
+              <div
+                class="modal-content bg-white p-6 rounded-lg w-full max-w-md"
+              >
+                <div class="text-2xl font-medium mb-4">New Order</div>
+                <div class="space-y-2">
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Product Name</label>
+                    <input
+                      type="text"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
+                      placeholder="Enter product name"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Product Id</label>
+                    <input
+                      type="text"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
+                      placeholder="Enter product Id"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Order Value</label>
+                    <input
+                      type="text"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
+                      placeholder="Enter order Value"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <label class="font-light text-gray-800">Quantity</label>
+                    <input
+                      type="text"
+                      class="border border-gray-300 px-4 py-2 rounded-md"
+                      placeholder="Enter Product Quantity"
+                    />
+                  </div>
+                </div>
+                <div class="flex justify-end gap-3 mt-6">
+                  <button
+                    class="close-modal bg-white border border-gray-300 text-gray-500 px-4 py-2 rounded hover:bg-gray-100"
+                  >
+                    Discard
+                  </button>
+                  <button
+                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                  >
+                    Add Product
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div class="p-4 lg:p-8 lg:pr-24 space-y-6">
@@ -258,7 +315,7 @@
                     </div>
                   </div>
                   <button
-                    class="text-blue-400 hover:bg-gray-100 active:bg-white px-4 py-2 rounded-lg border-2 border-gray-200 self-end md:self-center"
+                    class="px-4 py-1 text-sm text-white rounded-lg hover:bg-[#0fa370] transition"
                   >
                     Edit
                   </button>
@@ -352,6 +409,26 @@
         .catch((error) => {
           console.error("Error loading search bar:", error);
         });
+
+      const modal = document.getElementById("orderModal");
+      const openModalBtn = document.querySelector(".open-modal");
+      const closeModalBtn = document.querySelector(".close-modal");
+
+      openModalBtn.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
+
+      // Close modal
+      closeModalBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // Close modal when clicking outside modal content
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>

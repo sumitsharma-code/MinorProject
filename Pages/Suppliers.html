@@ -174,9 +174,10 @@
                   </th>
                   <th class="py-3 font-light text-gray-500">Email</th>
                   <th class="py-3 font-light text-gray-500">Type</th>
+                  <th class="py-3">Action</th>
                 </tr>
               </thead>
-              <tbody class="text-[14px]">
+              <tbody id="supplierBody" class="text-[14px]">
                 <tr class="border-b border-gray-300">
                   <td class="py-3">Satyam Upadhyay</td>
                   <td class="py-3">I Phone 60 Pro Max</td>
@@ -233,9 +234,80 @@
       </form>
     </div>
   </div>
+  <!-- Delete Confirmation Overlay -->
+  <div id="deleteModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center hidden z-50"
+    onclick="hideDeleteModal()">
+    <div class="bg-white p-6 rounded shadow-lg w-full max-w-sm text-center" onclick="event.stopPropagation()">
+      <h2 class="text-xl font-semibold mb-4">Are you sure?</h2>
+      <p class="mb-6">Do you really want to delete this supplier?</p>
+      <div class="flex justify-center gap-4">
+        <button onclick="hideDeleteModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancel</button>
+        <button id="confirmDeleteBtn" class="px-4 py-2 bg-red-600 rounded hover:bg-gray-400">Delete</button>
+      </div>
+    </div>
+  </div>
 
 
   <script>
+    let supplierToDelete = null;
+
+    function confirmDelete(id) {
+      supplierToDelete = id;
+      document.getElementById("deleteModal").classList.remove("hidden");
+    }
+
+    function hideDeleteModal() {
+      supplierToDelete = null;
+      document.getElementById("deleteModal").classList.add("hidden");
+    }
+
+    document.getElementById("confirmDeleteBtn").addEventListener("click", () => {
+      if (supplierToDelete !== null) {
+        fetch("/MinorProject/php/delete_supplier.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `id=${supplierToDelete}`
+        })
+          .then(res => res.text())
+          .then(res => {
+            console.log(res);
+            hideDeleteModal();
+            loadSuppliers(); // refresh the table
+          })
+          .catch(err => {
+            console.error("Delete failed:", err);
+            hideDeleteModal();
+          });
+      }
+    });
+    function loadSuppliers() {
+      fetch("/MinorProject/php/fetch_suppliers.php")
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.getElementById("supplierBody");
+          tbody.innerHTML = ""; // Clear existing rows
+
+          data.forEach(supplier => {
+            const colorClass = supplier.type === "Taking return" ? "text-green-600" : "text-red-600";
+            const row = `
+    <tr class="border-b border-gray-300">
+      <td class="py-3">${supplier.supplier_name}</td>
+      <td class="py-3">${supplier.product}</td>
+      <td class="py-3">${supplier.contact_number}</td>
+      <td class="py-3">${supplier.email}</td>
+      <td class="py-3 ${colorClass}">${supplier.type}</td>
+      <td class="py-3 text-center">
+        <button onclick="confirmDelete(${supplier.id})" class="text-red-500 hover:underline">🗑 Delete</button>
+      </td>
+    </tr>`;
+            tbody.innerHTML += row;
+          });
+
+        })
+        .catch(err => console.error("Failed to load suppliers:", err));
+    }
+
+    window.onload = loadSuppliers;
     // Load search bar
     function toggleSupplierModal() {
       const modal = document.getElementById("supplierModal");

@@ -209,7 +209,7 @@
           </div>
 
 
-          <div class="p-4 lg:p-8 lg:pr-24 space-y-6">
+          <div id="storeContainer" class="p-4 lg:p-8 lg:pr-24 space-y-6">
             <!-- Store Card 1 -->
             <div class="flex flex-col md:flex-row h-auto md:h-[150px]">
               <div
@@ -293,6 +293,42 @@
 
 
   <script>
+    function loadStores() {
+    fetch("/MinorProject/php/fetch_stores.php")
+      .then((res) => res.json())
+      .then((data) => {
+        const container = document.getElementById("storeContainer");
+        container.innerHTML = ""; // Clear previous content
+
+        data.forEach((store) => {
+          const card = `
+          <div class="flex flex-col md:flex-row h-auto md:h-[150px]">
+            <div class="w-full md:w-1/5 rounded-t-lg md:rounded-l-lg md:rounded-tr-none flex items-center justify-center bg-gray-200 font-semibold text-gray-500 text-lg md:text-xl p-4">
+              ${store.branch_name}
+            </div>
+            <div class="w-full md:w-4/5 h-full rounded-b-lg md:rounded-r-lg md:rounded-bl-none flex flex-col md:flex-row justify-between border-2 p-4 border-gray-200 gap-4">
+              <div class="flex flex-col justify-between gap-2">
+                <h1 class="text-xl text-gray-600">${store.store_name}</h1>
+                <div class="space-y-1">
+                  <h4 class="text-gray-400">${store.street_address}</h4>
+                  <h4 class="text-gray-400">${store.city}</h4>
+                  <h4 class="text-gray-400">${store.phone_number}</h4>
+                </div>
+              </div>
+              <button onclick="confirmDelete(${store.id})" class="text-red-500 border border-gray-300 px-4 py-2 rounded-lg self-end md:self-center hover:bg-gray-100">
+                🗑 Delete
+              </button>
+            </div>
+          </div>`;
+          container.innerHTML += card;
+        });
+      })
+      .catch((err) => {
+        console.error("Error loading store data:", err);
+      });
+  }
+
+  window.onload = loadStores;
     function openStoreOverlay() {
       document.getElementById("storeOverlay").classList.remove("hidden");
     }

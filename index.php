@@ -877,7 +877,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                 tension: 0.4,
                 label: "Ordered",
                 data: data2.map((row) => row.Ordered),
-                backgroundColor: "rgba(255, 215, 0, 0.2)", // Blue
+                backgroundColor: "rgba(255, 215, 0, 0.2)",
                 borderColor: "rgb(255, 215, 0)",
                 borderWidth: 2,
                 fill: true,

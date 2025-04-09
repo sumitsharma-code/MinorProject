@@ -63,10 +63,11 @@ nav {
   padding: 20px;
   border-radius: 8px;
   width: 500px;
-  height: 450px;
+  height: 550px;
   margin: 1% auto;
   position: relative;
 }
+
 .modal-content1 {
   background: white;
   padding: 20px;

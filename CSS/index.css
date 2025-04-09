@@ -67,6 +67,15 @@ nav {
   margin: 1% auto;
   position: relative;
 }
+.modal-content1 {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  height: 600px;
+  margin: 1% auto;
+  position: relative;
+}
 
 .bell {
   width: 102px;

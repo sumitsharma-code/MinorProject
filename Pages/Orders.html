@@ -166,27 +166,28 @@
               <!-- Total Orders Card -->
               <div class="bg-blue-50 p-4 rounded-lg">
                 <h3 class="text-blue-500 font-medium mb-2">Total Orders</h3>
-                <p class="text-gray-800 font-semibold text-xl mb-1">14</p>
+                <p id="totalSales" class="text-gray-800 font-semibold text-xl mb-1"></p>
                 <p class="text-gray-500 font-light">Ordered</p>
               </div>
 
               <!-- Total Received Card -->
               <div class="bg-orange-50 p-4 rounded-lg">
                 <h3 class="text-orange-400 font-medium mb-2">
-                  Total Received
+                  Total Quantity
                 </h3>
                 <div class="flex justify-between">
                   <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">
-                      868
+                    <p id="quantityInHand" class="text-gray-800 font-semibold text-xl mb-1">
                     </p>
-                    <p class="text-gray-500 font-light">Received</p>
+                    <p class="text-gray-500 font-light">Quantity</p>
                   </div>
                   <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">
-                      ₹25000
+                    <p id="investment" class="text-gray-800 font-semibold text-xl mb-1">
+                      <!-- show total Investment here ie (quantity * cost price) -->
+
                     </p>
-                    <p class="text-gray-500 font-light">Revenue</p>
+
+                    <p class="text-gray-500 font-light">Investment</p>
                   </div>
                 </div>
               </div>
@@ -194,35 +195,34 @@
               <!-- Total Returned Card -->
               <div class="bg-purple-50 p-4 rounded-lg">
                 <h3 class="text-purple-700 font-medium mb-2">
-                  Total Returned
+                  Total Category
                 </h3>
                 <div class="flex justify-between">
                   <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">5</p>
-                    <p class="text-gray-500 font-light">Returned</p>
+                    <p id="totalCategories" class="text-gray-800 font-semibold text-xl mb-1"></p>
+                    <p class="text-gray-500 font-light">Number</p>
                   </div>
                   <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">
-                      ₹2500
+                    <p id="avgCost" class="text-gray-800 font-semibold text-xl mb-1">
                     </p>
-                    <p class="text-gray-500 font-light">Cost</p>
+                    <p class="text-gray-500 font-light">Average Cost</p>
                   </div>
                 </div>
               </div>
 
               <!-- On the Way Card -->
               <div class="bg-red-50 p-4 rounded-lg">
-                <h3 class="text-red-500 font-medium mb-2">On the way</h3>
+                <h3 class="text-red-500 font-medium mb-2">Selling Price</h3>
                 <div class="flex justify-between">
                   <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">12</p>
-                    <p class="text-gray-500 font-light">Ordered</p>
+                    <p id="maxSP" class="text-gray-800 font-semibold text-xl mb-1"></p>
+                    <p class="text-gray-500 font-light">Highest SP</p>
                   </div>
                   <div>
-                    <p class="text-gray-800 font-semibold text-xl mb-1">
-                      ₹2500
+                    <p id="avgSP" class="text-gray-800 font-semibold text-xl mb-1">
+
                     </p>
-                    <p class="text-gray-500 font-light">Cost</p>
+                    <p class="text-gray-500 font-light">Average SP</p>
                   </div>
                 </div>
               </div>
@@ -336,41 +336,6 @@
   </div>
 
 
-  <script>
-    async function loadDashboardStats() {
-      try {
-        const response = await fetch(
-          "/MinorProject/php/fetch_dashboard_stats.php"
-        );
-        const data = await response.json();
-
-        if (data.error) {
-          console.error("Stats fetch error:", data.error);
-          return;
-        }
-
-        // Update HTML values
-        document.getElementById("totalSales").textContent = data.sales;
-        document.getElementById("revenue").textContent = "₹" + data.revenue;
-        document.getElementById("profit").textContent = "₹" + data.profit;
-        document.getElementById("cost").textContent = "₹" + data.cost;
-        document.getElementById("quantityInHand").textContent =
-          data.quantity_in_hand;
-        document.getElementById("toBeReceived").textContent =
-          data.to_be_received;
-        document.getElementById("purchaseAmount").textContent =
-          "₹" + data.purchase_amount;
-        document.getElementById("totalSuppliers").textContent =
-          data.suppliers;
-        // document.getElementById("totalCategories").textContent = data.categories;
-      } catch (err) {
-        console.error("Error loading dashboard stats:", err);
-      }
-    }
-
-    // Load on page load
-    window.onload = loadDashboardStats;
-  </script>
 
 
   <script>
@@ -481,6 +446,26 @@
       });
 
     window.onload = loadOrders;
+    function loadOrderStats() {
+      fetch("/MinorProject/php/fetch_orders_stats.php")
+        .then((res) => res.json())
+        .then((data) => {
+          document.getElementById("totalSales").textContent = data.total_orders;
+          document.getElementById("quantityInHand").textContent = data.total_quantity;
+          document.getElementById("investment").textContent = `₹${data.total_investment}`;
+          document.getElementById("totalCategories").textContent = data.total_categories;
+          document.getElementById("avgCost").textContent = `₹${data.avg_sp}`;
+          document.getElementById("maxSP").textContent = data.max_sp;
+          document.getElementById("avgSP").textContent = `₹${data.avg_sp}`;
+        })
+        .catch((err) => console.error("Failed to load stats:", err));
+    }
+
+    window.onload = () => {
+      loadOrders();
+      loadOrderStats();
+    };
+
   </script>
 </body>
 

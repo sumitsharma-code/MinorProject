@@ -432,26 +432,13 @@
                       <th class="py-3 font-light text-gray-500">Order Value</th>
                       <th class="py-3 font-light text-gray-500">Quantity</th>
                       <th class="py-3 font-light text-gray-500">Order ID</th>
+                      <th class="py-3 font-light text-gray-500">
+                        Selling Price
+                      </th>
                     </tr>
                   </thead>
                   <tbody class="text-[14px]" id="ordersBody"></tbody>
                 </table>
-              </div>
-
-              <div
-                class="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2"
-              >
-                <button
-                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
-                >
-                  Previous
-                </button>
-                <p class="text-gray-600 font-light">Page 1 of 10</p>
-                <button
-                  class="px-3 py-2 text-sm text-gray-600 font-light cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 whitespace-nowrap"
-                >
-                  Next
-                </button>
               </div>
             </div>
           </div>
@@ -539,6 +526,32 @@
         orderToDelete = null;
         document.getElementById("deleteModal").classList.add("hidden");
       }
+
+      fetch("/MinorProject/Components/Searchbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("search-bar").innerHTML = data;
+
+          // Add event listener after search bar is loaded
+          document
+            .getElementById("hamburger-menu")
+            ?.addEventListener("click", function () {
+              const sidebar = document.getElementById("mobile-sidebar");
+              const overlay = document.getElementById("sidebar-overlay");
+
+              sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle("hidden");
+
+              // Close sidebar when clicking on overlay
+              overlay.addEventListener("click", function () {
+                sidebar.classList.add("-translate-x-full");
+                overlay.classList.add("hidden");
+              });
+            });
+        })
+        .catch((error) => {
+          console.error("Error loading search bar:", error);
+        });
 
       document
         .getElementById("confirmDeleteBtn")

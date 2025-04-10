@@ -581,7 +581,6 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                   <div class="text-[#383e49] text-xl font-medium">
                     Top Selling Stock
                   </div>
-                  <div class="text-[#0F50AA] text-sm font-medium">See All</div>
                 </div>
 
                 <div class="flex flex-col justify-evenly gap-2 min-w-[600px]">
@@ -662,7 +661,6 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                   <div class="text-[#383e49] text-xl font-medium">
                     Low Quantity Stock
                   </div>
-                  <div class="text-[#0F50AA] text-sm font-medium">See All</div>
                 </div>
 
                 <div class="flex flex-col justify-evenly gap-4">

@@ -24,6 +24,7 @@ An interactive web-based **Inventory Management System** that allows admins to m
 
 ## 📁 Folder Structure
 
+```bash
 MinorProject/
 ├── Components/
 │ └── Searchbar.html
@@ -51,6 +52,7 @@ MinorProject/
 ├── index.php
 ├── landingpage.html
 └── README.md
+```
 
 ---
 

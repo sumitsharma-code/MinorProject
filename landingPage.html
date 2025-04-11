@@ -16,6 +16,11 @@
       }
       body {
         font-family: "Poppins", sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      body.light-mode {
+        background: linear-gradient(to bottom right, #f3f4f6, #e5e7eb, #f3f4f6);
+        color: #1f2937;
       }
       .underline-style {
         position: relative;
@@ -27,31 +32,62 @@
         bottom: 0;
         width: 100%;
         height: 4px;
-        background-color: #64b5f6;
+        background-color: #3b82f6;
         border-radius: 2px;
       }
       .feature-card {
         backdrop-filter: blur(16px);
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(17, 24, 39, 0.7);
+        border: 1px solid rgba(55, 65, 81, 0.2);
+        transition: background-color 0.3s;
+      }
+      .light-mode .feature-card {
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(209, 213, 219, 0.2);
       }
       .nav-scroll {
         transition: all 0.3s ease;
       }
       .nav-scroll.scrolled {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(17, 24, 39, 0.8);
         backdrop-filter: blur(20px);
         padding: 0.5rem 2rem;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+      .light-mode .nav-scroll.scrolled {
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .light-mode .text-gray-300 {
+        color: #4b5563;
+      }
+      .light-mode .text-gray-400 {
+        color: #374151;
+      }
+      .light-mode .nav-scroll {
+        background: rgba(255, 255, 255, 0.8);
+        color: #1f2937;
+      }
+      .light-mode .feature-card {
+        color: #1f2937;
+      }
+      .light-mode .bg-gray-800\/70 {
+        background-color: rgba(243, 244, 246, 0.7);
+      }
+      .light-mode .border-gray-700 {
+        border-color: #d1d5db;
+      }
+      .light-mode .text-gray-100 {
+        color: #1f2937;
       }
     </style>
   </head>
   <body
-    class="bg-gradient-to-br from-sky-100 via-blue-50 to-slate-100 min-h-screen overflow-y-scroll text-slate-700 px-6 py-20 shadow-2xl backdrop-blur-xl font-sans bg-no-repeat bg-cover bg-fixed relative overflow-hidden before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] before:from-blue-100/20 before:to-transparent before:opacity-50"
+    class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen overflow-y-scroll text-gray-100 px-6 py-20 shadow-2xl backdrop-blur-xl font-sans bg-no-repeat bg-cover bg-fixed relative overflow-hidden before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] before:from-blue-900/20 before:to-transparent before:opacity-50"
+    id="mainBody"
   >
     <!-- Navbar -->
     <nav
-      class="nav-scroll fixed top-0 left-0 right-0 flex justify-between items-center px-8 py-4 bg-white/80 backdrop-blur-lg text-slate-700 rounded-full max-w-7xl mx-auto mt-5 shadow-lg border border-white/20 z-50"
+      class="nav-scroll fixed top-0 left-0 right-0 flex justify-between items-center px-8 py-4 bg-gray-900/80 backdrop-blur-lg text-gray-100 rounded-full max-w-7xl mx-auto mt-5 shadow-lg border border-gray-700/20 z-50"
       id="navbar"
     >
       <div class="font-bold text-2xl flex items-center">
@@ -63,23 +99,57 @@
         StockMaster
       </div>
       <div class="hidden md:flex gap-8">
-        <a href="#home" class="hover:text-blue-500 transition-colors">Home</a>
-        <a href="#features" class="hover:text-blue-500 transition-colors"
+        <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
+        <a href="#features" class="hover:text-blue-400 transition-colors"
           >Features</a
         >
-        <a href="#dashboard" class="hover:text-blue-500 transition-colors"
+        <a href="#dashboard" class="hover:text-blue-400 transition-colors"
           >Dashboard</a
         >
-        <a href="#" class="hover:text-blue-500 transition-colors">Contact</a>
+        <a href="#" class="hover:text-blue-400 transition-colors">Contact</a>
       </div>
       <div class="flex items-center gap-4">
         <button
-          class="px-4 py-2 rounded-full text-sm hover:text-blue-500 transition-colors"
+          id="themeToggle"
+          class="p-2 rounded-full hover:bg-gray-700/50 transition-colors"
+          aria-label="Toggle theme"
+        >
+          <svg
+            id="darkIcon"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+          <svg
+            id="lightIcon"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
+            />
+          </svg>
+        </button>
+        <button
+          class="px-4 py-2 rounded-full text-sm hover:text-blue-400 transition-colors"
         >
           Login
         </button>
         <button
-          class="bg-blue-500 hover:bg-blue-600 transition-colors text-white px-6 py-2 rounded-full text-sm"
+          class="bg-blue-600 hover:bg-blue-700 transition-colors text-white px-6 py-2 rounded-full text-sm"
         >
           Sign Up
         </button>
@@ -90,10 +160,9 @@
     <section id="home" class="text-center py-20 px-4">
       <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
         Revolutionizing
-
-        <span class="underline-style text-blue-500">Inventory Management</span>
+        <span class="underline-style text-blue-400">Inventory Management</span>
       </h1>
-      <p class="mt-6 text-xl max-w-3xl mx-auto text-slate-600 leading-relaxed">
+      <p class="mt-6 text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
         Transform your inventory management with our comprehensive system.
         Streamline stock tracking, order processing, and warehouse organization
         while maintaining efficient business operations.
@@ -101,12 +170,12 @@
 
       <div class="flex justify-center gap-4 mt-12">
         <button
-          class="bg-blue-500 hover:bg-blue-600 transition-colors text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          class="bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
           Get Started Now
         </button>
         <button
-          class="bg-white/70 backdrop-blur-lg border border-slate-200 hover:bg-white/90 transition-colors text-slate-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          class="bg-gray-800/70 backdrop-blur-lg border border-gray-700 hover:bg-gray-700/90 transition-colors font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
           Watch Demo
         </button>
@@ -117,26 +186,26 @@
     <section id="features" class="max-w-7xl mx-auto px-4 py-16">
       <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="feature-card rounded-2xl p-6 text-center bg-white/70">
+        <div class="feature-card rounded-2xl p-6 text-center">
           <div class="text-4xl mb-4">📦</div>
           <h3 class="text-xl font-semibold mb-3">Real-time Tracking</h3>
-          <p class="text-slate-600">
+          <p class="text-gray-300">
             Instant stock updates and inventory management for seamless
             warehouse operations
           </p>
         </div>
-        <div class="feature-card rounded-2xl p-6 text-center bg-white/70">
+        <div class="feature-card rounded-2xl p-6 text-center">
           <div class="text-4xl mb-4">📊</div>
           <h3 class="text-xl font-semibold mb-3">Advanced Analytics</h3>
-          <p class="text-slate-600">
+          <p class="text-gray-300">
             Detailed inventory metrics and stock level predictions at your
             fingertips
           </p>
         </div>
-        <div class="feature-card rounded-2xl p-6 text-center bg-white/70">
+        <div class="feature-card rounded-2xl p-6 text-center">
           <div class="text-4xl mb-4">🔄</div>
           <h3 class="text-xl font-semibold mb-3">Order Management</h3>
-          <p class="text-slate-600">
+          <p class="text-gray-300">
             Comprehensive tools for processing orders and managing stock levels
           </p>
         </div>
@@ -148,7 +217,7 @@
       <div class="w-full max-w-7xl">
         <h2 class="text-3xl font-bold text-center mb-8">Powerful Dashboard</h2>
         <div
-          class="bg-white/70 backdrop-blur-lg border border-slate-200 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform"
+          class="bg-gray-800/70 backdrop-blur-lg border border-gray-700 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform"
         >
           <img
             src="./IMG/image.png"
@@ -161,7 +230,7 @@
 
     <!-- Footer -->
     <footer class="text-center pb-8">
-      <p class="text-slate-600">
+      <p class="text-gray-400">
         © 2024 StockMaster - Inventory Management System. All rights reserved.
       </p>
     </footer>
@@ -173,6 +242,46 @@
           navbar.classList.add("scrolled");
         } else {
           navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      const darkIcon = document.getElementById("darkIcon");
+      const lightIcon = document.getElementById("lightIcon");
+      const body = document.getElementById("mainBody");
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        darkIcon.classList.toggle("hidden");
+        lightIcon.classList.toggle("hidden");
+
+        if (body.classList.contains("light-mode")) {
+          body.classList.remove(
+            "from-gray-900",
+            "via-gray-800",
+            "to-gray-900",
+            "text-gray-100"
+          );
+          body.classList.add(
+            "from-gray-100",
+            "via-gray-200",
+            "to-gray-100",
+            "text-gray-900"
+          );
+        } else {
+          body.classList.remove(
+            "from-gray-100",
+            "via-gray-200",
+            "to-gray-100",
+            "text-gray-900"
+          );
+          body.classList.add(
+            "from-gray-900",
+            "via-gray-800",
+            "to-gray-900",
+            "text-gray-100"
+          );
         }
       });
     </script>

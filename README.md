@@ -24,8 +24,33 @@ An interactive web-based **Inventory Management System** that allows admins to m
 
 ## 📁 Folder Structure
 
-MinorProject/ ├── Pages/ │ ├── Orders.html │ ├── Suppliers.html │ ├── Store.html │ └── ... ├── CSS/ │ ├── index.css │ └── output.css ├── IMG/ │ └── (Icons, Logos, Product Images) ├── php/ │ ├── connection.php │ ├── add_order.php │ ├── fetch_orders.php │ ├── add_supplier.php │ ├── fetch_suppliers.php │ ├── add_store.php │ ├── fetch_stores.php │ ├── fetch_dashboard_stats.php │ ├── fetch_sales_purchase_data.php │ └── ... ├── Components/ │ └── Searchbar.html ├── index.php └── README.md
-
+MinorProject/
+├── Components/
+│ └── Searchbar.html
+├── CSS/
+│ ├── index.css
+│ └── output.css
+├── IMG/
+│ └── (Icons, Logos, Product Images)
+├── Pages/
+│ ├── Orders.html
+│ ├── Suppliers.html
+│ ├── Store.html
+│ └── ... (other pages)
+├── php/
+│ ├── add_order.php
+│ ├── add_store.php
+│ ├── add_supplier.php
+│ ├── connection.php
+│ ├── fetch_dashboard_stats.php
+│ ├── fetch_orders.php
+│ ├── fetch_sales_purchase_data.php
+│ ├── fetch_stores.php
+│ ├── fetch_suppliers.php
+│ └── ... (other PHP scripts)
+├── index.php
+├── landingpage.html
+└── README.md
 
 ---
 

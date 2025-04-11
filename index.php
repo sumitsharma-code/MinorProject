@@ -23,7 +23,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
         class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg">
         <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
             <!-- Company logo -->
-            <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logo.svg" alt="Company Logo" />
+            <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logos/logoBanner.png" alt="Company Logo" />
 
             <!-- Main navigation links -->
             <ul class="flex flex-col gap-3 px-4 py-2">
@@ -93,7 +93,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
             role="navigation">
             <div class="flex flex-col gap-8 w-[280px]">
                 <!-- Company logo -->
-                <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logo.svg" alt="Company Logo" />
+                <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logos/logoBanner.png" alt="Company Logo" />
 
                 <!-- Main navigation links -->
                 <ul class="flex flex-col gap-3 px-4 py-2">
@@ -336,7 +336,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                                             </div>
                                             <div class="flex flex-col items-center md:flex-row md:gap-2">
                                                 <div class="text-[#5D6679] font-semibold">
-                                                    <p id="cost"></p>
+                                                    <p id="costt"></p>
                                                 </div>
                                                 <div class="text-[#667085] font-medium text-sm md:text-base">
                                                     Cost
@@ -585,6 +585,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                 document.getElementById("revenue").textContent = "₹" + data.revenue;
                 document.getElementById("profit").textContent = "₹" + data.profit;
                 document.getElementById("cost").textContent = "₹" + data.cost;
+                document.getElementById("costt").textContent = "₹" + data.costt;
                 document.getElementById("quantityInHand").textContent =
                     data.quantity_in_hand;
                 document.getElementById("toBeReceived").textContent =

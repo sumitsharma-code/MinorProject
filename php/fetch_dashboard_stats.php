@@ -31,6 +31,9 @@ $response['profit'] = $result->fetch_assoc()['profit'] ?? 0;
 $result = $conn->query("SELECT SUM(order_value * quantity) as cost FROM orders");
 $response['cost'] = $result->fetch_assoc()['cost'] ?? 0;
 
+$result = $conn->query("SELECT SUM(order_value * quantity) as cost FROM orders");
+$response['costt'] = $result->fetch_assoc()['costt'] ?? 0;
+
 // Quantity in hand
 $result = $conn->query("SELECT SUM(quantity) as quantity_in_hand FROM orders");
 $response['quantity_in_hand'] = $result->fetch_assoc()['quantity_in_hand'] ?? 0;

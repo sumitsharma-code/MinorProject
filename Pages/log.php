@@ -17,7 +17,7 @@ include("/xampp/htdocs/MinorProject/php/logincheck.php");
         <!-- Left Section -->
         <div class="w-1/2 bg-blue-500 flex flex-col items-center justify-center p-10">
             <div class="w-32 h-32 bg-blue-400 rounded-lg flex items-center justify-center">
-                <span class="text-white text-3xl font-bold">LOGO</span>
+                <span class="text-white text-3xl font-bold"><img src="/MinorProject/IMG/Logos/logoBlueBg.png" alt="" srcset=""></span>
             </div>
             <h1 class="text-white text-3xl font-semibold mt-4">INVENTRA</h1>
         </div>
@@ -25,7 +25,7 @@ include("/xampp/htdocs/MinorProject/php/logincheck.php");
         <!-- Right Section -->
         <div class="w-1/2 p-10">
             <div class="flex flex-col items-center">
-                <img src="https://via.placeholder.com/50" class="mb-4" alt="Logo">
+                <img src="/MinorProject/IMG/Logos/logo.png" class="mb-4 h-11" alt="Logo">
                 <h2 class="text-2xl font-semibold">Log in to your account</h2>
                 <p class="text-gray-500 mb-6">Welcome back! Please enter your details.</p>
             </div>

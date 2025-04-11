@@ -1,27 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>REPORTS Page</title>
-    <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
-    <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
-  </head>
 
-  <body class="bg-gray-100">
-    <!-- Mobile Sidebar and Overlay -->
-    <div
-      id="mobile-sidebar"
-      class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg"
-    >
-      <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REPORTS Page</title>
+  <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
+  <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
+</head>
+
+<body class="bg-gray-100">
+  <!-- Mobile Sidebar and Overlay -->
+  <div id="mobile-sidebar"
+    class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg">
+    <div class="flex flex-col gap-8 h-full px-6 pb-8 pt-6">
+      <!-- Company logo -->
+      <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logos/logoBanner.png" alt="Company Logo" />
+
+      <!-- Main navigation links -->
+      <ul class="flex flex-col gap-3 px-4 py-2">
+        <li class="py-4">
+          <a href="/MinorProject/index.php" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/DashIcon.svg" alt="Dashboard Icon" />
+            Dashboard
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Inventory.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
+            Inventory
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Reports.html" class="flex gap-4 text-md items-center">
+            <img src="/MinorProject/Animation/Reports.gif" class="w-7 h-7" alt="Reports Icon" />
+            <div class="text-[#1570EF]">Reports</div>
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Suppliers.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
+            Suppliers
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Orders.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
+            Orders
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Store.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Store.svg" alt="Manage Store Icon" />
+            Manage Store
+          </a>
+        </li>
+      </ul>
+
+      <!-- Additional navigation links -->
+      <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Settings.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+            Settings
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay for when mobile sidebar is open -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"></div>
+
+  <!-- Main container -->
+  <div class="flex gap-1 h-screen">
+    <!-- Desktop Navigation bar -->
+    <nav class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white shadow-md" role="navigation">
+      <div class="flex flex-col gap-8 w-[280px]">
         <!-- Company logo -->
-        <img
-          width="150"
-          class="px-4 py-1"
-          src="/MinorProject/IMG/Logos/logoBanner.png"
-          alt="Company Logo"
-        />
+        <img width="150" class="px-4 py-1" src="/MinorProject/IMG/Logos/logoBanner.png" alt="Company Logo" />
 
         <!-- Main navigation links -->
         <ul class="flex flex-col gap-3 px-4 py-2">
@@ -32,41 +95,25 @@
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Inventory.html"
-              class="flex gap-4 text-md"
-            >
+            <a href="/MinorProject/Pages/Inventory.html" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
               Inventory
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Reports.html"
-              class="flex gap-4 text-md items-center"
-            >
-              <img
-                src="/MinorProject/Animation/Reports.gif"
-                class="w-7 h-7"
-                alt="Reports Icon"
-              />
+            <a href="/MinorProject/Pages/Reports.html" class="flex gap-4 text-md items-center">
+              <img src="/MinorProject/Animation/Reports.gif" class="w-7 h-7" alt="Reports Icon" />
               <div class="text-[#1570EF]">Reports</div>
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Suppliers.html"
-              class="flex gap-4 text-md"
-            >
+            <a href="/MinorProject/Pages/Suppliers.html" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/Suppliers.svg" alt="Suppliers Icon" />
               Suppliers
             </a>
           </li>
           <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Orders.html"
-              class="flex gap-4 text-md"
-            >
+            <a href="/MinorProject/Pages/Orders.html" class="flex gap-4 text-md">
               <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
               Orders
             </a>
@@ -78,248 +125,51 @@
             </a>
           </li>
         </ul>
-
-        <!-- Additional navigation links -->
-        <ul class="flex flex-col gap-3 px-4 py-2 mt-auto">
-          <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Settings.html"
-              class="flex gap-4 text-md"
-            >
-              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
-              Settings
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
-              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
-              Log Out
-            </a>
-          </li>
-        </ul>
       </div>
-    </div>
 
-    <!-- Overlay for when mobile sidebar is open -->
-    <div
-      id="sidebar-overlay"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"
-    ></div>
+      <!-- Additional navigation links -->
+      <ul class="flex flex-col gap-3 px-4 py-2">
+        <li class="py-4">
+          <a href="/MinorProject/Pages/Settings.html" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
+            Settings
+          </a>
+        </li>
+        <li class="py-4">
+          <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
+            <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    <!-- Main container -->
-    <div class="flex gap-1 h-screen">
-      <!-- Desktop Navigation bar -->
-      <nav
-        class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white shadow-md"
-        role="navigation"
-      >
-        <div class="flex flex-col gap-8 w-[280px]">
-          <!-- Company logo -->
-          <img
-            width="150"
-            class="px-4 py-1"
-            src="/MinorProject/IMG/Logos/logoBanner.png"
-            alt="Company Logo"
-          />
+    <!-- Main content area -->
+    <div class="flex flex-col flex-1 overflow-hidden">
+      <!-- Search bar section -->
+      <div id="search-bar" class="sticky top-0 z-30"></div>
 
-          <!-- Main navigation links -->
-          <ul class="flex flex-col gap-3 px-4 py-2">
-            <li class="py-4">
-              <a href="/MinorProject/index.php" class="flex gap-4 text-md">
-                <img
-                  src="/MinorProject/IMG/DashIcon.svg"
-                  alt="Dashboard Icon"
-                />
-                Dashboard
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Inventory.html"
-                class="flex gap-4 text-md"
-              >
-                <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
-                Inventory
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Reports.html"
-                class="flex gap-4 text-md items-center"
-              >
-                <img
-                  src="/MinorProject/Animation/Reports.gif"
-                  class="w-7 h-7"
-                  alt="Reports Icon"
-                />
-                <div class="text-[#1570EF]">Reports</div>
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Suppliers.html"
-                class="flex gap-4 text-md"
-              >
-                <img
-                  src="/MinorProject/IMG/Suppliers.svg"
-                  alt="Suppliers Icon"
-                />
-                Suppliers
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Orders.html"
-                class="flex gap-4 text-md"
-              >
-                <img src="/MinorProject/IMG/Orders.svg" alt="Orders Icon" />
-                Orders
-              </a>
-            </li>
-            <li class="py-4">
-              <a
-                href="/MinorProject/Pages/Store.html"
-                class="flex gap-4 text-md"
-              >
-                <img
-                  src="/MinorProject/IMG/Store.svg"
-                  alt="Manage Store Icon"
-                />
-                Manage Store
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Additional navigation links -->
-        <ul class="flex flex-col gap-3 px-4 py-2">
-          <li class="py-4">
-            <a
-              href="/MinorProject/Pages/Settings.html"
-              class="flex gap-4 text-md"
-            >
-              <img src="/MinorProject/IMG/Settings.svg" alt="Settings Icon" />
-              Settings
-            </a>
-          </li>
-          <li class="py-4">
-            <a href="/MinorProject/php/logout.php" class="flex gap-4 text-md">
-              <img src="/MinorProject/IMG/LogOut.svg" alt="Log Out Icon" />
-              Log Out
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Main content area -->
-      <div class="flex flex-col flex-1 overflow-hidden">
-        <!-- Search bar section -->
-        <div id="search-bar" class="sticky top-0 z-30"></div>
-
-        <main class="flex-1 overflow-y-auto p-1">
-          <div class="flex flex-col gap-2">
-            <!-- First row - Overview and Best Selling Category -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
-              <!-- Overview Card -->
-              <div class="bg-white rounded-2xl p-4 h-full shadow">
-                <div class="text-xl font-medium text-[#383e49] mb-4">
-                  Overview
-                </div>
-
-                <div class="grid grid-cols-3 gap-4 mb-4">
-                  <div class="flex flex-col">
-                    <div class="text-gray-600 font-medium">₹21,190</div>
-                    <div class="text-sm text-[#555]">Total Profit</div>
-                  </div>
-                  <div class="flex flex-col">
-                    <div class="text-gray-600 font-medium">₹18,300</div>
-                    <div class="text-sm text-[#DBA362]">Revenue</div>
-                  </div>
-                  <div class="flex flex-col">
-                    <div class="text-gray-600 font-medium">₹17,432</div>
-                    <div class="text-sm text-[#845EBC]">Sales</div>
-                  </div>
-                </div>
-
-                <hr class="border-gray-200 my-3" />
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div class="flex flex-col">
-                    <div class="text-gray-600 font-medium">₹1,95,546</div>
-                    <div class="text-gray-500 text-sm">Net purchase value</div>
-                  </div>
-                  <div class="flex flex-col">
-                    <div class="text-gray-600 font-medium">₹80,432</div>
-                    <div class="text-gray-500 text-sm">Net sales value</div>
-                  </div>
-                  <div class="flex flex-col">
-                    <div class="text-gray-600 font-medium">₹30,432</div>
-                    <div class="text-gray-500 text-sm">MoM Profit</div>
-                  </div>
-                  <div class="flex flex-col">
-                    <div class="text-gray-600 font-medium">₹1,10,432</div>
-                    <div class="text-gray-500 text-sm">YoY Profit</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Best Selling Category Card -->
-              <div class="bg-white rounded-2xl p-4 shadow">
-                <div class="flex justify-between items-center mb-4">
-                  <div class="text-xl font-medium text-[#383e49]">
-                    Best selling category
-                  </div>
-                </div>
-
-                <div class="space-y-3">
-                  <div
-                    class="flex justify-between items-center pb-2 border-b border-gray-200"
-                  >
-                    <div class="text-[#48505E]">Vegetable</div>
-                    <div class="flex gap-8">
-                      <div>₹26,000</div>
-                      <div class="text-[#10A760]">3.2%</div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-between items-center pb-2 border-b border-gray-200"
-                  >
-                    <div class="text-[#48505E]">Instant Food</div>
-                    <div class="flex gap-8">
-                      <div>₹26,000</div>
-                      <div class="text-[#10A760]">3.2%</div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-between items-center pb-2 border-b border-gray-200"
-                  >
-                    <div class="text-[#48505E]">Households</div>
-                    <div class="flex gap-8">
-                      <div>₹26,000</div>
-                      <div class="text-[#10A760]">3.2%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Second row - Profit & Revenue -->
-            <div class="bg-white rounded-2xl p-4 shadow">
+      <main class="flex-1 overflow-y-auto p-1">
+        <div class="flex flex-col gap-2">
+          <!-- First row - Overview and Best Selling Category -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+            <!-- Overview Card -->
+            <div class="bg-white rounded-2xl p-4 h-full shadow">
               <div class="text-xl font-medium text-[#383e49] mb-4">
-                Profit & Revenue
+                Overview
               </div>
 
               <div class="grid grid-cols-3 gap-4 mb-4">
                 <div class="flex flex-col">
-                  <div class="text-gray-600 font-medium">₹21,190</div>
+                  <div class="text-gray-600 font-medium" id="profit-value"></div>
                   <div class="text-sm text-[#555]">Total Profit</div>
                 </div>
                 <div class="flex flex-col">
-                  <div class="text-gray-600 font-medium">₹18,300</div>
+                  <div class="text-gray-600 font-medium" id="revenue-value"></div>
                   <div class="text-sm text-[#DBA362]">Revenue</div>
                 </div>
                 <div class="flex flex-col">
-                  <div class="text-gray-600 font-medium">₹17,432</div>
+                  <div class="text-gray-600 font-medium" id="sales-value"></div>
                   <div class="text-sm text-[#845EBC]">Sales</div>
                 </div>
               </div>
@@ -328,114 +178,198 @@
 
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="flex flex-col">
-                  <div class="text-gray-600 font-medium">₹1,95,546</div>
+                  <div class="text-gray-600 font-medium" id="net-purchase"></div>
                   <div class="text-gray-500 text-sm">Net purchase value</div>
                 </div>
                 <div class="flex flex-col">
-                  <div class="text-gray-600 font-medium">₹80,432</div>
-                  <div class="text-gray-500 text-sm">Net sales value</div>
+                  <div class="text-gray-600 font-medium" id="net-sales"></div>
+                  <div class="text-gray-500 text-sm">Avg Sales Per Month</div>
                 </div>
+
                 <div class="flex flex-col">
-                  <div class="text-gray-600 font-medium">₹30,432</div>
+                  <div class="text-gray-600 font-medium" id="mom-profit1"></div>
                   <div class="text-gray-500 text-sm">MoM Profit</div>
                 </div>
                 <div class="flex flex-col">
-                  <div class="text-gray-600 font-medium">₹1,10,432</div>
+                  <div class="text-gray-600 font-medium" id="yoy-profit1"></div>
                   <div class="text-gray-500 text-sm">YoY Profit</div>
                 </div>
               </div>
             </div>
 
-            <!-- Third row - Best Selling Product -->
-            <div class="bg-white rounded-2xl p-4 shadow overflow-x-auto">
+            <!-- Best Selling Category Card -->
+            <div class="bg-white rounded-2xl p-4 shadow">
               <div class="flex justify-between items-center mb-4">
                 <div class="text-xl font-medium text-[#383e49]">
-                  Best selling product
+                  Best selling category
                 </div>
               </div>
 
-              <div class="min-w-[800px]">
-                <table class="w-full text-left text-sm">
-                  <thead>
-                    <tr class="border-b border-gray-300">
-                      <th class="py-3 font-light text-gray-500">Product</th>
-                      <th class="py-3 font-light text-gray-500">Product ID</th>
-                      <th class="py-3 font-light text-gray-500">Category</th>
-                      <th class="py-3 font-light text-gray-500">
-                        Remaining Quantity
-                      </th>
-                      <th class="py-3 font-light text-gray-500">Turn Over</th>
-                      <th class="py-3 font-light text-gray-500">Increase By</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-gray-300">
-                      <td class="py-3 text-[#48505E]">Tomato</td>
-                      <td class="py-3 text-[#48505E]">13561</td>
-                      <td class="py-3 text-[#48505E]">Vegetable</td>
-                      <td class="py-3 text-[#10A760]">225 kg</td>
-                      <td class="py-3 text-[#48505E]">₹26,000</td>
-                      <td class="py-3 text-[#10A760]">3.2%</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                      <td class="py-3 text-[#48505E]">Tomato</td>
-                      <td class="py-3 text-[#48505E]">13561</td>
-                      <td class="py-3 text-[#48505E]">Vegetable</td>
-                      <td class="py-3 text-[#10A760]">225 kg</td>
-                      <td class="py-3 text-[#48505E]">₹26,000</td>
-                      <td class="py-3 text-[#10A760]">3.2%</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                      <td class="py-3 text-[#48505E]">Tomato</td>
-                      <td class="py-3 text-[#48505E]">13561</td>
-                      <td class="py-3 text-[#48505E]">Vegetable</td>
-                      <td class="py-3 text-[#10A760]">225 kg</td>
-                      <td class="py-3 text-[#48505E]">₹26,000</td>
-                      <td class="py-3 text-[#10A760]">3.2%</td>
-                    </tr>
-                    <tr class="border-b border-gray-300">
-                      <td class="py-3 text-[#48505E]">Tomato</td>
-                      <td class="py-3 text-[#48505E]">13561</td>
-                      <td class="py-3 text-[#48505E]">Vegetable</td>
-                      <td class="py-3 text-[#10A760]">225 kg</td>
-                      <td class="py-3 text-[#48505E]">₹26,000</td>
-                      <td class="py-3 text-[#10A760]">3.2%</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="space-y-3" id="top-categories">
+
               </div>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+
+        <!-- Second row - Profit & Revenue -->
+        <div class="bg-white rounded-2xl p-4 shadow">
+          <div class="text-xl font-medium text-[#383e49] mb-4">
+            Profit & Revenue
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 mb-4">
+            <div class="flex flex-col">
+              <div class="text-gray-600 font-medium" id="profit-value1"></div>
+              <div class="text-sm text-[#555]">Total Profit</div>
+            </div>
+            <div class="flex flex-col">
+              <div class="text-gray-600 font-medium" id="revenue-value1"></div>
+              <div class="text-sm text-[#DBA362]">Revenue</div>
+            </div>
+            <div class="flex flex-col">
+              <div class="text-gray-600 font-medium" id="sales-value1"></div>
+              <div class="text-sm text-[#845EBC]">Sales</div>
+            </div>
+          </div>
+
+          <hr class="border-gray-200 my-3" />
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="flex flex-col">
+              <div class="text-gray-600 font-medium" id="net-purchase1"></div>
+              <div class="text-gray-500 text-sm">Net purchase value</div>
+            </div>
+            <div class="flex flex-col">
+              <div class="text-gray-600 font-medium"></div>
+              <div class="text-gray-500 text-sm">Net sales value</div>
+            </div>
+            <div class="flex flex-col">
+              <div class="text-gray-600 font-medium" id="mom-profit"></div>
+              <div class="text-gray-500 text-sm">MoM Profit</div>
+            </div>
+            <div class="flex flex-col">
+              <div class="text-gray-600 font-medium" id="yoy-profit"></div>
+              <div class="text-gray-500 text-sm">YoY Profit</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third row - Best Selling Product -->
+        <div class="bg-white rounded-2xl p-4 shadow overflow-x-auto">
+          <div class="flex justify-between items-center mb-4">
+            <div class="text-xl font-medium text-[#383e49]">
+              Best selling product
+            </div>
+          </div>
+
+          <div class="min-w-[800px]">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-gray-300">
+                  <th class="py-3 font-light text-gray-500">Product</th>
+                  <th class="py-3 font-light text-gray-500">Product ID</th>
+                  <th class="py-3 font-light text-gray-500">Category</th>
+                  <th class="py-3 font-light text-gray-500">
+                    Bought Quantity
+                  </th>
+                  <th class="py-3 font-light text-gray-500">Turn Over</th>
+                </tr>
+              </thead>
+              <tbody id="top-products">
+              </tbody>
+            </table>
+          </div>
+        </div>
     </div>
+    </main>
+  </div>
+  </div>
 
-    <script>
-      fetch("/MinorProject/Components/Searchbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("search-bar").innerHTML = data;
+  <script>
+    fetch("/MinorProject/php/fetch_reports_data.php")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          console.error("Error:", data.error);
+          return;
+        }
 
-          // Add event listener after search bar is loaded
-          document
-            .getElementById("hamburger-menu")
-            ?.addEventListener("click", function () {
-              const sidebar = document.getElementById("mobile-sidebar");
-              const overlay = document.getElementById("sidebar-overlay");
+        document.getElementById("profit-value").textContent = `₹${data.profit}`;
+        document.getElementById("profit-value1").textContent = `₹${data.profit}`;
+        document.getElementById("revenue-value").textContent = `₹${data.revenue}`;
+        document.getElementById("revenue-value1").textContent = `₹${data.revenue}`;
+        document.getElementById("sales-value").textContent = `${data.sales}`;
+        document.getElementById("sales-value1").textContent = `${data.sales}`;
+        document.getElementById("net-purchase").textContent = `₹${data.purchase}`;
+        document.getElementById("net-purchase1").textContent = `₹${data.purchase}`;
+        document.getElementById("net-sales").textContent = `₹${data.sales_value}`;
+        document.getElementById("mom-profit").textContent = `₹${data.mom_profit ?? 0}`;
+        document.getElementById("yoy-profit").textContent = `₹${data.yoy_profit ?? 0}`;
+        document.getElementById("mom-profit1").textContent = `₹${data.mom_profit ?? 0}`;
+        document.getElementById("yoy-profit1").textContent = `₹${data.yoy_profit ?? 0}`;
 
-              sidebar.classList.toggle("-translate-x-full");
-              overlay.classList.toggle("hidden");
+        console.log(data.mom_profit);
+        console.log(data.yoy_profit);
 
-              // Close sidebar when clicking on overlay
-              overlay.addEventListener("click", function () {
-                sidebar.classList.add("-translate-x-full");
-                overlay.classList.add("hidden");
-              });
-            });
-        })
-        .catch((error) => {
-          console.error("Error loading search bar:", error);
+        // Populate Best Selling Categories
+        const categoryList = document.getElementById("top-categories");
+        categoryList.innerHTML = "";
+        data.top_categories.forEach((cat) => {
+          categoryList.innerHTML += `
+              <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                <div class="text-[#48505E]">${cat.category}</div>
+                <div>₹${cat.turnover}</div>
+              </div>`;
         });
-    </script>
-  </body>
+
+        // Populate Top Products Table
+        const productTable = document.getElementById("top-products");
+
+        productTable.innerHTML = "";
+        data.top_products.forEach((prod) => {
+          productTable.innerHTML += `
+              <tr class="border-b border-gray-300">
+                <td class="py-3 text-[#48505E]">${prod.product_name}</td>
+                <td class="py-3 text-[#48505E]">${prod.product_id}</td>
+                <td class="py-3 text-[#48505E]">${prod.category}</td>
+                <td class="py-3 text-[#10A760]">${prod.total_qty}</td>
+                <td class="py-3 text-[#48505E]">₹${prod.turnover}</td>
+              </tr>`;
+        });
+
+      })
+      .catch(err => console.error("Failed to load report stats", err));
+  </script>
+
+
+  <script>
+    fetch("/MinorProject/Components/Searchbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("search-bar").innerHTML = data;
+
+        // Add event listener after search bar is loaded
+        document
+          .getElementById("hamburger-menu")
+          ?.addEventListener("click", function () {
+            const sidebar = document.getElementById("mobile-sidebar");
+            const overlay = document.getElementById("sidebar-overlay");
+
+            sidebar.classList.toggle("-translate-x-full");
+            overlay.classList.toggle("hidden");
+
+            // Close sidebar when clicking on overlay
+            overlay.addEventListener("click", function () {
+              sidebar.classList.add("-translate-x-full");
+              overlay.classList.add("hidden");
+            });
+          });
+      })
+      .catch((error) => {
+        console.error("Error loading search bar:", error);
+      });
+  </script>
+</body>
+
 </html>

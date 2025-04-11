@@ -18,6 +18,7 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
 </head>
 
 <body class="bg-gray-100">
+    
     <!-- Mobile Sidebar and Overlay -->
     <div id="mobile-sidebar"
         class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg">

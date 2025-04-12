@@ -11,7 +11,9 @@ if ($conn->connect_error) {
     exit();
 }
 
+
 $response = [];
+
 
 // Total Profit
 $q = $conn->query("SELECT SUM((selling_price - order_value) * quantity) as profit FROM orders");

@@ -7,9 +7,16 @@
   <title>REPORTS Page</title>
   <link rel="stylesheet" href="/MinorProject/CSS/output.css" />
   <link rel="stylesheet" href="/MinorProject/CSS/index.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
+
+
+
+
+
 <body class="bg-gray-100">
+
   <!-- Mobile Sidebar and Overlay -->
   <div id="mobile-sidebar"
     class="fixed inset-y-0 left-0 z-50 w-64 bg-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-lg">
@@ -78,8 +85,9 @@
   <!-- Overlay for when mobile sidebar is open -->
   <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-70 z-40 hidden"></div>
 
-  <!-- Main container -->
+  <!-- FULL container -->
   <div class="flex gap-1 h-screen">
+
     <!-- Desktop Navigation bar -->
     <nav class="lg:flex flex-col hidden rounded-md justify-between px-6 pb-8 pt-6 bg-white shadow-md" role="navigation">
       <div class="flex flex-col gap-8 w-[280px]">
@@ -146,12 +154,14 @@
 
     <!-- Main content area -->
     <div class="flex flex-col flex-1 overflow-hidden">
+
       <!-- Search bar section -->
       <div id="search-bar" class="sticky top-0 z-30"></div>
 
       <main class="flex-1 overflow-y-auto p-1">
+
+        <!-- First row - Overview and Best Selling Category -->
         <div class="flex flex-col gap-2">
-          <!-- First row - Overview and Best Selling Category -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
             <!-- Overview Card -->
             <div class="bg-white rounded-2xl p-4 h-full shadow">
@@ -186,6 +196,7 @@
                   <div class="text-gray-600 font-medium" id="mom-profit1"></div>
                   <div class="text-gray-500 text-sm">MoM Profit</div>
                 </div>
+
                 <div class="flex flex-col">
                   <div class="text-gray-600 font-medium" id="yoy-profit1"></div>
                   <div class="text-gray-500 text-sm">YoY Profit</div>
@@ -201,15 +212,14 @@
                 </div>
               </div>
 
-              <div class="space-y-3" id="top-categories">
+              <div class="space-y-3" id="top-categories"></div>
 
-              </div>
             </div>
           </div>
         </div>
 
         <!-- Second row - Profit & Revenue -->
-        <div class="bg-white rounded-2xl p-4 shadow">
+        <div class="bg-white rounded-2xl p-4 shadow mt-2">
           <div class="text-xl font-medium text-[#383e49] mb-4">
             Profit & Revenue
           </div>
@@ -248,7 +258,7 @@
         </div>
 
         <!-- Third row - Best Selling Product -->
-        <div class="bg-white rounded-2xl p-4 shadow overflow-x-auto">
+        <div class="bg-white rounded-2xl p-4 shadow overflow-x-auto mt-2">
           <div class="flex justify-between items-center mb-4">
             <div class="text-xl font-medium text-[#383e49]">
               Best selling product
@@ -273,9 +283,11 @@
             </table>
           </div>
         </div>
+
+      </main>
     </div>
-    </main>
-  </div>
+
+
   </div>
 
   <script>
@@ -287,24 +299,20 @@
           return;
         }
 
-        document.getElementById("profit-value").textContent = `₹${data.profit}`;
-        document.getElementById("profit-value1").textContent = `₹${data.profit}`;
-        document.getElementById("revenue-value").textContent = `₹${data.revenue}`;
-        document.getElementById("revenue-value1").textContent = `₹${data.revenue}`;
-        document.getElementById("sales-value").textContent = `${data.sales}`;
-        document.getElementById("sales-value1").textContent = `${data.sales}`;
-        document.getElementById("net-purchase").textContent = `₹${data.purchase}`;
-        document.getElementById("net-purchase1").textContent = `₹${data.purchase}`;
-        document.getElementById("net-sales").textContent = `₹${data.sales_value}`;
+
+        document.getElementById("profit-value").textContent = `₹${data.profit ?? 0}`;
+        document.getElementById("profit-value1").textContent = `₹${data.profit ?? 0}`;
+        document.getElementById("revenue-value").textContent = `₹${data.revenue ?? 0}`;
+        document.getElementById("revenue-value1").textContent = `₹${data.revenue ?? 0}`;
+        document.getElementById("sales-value").textContent = `${data.sales ?? 0}`;
+        document.getElementById("sales-value1").textContent = `${data.sales ?? 0}`;
+        document.getElementById("net-purchase").textContent = `₹${data.purchase ?? 0}`;
+        document.getElementById("net-purchase1").textContent = `₹${data.purchase ?? 0}`;
         document.getElementById("mom-profit").textContent = `₹${data.mom_profit ?? 0}`;
         document.getElementById("yoy-profit").textContent = `₹${data.yoy_profit ?? 0}`;
         document.getElementById("mom-profit1").textContent = `₹${data.mom_profit ?? 0}`;
         document.getElementById("yoy-profit1").textContent = `₹${data.yoy_profit ?? 0}`;
 
-        console.log(data.mom_profit);
-        console.log(data.yoy_profit);
-
-        // Populate Best Selling Categories
         const categoryList = document.getElementById("top-categories");
         categoryList.innerHTML = "";
         data.top_categories.forEach((cat) => {
@@ -315,7 +323,7 @@
               </div>`;
         });
 
-        // Populate Top Products Table
+
         const productTable = document.getElementById("top-products");
 
         productTable.innerHTML = "";
@@ -362,6 +370,17 @@
         console.error("Error loading search bar:", error);
       });
   </script>
+
 </body>
+
+
+
+
+
+
+
+
+
+
 
 </html>

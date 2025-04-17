@@ -35,12 +35,6 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                     </a>
                 </li>
                 <li class="py-4">
-                    <a href="/MinorProject/Pages/Inventory.html" class="flex gap-4 text-md">
-                        <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
-                        Inventory
-                    </a>
-                </li>
-                <li class="py-4">
                     <a href="/MinorProject/Pages/Reports.html" class="flex gap-4 text-md">
                         <img width="24" src="/MinorProject/IMG/ReportN.svg" alt="Reports Icon" />
                         Reports
@@ -102,12 +96,6 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                         <a href="/MinorProject/index.php" class="flex gap-4 text-md items-center">
                             <img src="/MinorProject/Animation/home.gif" class="w-7 h-7" alt="Dashboard Icon" />
                             <div class="text-[#1570EF]">Dashboard</div>
-                        </a>
-                    </li>
-                    <li class="py-4">
-                        <a href="/MinorProject/Pages/Inventory.html" class="flex gap-4 text-md">
-                            <img src="/MinorProject/IMG/Invent.svg" alt="Inventory Icon" />
-                            Inventory
                         </a>
                     </li>
                     <li class="py-4">
@@ -416,152 +404,6 @@ include("/xampp/htdocs/MinorProject/php/protection.php");
                     </div>
 
                     <!-- Fourth row of main content -->
-                    <div class="flex flex-col lg:flex-row gap-2">
-                        <!-- Top Selling Stock -->
-                        <div class="bg-white flex flex-col rounded-2xl p-4 w-full lg:w-2/3 shadow-sm overflow-x-auto">
-                            <!-- overview part -->
-                            <div class="h-17 flex flex-row items-center justify-between mb-4">
-                                <div class="text-[#383e49] text-xl font-medium">
-                                    Top Selling Stock
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col justify-evenly gap-2 min-w-[600px]">
-                                <hr class="border-gray-200" />
-                                <div class="font-medium flex flex-row justify-between text-[#667085] text-sm">
-                                    <div class="w-1/6 px-2">Product</div>
-                                    <div class="w-1/6 px-2">Product ID</div>
-                                    <div class="w-1/6 px-2">Category</div>
-                                    <div class="w-1/6 px-2">Remaining Quantity</div>
-                                    <div class="w-1/6 px-2">Turn Over</div>
-                                    <div class="w-1/6 px-2">Increase By</div>
-                                </div>
-                                <hr class="border-gray-200" />
-
-                                <!-- Product rows -->
-                                <div class="flex flex-col gap-2">
-                                    <!-- Product row 1 -->
-                                    <div class="text-[#48505E] flex flex-row justify-between text-sm py-2">
-                                        <div class="w-1/6 px-2">Tomato</div>
-                                        <div class="w-1/6 px-2">13561</div>
-                                        <div class="w-1/6 px-2">Vegetable</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">225 kg</div>
-                                        <div class="w-1/6 px-2">₹26,000</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">3.2%</div>
-                                    </div>
-                                    <hr class="border-gray-200" />
-
-                                    <!-- Product row 2 -->
-                                    <div class="text-[#48505E] flex flex-row justify-between text-sm py-2">
-                                        <div class="w-1/6 px-2">Tomato</div>
-                                        <div class="w-1/6 px-2">13561</div>
-                                        <div class="w-1/6 px-2">Vegetable</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">225 kg</div>
-                                        <div class="w-1/6 px-2">₹26,000</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">3.2%</div>
-                                    </div>
-                                    <hr class="border-gray-200" />
-
-                                    <!-- Product row 3 -->
-                                    <div class="text-[#48505E] flex flex-row justify-between text-sm py-2">
-                                        <div class="w-1/6 px-2">Tomato</div>
-                                        <div class="w-1/6 px-2">13561</div>
-                                        <div class="w-1/6 px-2">Vegetable</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">225 kg</div>
-                                        <div class="w-1/6 px-2">₹26,000</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">3.2%</div>
-                                    </div>
-                                    <hr class="border-gray-200" />
-
-                                    <!-- Product row 4 -->
-                                    <div class="text-[#48505E] flex flex-row justify-between text-sm py-2">
-                                        <div class="w-1/6 px-2">Tomato</div>
-                                        <div class="w-1/6 px-2">13561</div>
-                                        <div class="w-1/6 px-2">Vegetable</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">225 kg</div>
-                                        <div class="w-1/6 px-2">₹26,000</div>
-                                        <div class="w-1/6 px-2 text-[#10A760]">3.2%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Low Quantity Stock -->
-                        <div class="bg-white flex flex-col w-full lg:w-1/3 rounded-2xl p-4 shadow-sm">
-                            <div class="h-17 flex flex-col justify-center mb-4">
-                                <div class="text-[#383e49] text-xl font-medium">
-                                    Low Quantity Stock
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col justify-evenly gap-4">
-                                <!-- Product 1 -->
-                                <div class="flex flex-row items-center gap-4 p-2 hover:bg-gray-50 rounded-lg">
-                                    <div class="w-16 h-16 flex-shrink-0">
-                                        <img src="/MinorProject/IMG/Products/Tata Salt.svg" alt="Tata Salt"
-                                            class="w-full h-full object-contain" />
-                                    </div>
-                                    <div class="flex-grow">
-                                        <div class="text-lg font-semibold text-[#383E49]">
-                                            Tata Salt
-                                        </div>
-                                        <div class="text-[#667085] font-medium text-sm">
-                                            Remaining Quantity: 10 Packet
-                                        </div>
-                                    </div>
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="bg-[#FEECEB] flex justify-center items-center py-0.5 px-2 rounded-full text-sm">
-                                            Low
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Product 2 -->
-                                <div class="flex flex-row items-center gap-4 p-2 hover:bg-gray-50 rounded-lg">
-                                    <div class="w-16 h-16 flex-shrink-0">
-                                        <img src="/MinorProject/IMG/Products/Lays.svg" alt="Lays"
-                                            class="w-full h-full object-contain" />
-                                    </div>
-                                    <div class="flex-grow">
-                                        <div class="text-lg font-semibold text-[#383E49]">
-                                            Lays
-                                        </div>
-                                        <div class="text-[#667085] font-medium text-sm">
-                                            Remaining Quantity: 14 Packet
-                                        </div>
-                                    </div>
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="bg-[#FEECEB] flex justify-center items-center py-0.5 px-2 rounded-full text-sm">
-                                            Low
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Product 3 -->
-                                <div class="flex flex-row items-center gap-4 p-2 hover:bg-gray-50 rounded-lg">
-                                    <div class="w-16 h-16 flex-shrink-0">
-                                        <img src="/MinorProject/IMG/Products/Lays.svg" alt="Lays"
-                                            class="w-full h-full object-contain" />
-                                    </div>
-                                    <div class="flex-grow">
-                                        <div class="text-lg font-semibold text-[#383E49]">
-                                            Lays
-                                        </div>
-                                        <div class="text-[#667085] font-medium text-sm">
-                                            Remaining Quantity: 85 Packet
-                                        </div>
-                                    </div>
-                                    <div class="flex-shrink-0">
-                                        <div
-                                            class="bg-[#FEECEB] flex justify-center items-center py-0.5 px-2 rounded-full text-sm">
-                                            Low
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </main>
